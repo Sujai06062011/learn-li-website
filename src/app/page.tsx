@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
-import { FeatureCard, WhiteFeatureCard } from "@/components/brand/FeatureCard";
+import { FeatureCard } from "@/components/brand/FeatureCard";
 import { LiIcon } from "@/components/brand/LiIcon";
+import { LiveStudio } from "@/components/home/LiveStudio";
 import { buttonVariants } from "@/components/ui/button";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import {
@@ -17,7 +18,6 @@ import {
   smartSections,
   snapshot,
   steps,
-  subjects,
   toneClass,
   toneInk,
 } from "@/lib/site";
@@ -65,28 +65,46 @@ export default function Home() {
             See features
           </Link>
         </div>
-        <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
-          {subjects.map((subject) => (
-            <div
-              key={subject.name}
-              className={cn("rounded-3xl p-4 shadow-sm", toneClass[subject.tone])}
-            >
-              <div
-                className={cn(
-                  "flex size-10 items-center justify-center rounded-2xl",
-                  toneInk[subject.tone]
-                )}
-              >
-                <LiIcon name={subject.icon} className="size-5" />
-              </div>
-              <p className="mt-3 font-semibold">{subject.name}</p>
-              <p className="mt-1 text-xs text-foreground/60">{subject.hint}</p>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 py-4 sm:px-8">
+        <div className="overflow-hidden rounded-3xl bg-[linear-gradient(135deg,#3b82f6,#6366f1)] p-8 text-white shadow-[0_18px_50px_-24px_rgba(59,130,246,0.65)] sm:p-12">
+          <p className="text-[11px] tracking-[0.22em] uppercase opacity-80">The company</p>
+          <p className="font-display mt-3 max-w-3xl text-3xl tracking-tight sm:text-4xl">
+            {company.statement}
+          </p>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            <div className="rounded-2xl bg-white/12 p-5">
+              <p className="text-[11px] tracking-[0.2em] uppercase opacity-80">Vision</p>
+              <p className="mt-2 text-sm leading-relaxed sm:text-base">{company.vision}</p>
             </div>
-          ))}
+            <div className="rounded-2xl bg-white/12 p-5">
+              <p className="text-[11px] tracking-[0.2em] uppercase opacity-80">Mission</p>
+              <p className="mt-2 text-sm leading-relaxed sm:text-base">{company.mission}</p>
+            </div>
+          </div>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              href="/company"
+              className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-li-blue"
+            >
+              About LearnLi
+            </Link>
+            <a
+              href={site.productUrl}
+              target="_blank"
+              rel="noreferrer"
+              className="rounded-full bg-[#22c55e] px-5 py-2.5 text-sm font-semibold text-white"
+            >
+              Go to learnli.in
+            </a>
+          </div>
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 pb-4 sm:px-8">
+      <LiveStudio />
+
+      <section className="mx-auto max-w-6xl px-5 py-8 sm:px-8">
         <div className="grid gap-4 md:grid-cols-3">
           {learningModes.map((mode) => (
             <FeatureCard key={mode.title} {...mode} />
@@ -120,7 +138,7 @@ export default function Home() {
           {steps.map((step, index) => (
             <article
               key={step.n}
-              className="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-foreground/8"
+              className="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-foreground/8 transition hover:-translate-y-1"
             >
               <span
                 className={cn(
@@ -146,7 +164,10 @@ export default function Home() {
           {highlightTiles.map((tile) => (
             <div
               key={tile.title}
-              className={cn("rounded-3xl p-4 shadow-sm", toneClass[tile.tone])}
+              className={cn(
+                "rounded-3xl p-4 shadow-sm transition hover:-translate-y-1",
+                toneClass[tile.tone]
+              )}
             >
               <div
                 className={cn(
@@ -170,7 +191,7 @@ export default function Home() {
         </h2>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {smartSections.map((section, index) => (
-            <WhiteFeatureCard
+            <FeatureCard
               key={section.title}
               {...section}
               index={String(index + 1).padStart(2, "0")}
@@ -203,12 +224,12 @@ export default function Home() {
         </div>
         <div className="mt-4 grid gap-4 md:grid-cols-3">
           {extras.map((item) => (
-            <WhiteFeatureCard key={item.title} {...item} />
+            <FeatureCard key={item.title} {...item} />
           ))}
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-10 sm:px-8">
+      <section className="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:pb-16">
         <SectionLabel>Everyone around the student</SectionLabel>
         <h2 className="font-display mt-3 max-w-xl text-3xl tracking-tight sm:text-4xl">
           Three dashboards. One story.
@@ -228,31 +249,6 @@ export default function Home() {
           ))}
         </div>
         <p className="mt-6 text-sm text-foreground/60">{careerNote}</p>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:pb-16">
-        <div className="overflow-hidden rounded-3xl bg-[linear-gradient(135deg,#3b82f6,#6366f1)] p-8 text-white shadow-[0_18px_50px_-24px_rgba(59,130,246,0.65)] sm:p-12">
-          <p className="text-[11px] tracking-[0.22em] uppercase opacity-80">The company</p>
-          <p className="font-display mt-3 max-w-2xl text-3xl tracking-tight sm:text-4xl">
-            {company.statement}
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href="/company"
-              className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-li-blue"
-            >
-              About LearnLi
-            </Link>
-            <a
-              href={site.productUrl}
-              target="_blank"
-              rel="noreferrer"
-              className="rounded-full bg-[#22c55e] px-5 py-2.5 text-sm font-semibold text-white"
-            >
-              Go to learnli.in
-            </a>
-          </div>
-        </div>
       </section>
     </main>
   );

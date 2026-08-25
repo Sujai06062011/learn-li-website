@@ -13,7 +13,7 @@ export const heroCopy = {
   lede: "Pick a chapter. Learn with Li, ask a doubt, take a quiz, or talk it through. Parents and teachers see the same progress.",
 };
 
-export type Tone = "pink" | "mint" | "lavender" | "sun" | "sky" | "rose";
+export type Tone = "pink" | "mint" | "lavender" | "sun" | "sky" | "rose" | "cyan";
 
 export const toneClass: Record<Tone, string> = {
   pink: "bg-li-pink",
@@ -22,6 +22,7 @@ export const toneClass: Record<Tone, string> = {
   sun: "bg-li-sun",
   sky: "bg-li-sky",
   rose: "bg-li-rose",
+  cyan: "bg-li-cyan",
 };
 
 export const toneInk: Record<Tone, string> = {
@@ -31,13 +32,14 @@ export const toneInk: Record<Tone, string> = {
   sun: "bg-[#f59e0b] text-white",
   sky: "bg-[#3b82f6] text-white",
   rose: "bg-[#f43f5e] text-white",
+  cyan: "bg-[#06b6d4] text-white",
 };
 
 export const subjects = [
-  { name: "Science", hint: "Labs, life, the physical world", tone: "mint" as Tone, icon: "microscope" },
-  { name: "Mathematics", hint: "From numbers to proofs", tone: "sky" as Tone, icon: "calculator" },
-  { name: "English", hint: "Language, literature, voice", tone: "sun" as Tone, icon: "book" },
-  { name: "Social Studies", hint: "People, places, civics", tone: "rose" as Tone, icon: "globe" },
+  { name: "Science", hint: "Life, labs, the living world", tone: "mint" as Tone, icon: "microscope" },
+  { name: "Maths", hint: "Numbers, shapes, proofs", tone: "sky" as Tone, icon: "calculator" },
+  { name: "Physics", hint: "Motion, heat, light, force", tone: "lavender" as Tone, icon: "atom" },
+  { name: "Chemistry", hint: "Matter, reactions, the lab", tone: "sun" as Tone, icon: "flask" },
 ];
 
 export const snapshot = [
@@ -68,7 +70,7 @@ export const highlightTiles = [
   { title: "Overview first", hint: "See the chapter whole", tone: "sun" as Tone, icon: "sparkles" },
   { title: "Pronunciation", hint: "Keywords + IPA", tone: "lavender" as Tone, icon: "audio" },
   { title: "Your own test", hint: "Chapters, timer, mix", tone: "pink" as Tone, icon: "clipboard" },
-  { title: "Image upload", hint: "Photo → practice", tone: "rose" as Tone, icon: "image" },
+  { title: "Image upload", hint: "Photo → practice", tone: "cyan" as Tone, icon: "image" },
   { title: "Study plans", hint: "Time you can keep", tone: "mint" as Tone, icon: "calendar" },
   { title: "Levels & points", hint: "Streaks and badges", tone: "sun" as Tone, icon: "trophy" },
 ];
@@ -140,7 +142,7 @@ export const smartSections = [
   {
     title: "Li scoring partner",
     icon: "star",
-    tone: "sun" as Tone,
+    tone: "rose" as Tone,
     body: "Li names the gaps and sends the student back to the exact idea.",
   },
 ];
@@ -221,8 +223,10 @@ export const company = {
   name: "LearnLi",
   statement:
     "LearnLi builds an AI companion for school — not a replacement for teachers, and not a feed of generic answers.",
+  vision:
+    "Every CBSE student from Grade 6 to 12 can open a chapter, understand it, practise it, and show that progress to the people who care.",
   mission:
-    "Help every student in Grades 6–12 understand the chapter in front of them, practise it properly, and show that progress to the people who care.",
+    "Help every student understand the chapter in front of them — with Li as tutor, listener, and scoring partner — and give parents and teachers a clear window into that work.",
   product:
     "An AI-assisted CBSE platform. Li teaches, answers, listens, speaks, quizzes, and plans. Students work chapter by chapter. Parents and teachers see the same story.",
   audience: [
@@ -230,5 +234,5 @@ export const company = {
     { title: "Parents", body: "A calm, factual view of study.", tone: "mint" as Tone, icon: "users" },
     { title: "Teachers", body: "Class insight without extra paperwork.", tone: "lavender" as Tone, icon: "chalkboard" },
   ],
-  subjects: ["Science", "Mathematics", "English", "Social Studies"],
+  subjects: ["Science", "Maths", "Physics", "Chemistry"],
 };

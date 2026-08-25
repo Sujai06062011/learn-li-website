@@ -54,17 +54,22 @@ export default function CompanyPage() {
         ))}
       </section>
 
-      <section className="mt-14 grid gap-10 lg:grid-cols-2">
+      <section className="mt-14 grid gap-4 md:grid-cols-2">
+        <div className="rounded-3xl bg-[linear-gradient(135deg,#3b82f6,#6366f1)] p-6 text-white shadow-sm sm:p-8">
+          <SectionLabel className="text-white/80">Vision</SectionLabel>
+          <p className="mt-4 text-base leading-relaxed">{company.vision}</p>
+        </div>
         <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-foreground/8 sm:p-8">
           <SectionLabel>Mission</SectionLabel>
           <p className="mt-4 text-base leading-relaxed">{company.mission}</p>
         </div>
-        <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-foreground/8 sm:p-8">
-          <SectionLabel>What we make</SectionLabel>
-          <p className="mt-4 text-base leading-relaxed text-foreground/70">
-            {company.product}
-          </p>
-        </div>
+      </section>
+
+      <section className="mt-6 rounded-3xl bg-white p-6 shadow-sm ring-1 ring-foreground/8 sm:p-8">
+        <SectionLabel>What we make</SectionLabel>
+        <p className="mt-4 text-base leading-relaxed text-foreground/70">
+          {company.product}
+        </p>
       </section>
 
       <section className="mt-10">

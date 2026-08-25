@@ -8,6 +8,8 @@ import {
   ClipboardCheck,
   FilePlus,
   Globe,
+  Atom,
+  FlaskConical,
   GraduationCap,
   Headphones,
   ImagePlus,
@@ -43,6 +45,8 @@ const map: Record<string, LucideIcon> = {
   calculator: Calculator,
   book: BookOpen,
   globe: Globe,
+  atom: Atom,
+  flask: FlaskConical,
 };
 
 export function LiIcon({
