@@ -1,65 +1,101 @@
 import Image from "next/image";
 import Link from "next/link";
+import { FeatureCard, WhiteFeatureCard } from "@/components/brand/FeatureCard";
+import { LiIcon } from "@/components/brand/LiIcon";
 import { buttonVariants } from "@/components/ui/button";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import {
   careerNote,
   company,
+  extras,
   heroCopy,
-  highlights,
+  highlightTiles,
   learningModes,
   practiceFeatures,
   roles,
   site,
   smartSections,
+  snapshot,
+  steps,
+  subjects,
+  toneClass,
+  toneInk,
 } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export default function Home() {
   return (
     <main>
-      <section className="mx-auto max-w-6xl px-5 pt-12 pb-8 sm:px-8 sm:pt-16">
-        <SectionLabel>{heroCopy.kicker}</SectionLabel>
-        <div className="mt-6 grid items-end gap-10 lg:grid-cols-[1.15fr_0.85fr]">
-          <div>
-            <h1 className="font-display text-[2.6rem] leading-[1.05] tracking-tight text-balance sm:text-6xl lg:text-[4.35rem]">
-              {heroCopy.headline}
-            </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              {heroCopy.lede}
-            </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a
-                href={site.productUrl}
-                target="_blank"
-                rel="noreferrer"
+      <section className="mx-auto max-w-6xl px-5 pt-10 pb-6 sm:px-8 sm:pt-14">
+        <div className="flex flex-wrap gap-2">
+          {["CBSE", "Grades 6–12", "Ask Li", "Voice & listen"].map((tag) => (
+            <span
+              key={tag}
+              className="rounded-full bg-white px-3 py-1 text-[11px] font-medium tracking-[0.14em] text-li-blue uppercase shadow-sm ring-1 ring-li-blue/15"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+        <h1 className="font-display mt-6 max-w-3xl text-[2.6rem] leading-[1.05] tracking-tight text-balance sm:text-6xl lg:text-[4.2rem]">
+          {heroCopy.headline}
+        </h1>
+        <p className="mt-5 max-w-xl text-base leading-relaxed text-foreground/70 sm:text-lg">
+          {heroCopy.lede}
+        </p>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <a
+            href={site.productUrl}
+            target="_blank"
+            rel="noreferrer"
+            className={cn(
+              buttonVariants({ variant: "success", size: "lg" }),
+              "h-11 rounded-full px-6 text-sm font-semibold"
+            )}
+          >
+            Open LearnLi
+          </a>
+          <Link
+            href="/product"
+            className={cn(
+              buttonVariants({ variant: "outline", size: "lg" }),
+              "h-11 rounded-full px-6 text-sm font-semibold"
+            )}
+          >
+            See features
+          </Link>
+        </div>
+        <div className="mt-10 grid grid-cols-2 gap-3 sm:grid-cols-4">
+          {subjects.map((subject) => (
+            <div
+              key={subject.name}
+              className={cn("rounded-3xl p-4 shadow-sm", toneClass[subject.tone])}
+            >
+              <div
                 className={cn(
-                  buttonVariants({ size: "lg" }),
-                  "h-11 px-5 text-[11px] tracking-[0.2em] uppercase"
+                  "flex size-10 items-center justify-center rounded-2xl",
+                  toneInk[subject.tone]
                 )}
               >
-                Open the product
-              </a>
-              <Link
-                href="/brochure"
-                className={cn(
-                  buttonVariants({ variant: "outline", size: "lg" }),
-                  "h-11 px-5 text-[11px] tracking-[0.2em] uppercase"
-                )}
-              >
-                Company PDF
-              </Link>
+                <LiIcon name={subject.icon} className="size-5" />
+              </div>
+              <p className="mt-3 font-semibold">{subject.name}</p>
+              <p className="mt-1 text-xs text-foreground/60">{subject.hint}</p>
             </div>
-          </div>
-          <p className="max-w-sm text-sm leading-relaxed text-muted-foreground lg:justify-self-end lg:text-right">
-            Built for the CBSE chapter as it is taught: Science, Mathematics,
-            English, and Social Studies, from Grade 6 through Grade 12.
-          </p>
+          ))}
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-5 pb-4 sm:px-8">
-        <div className="overflow-hidden rounded-sm border border-foreground/12 bg-card">
+        <div className="grid gap-4 md:grid-cols-3">
+          {learningModes.map((mode) => (
+            <FeatureCard key={mode.title} {...mode} />
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 py-6 sm:px-8">
+        <div className="overflow-hidden rounded-3xl bg-white shadow-[0_18px_50px_-28px_rgba(27,63,71,0.4)] ring-1 ring-foreground/8">
           <Image
             src="/brand/learnli-hero-campus.png"
             alt="Fine-line drawing of a quiet school campus, with students reading under a tree and a constellation of sparks in the sky."
@@ -69,75 +105,82 @@ export default function Home() {
             className="h-auto w-full"
           />
         </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
-        <SectionLabel>Product highlights</SectionLabel>
-        <div className="mt-4 grid gap-10 lg:grid-cols-2">
-          <h2 className="font-display max-w-md text-3xl tracking-tight text-balance sm:text-4xl">
-            Everything a chapter needs, before the exam asks for it.
-          </h2>
-          <ul className="grid gap-x-10 gap-y-3 sm:grid-cols-2">
-            {highlights.map((item) => (
-              <li
-                key={item}
-                className="flex gap-3 text-sm leading-relaxed text-muted-foreground"
-              >
-                <span className="mt-[0.55rem] size-1 shrink-0 rounded-full bg-foreground" />
-                <span>{item}</span>
-              </li>
-            ))}
-          </ul>
+        <div className="mt-4 grid grid-cols-2 gap-3 rounded-3xl bg-white p-4 shadow-sm ring-1 ring-foreground/8 sm:grid-cols-4 sm:p-5">
+          {snapshot.map((item) => (
+            <div key={item.label} className="px-2 py-1">
+              <p className="text-2xl font-semibold tracking-tight text-li-blue">{item.value}</p>
+              <p className="mt-1 text-xs text-foreground/55">{item.label}</p>
+            </div>
+          ))}
         </div>
       </section>
 
-      <section className="border-y border-foreground/10 bg-card/40">
-        <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
-          <SectionLabel>Choose a learning mode</SectionLabel>
-          <h2 className="font-display mt-4 max-w-xl text-3xl tracking-tight sm:text-4xl">
-            Learn with Li. Ask Li. See the idea.
-          </h2>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            {learningModes.map((mode) => (
-              <article
-                key={mode.title}
-                className="border border-foreground/12 bg-background p-6"
+      <section className="mx-auto max-w-6xl px-5 pb-6 sm:px-8">
+        <div className="grid gap-4 sm:grid-cols-3">
+          {steps.map((step, index) => (
+            <article
+              key={step.n}
+              className="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-foreground/8"
+            >
+              <span
+                className={cn(
+                  "inline-flex size-9 items-center justify-center rounded-full text-sm font-bold text-white",
+                  index === 0 ? "bg-li-blue" : index === 1 ? "bg-[#8b5cf6]" : "bg-li-green"
+                )}
               >
-                <p className="text-[11px] tracking-[0.24em] text-muted-foreground uppercase">
-                  {mode.kicker}
-                </p>
-                <h3 className="mt-3 font-display text-2xl">{mode.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {mode.body}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
-        <SectionLabel>Smart sections</SectionLabel>
-        <h2 className="font-display mt-4 max-w-xl text-3xl tracking-tight sm:text-4xl">
-          The chapter, taken apart with care.
-        </h2>
-        <div className="mt-10 grid gap-px overflow-hidden border border-foreground/12 bg-foreground/12 sm:grid-cols-2 lg:grid-cols-3">
-          {smartSections.map((section, index) => (
-            <article key={section.title} className="bg-background p-6">
-              <p className="font-display text-3xl text-foreground/25">
-                {String(index + 1).padStart(2, "0")}
-              </p>
-              <h3 className="mt-4 text-base font-medium">{section.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {section.body}
-              </p>
+                {step.n}
+              </span>
+              <h3 className="mt-3 font-semibold">{step.title}</h3>
+              <p className="mt-1 text-sm text-foreground/65">{step.body}</p>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 pb-8 sm:px-8">
-        <div className="overflow-hidden rounded-sm border border-foreground/12 bg-card">
+      <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
+        <SectionLabel>What students actually open</SectionLabel>
+        <h2 className="font-display mt-3 max-w-xl text-3xl tracking-tight sm:text-4xl">
+          Not a lecture. A set of tools.
+        </h2>
+        <div className="mt-8 grid grid-cols-2 gap-3 lg:grid-cols-4">
+          {highlightTiles.map((tile) => (
+            <div
+              key={tile.title}
+              className={cn("rounded-3xl p-4 shadow-sm", toneClass[tile.tone])}
+            >
+              <div
+                className={cn(
+                  "flex size-10 items-center justify-center rounded-2xl",
+                  toneInk[tile.tone]
+                )}
+              >
+                <LiIcon name={tile.icon} className="size-5" />
+              </div>
+              <p className="mt-3 font-semibold">{tile.title}</p>
+              <p className="mt-1 text-xs text-foreground/60">{tile.hint}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 py-6 sm:px-8 sm:py-10">
+        <SectionLabel>Inside every chapter</SectionLabel>
+        <h2 className="font-display mt-3 max-w-xl text-3xl tracking-tight sm:text-4xl">
+          Smart sections
+        </h2>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {smartSections.map((section, index) => (
+            <WhiteFeatureCard
+              key={section.title}
+              {...section}
+              index={String(index + 1).padStart(2, "0")}
+            />
+          ))}
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 py-10 sm:px-8">
+        <div className="overflow-hidden rounded-3xl bg-white shadow-[0_18px_50px_-28px_rgba(27,63,71,0.4)] ring-1 ring-foreground/8">
           <Image
             src="/brand/learnli-tools-still-life.png"
             alt="Line drawing of headphones, a microphone, an open textbook, a study plan checklist, and a phone — the tools of LearnLi."
@@ -148,97 +191,63 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
-        <SectionLabel>Practice, plans, progress</SectionLabel>
-        <h2 className="font-display mt-4 max-w-xl text-3xl tracking-tight sm:text-4xl">
-          A test you can shape. A plan you can keep.
+      <section className="mx-auto max-w-6xl px-5 py-10 sm:px-8">
+        <SectionLabel>Practice</SectionLabel>
+        <h2 className="font-display mt-3 max-w-xl text-3xl tracking-tight sm:text-4xl">
+          Tests you shape. Plans you keep.
         </h2>
-        <div className="mt-10 grid gap-10 md:grid-cols-2">
+        <div className="mt-8 grid gap-4 md:grid-cols-2">
           {practiceFeatures.map((feature) => (
-            <article key={feature.title} className="border-t border-foreground/12 pt-6">
-              <h3 className="text-lg font-medium">{feature.title}</h3>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                {feature.body}
-              </p>
-            </article>
+            <FeatureCard key={feature.title} {...feature} />
+          ))}
+        </div>
+        <div className="mt-4 grid gap-4 md:grid-cols-3">
+          {extras.map((item) => (
+            <WhiteFeatureCard key={item.title} {...item} />
           ))}
         </div>
       </section>
 
-      <section className="border-y border-foreground/10 bg-card/40">
-        <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
-          <SectionLabel>For every desk in the house</SectionLabel>
-          <h2 className="font-display mt-4 max-w-xl text-3xl tracking-tight sm:text-4xl">
-            Student, parent, and teacher — each with a dashboard of their own.
-          </h2>
-          <div className="mt-10 overflow-hidden rounded-sm border border-foreground/12 bg-background">
-            <Image
-              src="/brand/learnli-roles-illustration.png"
-              alt="Three fine-line scenes: a student talking with Li, a parent reviewing progress, and a teacher studying a class overview."
-              width={1920}
-              height={1080}
-              className="h-auto w-full"
-            />
-          </div>
-          <div className="mt-10 grid gap-8 md:grid-cols-3">
-            {roles.map((role) => (
-              <article key={role.title}>
-                <h3 className="text-base font-medium">{role.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  {role.body}
-                </p>
-              </article>
-            ))}
-          </div>
-          <p className="mt-10 max-w-3xl text-sm leading-relaxed text-muted-foreground">
-            {careerNote}
-          </p>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-24">
-        <SectionLabel>The company</SectionLabel>
-        <div className="mt-4 grid gap-10 lg:grid-cols-2">
-          <h2 className="font-display text-3xl tracking-tight sm:text-4xl">
-            {company.statement}
-          </h2>
-          <div className="space-y-6 text-sm leading-relaxed text-muted-foreground">
-            <p>{company.mission}</p>
-            <p>{company.product}</p>
-            <Link
-              href="/company"
-              className="inline-block text-[11px] tracking-[0.22em] text-foreground uppercase"
-            >
-              Read the company note →
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-5 pb-20 sm:px-8">
-        <div className="overflow-hidden rounded-sm border border-foreground/12 bg-card">
+      <section className="mx-auto max-w-6xl px-5 py-10 sm:px-8">
+        <SectionLabel>Everyone around the student</SectionLabel>
+        <h2 className="font-display mt-3 max-w-xl text-3xl tracking-tight sm:text-4xl">
+          Three dashboards. One story.
+        </h2>
+        <div className="mt-8 overflow-hidden rounded-3xl bg-white shadow-[0_18px_50px_-28px_rgba(27,63,71,0.4)] ring-1 ring-foreground/8">
           <Image
-            src="/brand/learnli-library-banner.png"
-            alt="Architectural line drawing of a library opening onto a courtyard of palms and hills."
+            src="/brand/learnli-roles-illustration.png"
+            alt="Three fine-line scenes: a student talking with Li, a parent reviewing progress, and a teacher studying a class overview."
             width={1920}
             height={1080}
             className="h-auto w-full"
           />
-          <div className="flex flex-col gap-6 px-6 py-8 sm:flex-row sm:items-end sm:justify-between sm:px-10 sm:py-10">
-            <div>
-              <p className="font-display text-3xl tracking-tight">Begin with a chapter.</p>
-              <p className="mt-2 max-w-md text-sm text-muted-foreground">
-                Open LearnLi, pick a grade, and let Li take the first pass with you.
-              </p>
-            </div>
+        </div>
+        <div className="mt-4 grid gap-4 md:grid-cols-3">
+          {roles.map((role) => (
+            <FeatureCard key={role.title} {...role} />
+          ))}
+        </div>
+        <p className="mt-6 text-sm text-foreground/60">{careerNote}</p>
+      </section>
+
+      <section className="mx-auto max-w-6xl px-5 py-10 sm:px-8 sm:pb-16">
+        <div className="overflow-hidden rounded-3xl bg-[linear-gradient(135deg,#3b82f6,#6366f1)] p-8 text-white shadow-[0_18px_50px_-24px_rgba(59,130,246,0.65)] sm:p-12">
+          <p className="text-[11px] tracking-[0.22em] uppercase opacity-80">The company</p>
+          <p className="font-display mt-3 max-w-2xl text-3xl tracking-tight sm:text-4xl">
+            {company.statement}
+          </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link
+              href="/company"
+              className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-li-blue"
+            >
+              About LearnLi
+            </Link>
             <a
               href={site.productUrl}
               target="_blank"
               rel="noreferrer"
-              className={cn(
-                buttonVariants({ size: "lg" }),
-                "h-11 px-5 text-[11px] tracking-[0.2em] uppercase"
-              )}
+              className="rounded-full bg-[#22c55e] px-5 py-2.5 text-sm font-semibold text-white"
             >
               Go to learnli.in
             </a>

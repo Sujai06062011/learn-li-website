@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { FeatureCard, WhiteFeatureCard } from "@/components/brand/FeatureCard";
+import { SectionLabel } from "@/components/ui/SectionLabel";
 import {
+  extras,
   learningModes,
   practiceFeatures,
   roles,
   smartSections,
 } from "@/lib/site";
-import { SectionLabel } from "@/components/ui/SectionLabel";
 
 export const metadata: Metadata = {
   title: "Product",
@@ -14,35 +16,36 @@ export const metadata: Metadata = {
     "LearnLi product: guided lessons, Ask Li, visual learning, quizzes, custom tests, study plans, and dashboards for students, parents, and teachers.",
 };
 
-const extras = [
-  {
-    title: "Listen mode",
-    body: "Li reads the lesson aloud so a student can follow with their ears as well as their eyes — useful on a walk, a commute, or a tired evening.",
-  },
-  {
-    title: "Voice mode",
-    body: "Talk to Li. Ask the next question without typing. The conversation stays inside the chapter, not a generic chat.",
-  },
-  {
-    title: "Image upload",
-    body: "Photograph a diagram, a worked example, or a page from the book. Li can explain it, or fold it into a test.",
-  },
-];
-
 export default function ProductPage() {
   return (
-    <main className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
-      <SectionLabel>The product</SectionLabel>
-      <h1 className="font-display mt-4 max-w-3xl text-4xl tracking-tight text-balance sm:text-6xl">
+    <main className="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
+      <div className="flex flex-wrap gap-2">
+        {["Learn with Li", "Ask Li", "Visuals", "Quizzes", "Voice"].map((tag) => (
+          <span
+            key={tag}
+            className="rounded-full bg-white px-3 py-1 text-[11px] font-medium tracking-[0.14em] text-li-blue uppercase shadow-sm ring-1 ring-li-blue/15"
+          >
+            {tag}
+          </span>
+        ))}
+      </div>
+      <h1 className="font-display mt-5 max-w-3xl text-4xl tracking-tight text-balance sm:text-6xl">
         An AI companion for the CBSE chapter.
       </h1>
-      <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground">
-        LearnLi is organised the way school is organised: grade, subject, chapter.
-        Inside each chapter the student chooses how to learn, then how to practise,
-        then how to show the work.
+      <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/70">
+        Grade, subject, chapter. Then choose how to learn, how to practise, and how
+        to show the work.
       </p>
 
-      <div className="mt-12 overflow-hidden rounded-sm border border-foreground/12">
+      <section className="mt-10">
+        <div className="grid gap-4 md:grid-cols-3">
+          {learningModes.map((mode) => (
+            <FeatureCard key={mode.title} {...mode} />
+          ))}
+        </div>
+      </section>
+
+      <div className="mt-10 overflow-hidden rounded-3xl bg-white shadow-[0_18px_50px_-28px_rgba(27,63,71,0.4)] ring-1 ring-foreground/8">
         <Image
           src="/brand/learnli-tools-still-life.png"
           alt="Study tools drawn in teal ink on cream paper."
@@ -52,75 +55,42 @@ export default function ProductPage() {
         />
       </div>
 
-      <section className="mt-20">
-        <SectionLabel>Learning modes</SectionLabel>
-        <div className="mt-8 space-y-10">
-          {learningModes.map((mode) => (
-            <article
-              key={mode.title}
-              className="grid gap-3 border-t border-foreground/12 pt-8 md:grid-cols-[220px_1fr]"
-            >
-              <h2 className="font-display text-2xl">{mode.title}</h2>
-              <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
-                {mode.body}
-              </p>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="mt-20">
+      <section className="mt-16">
         <SectionLabel>Inside the chapter</SectionLabel>
-        <div className="mt-8 grid gap-8 sm:grid-cols-2">
-          {smartSections.map((section) => (
-            <article key={section.title}>
-              <h2 className="text-lg font-medium">{section.title}</h2>
-              <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                {section.body}
-              </p>
-            </article>
+        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {smartSections.map((section, index) => (
+            <WhiteFeatureCard
+              key={section.title}
+              {...section}
+              index={String(index + 1).padStart(2, "0")}
+            />
           ))}
         </div>
       </section>
 
-      <section className="mt-20">
+      <section className="mt-16">
         <SectionLabel>Listen, speak, upload</SectionLabel>
-        <div className="mt-8 grid gap-8 md:grid-cols-3">
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
           {extras.map((item) => (
-            <article key={item.title} className="border border-foreground/12 p-6">
-              <h2 className="text-lg font-medium">{item.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                {item.body}
-              </p>
-            </article>
+            <FeatureCard key={item.title} {...item} />
           ))}
         </div>
       </section>
 
-      <section className="mt-20">
+      <section className="mt-16">
         <SectionLabel>Tests and plans</SectionLabel>
-        <div className="mt-8 grid gap-10 md:grid-cols-2">
+        <div className="mt-6 grid gap-4 md:grid-cols-2">
           {practiceFeatures.map((feature) => (
-            <article key={feature.title} className="border-t border-foreground/12 pt-6">
-              <h2 className="text-lg font-medium">{feature.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                {feature.body}
-              </p>
-            </article>
+            <FeatureCard key={feature.title} {...feature} />
           ))}
         </div>
       </section>
 
-      <section className="mt-20 mb-8">
+      <section className="mt-16 mb-4">
         <SectionLabel>Dashboards</SectionLabel>
-        <div className="mt-8 grid gap-8 md:grid-cols-3">
+        <div className="mt-6 grid gap-4 md:grid-cols-3">
           {roles.map((role) => (
-            <article key={role.title}>
-              <h2 className="text-lg font-medium">{role.title}</h2>
-              <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                {role.body}
-              </p>
-            </article>
+            <WhiteFeatureCard key={role.title} {...role} />
           ))}
         </div>
       </section>

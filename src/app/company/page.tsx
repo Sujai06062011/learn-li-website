@@ -1,7 +1,10 @@
 import type { Metadata } from "next";
 import Image from "next/image";
-import { company, site } from "@/lib/site";
+import { LiIcon } from "@/components/brand/LiIcon";
 import { SectionLabel } from "@/components/ui/SectionLabel";
+import { buttonVariants } from "@/components/ui/button";
+import { company, site, subjects, toneClass, toneInk } from "@/lib/site";
+import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Company",
@@ -11,16 +14,17 @@ export const metadata: Metadata = {
 
 export default function CompanyPage() {
   return (
-    <main className="mx-auto max-w-6xl px-5 py-14 sm:px-8 sm:py-20">
+    <main className="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
       <SectionLabel>The company</SectionLabel>
       <h1 className="font-display mt-4 max-w-3xl text-4xl tracking-tight text-balance sm:text-6xl">
-        A school companion, built with a quiet room in mind.
+        Built for the classroom as it actually is.
       </h1>
-      <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground">
-        {company.statement}
+      <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/70">
+        {company.statement} Chapters, marks, parents who want a window, teachers who
+        need a wider one.
       </p>
 
-      <div className="mt-12 overflow-hidden rounded-sm border border-foreground/12">
+      <div className="mt-10 overflow-hidden rounded-3xl bg-white shadow-[0_18px_50px_-28px_rgba(27,63,71,0.4)] ring-1 ring-foreground/8">
         <Image
           src="/brand/learnli-library-banner.png"
           alt="Line drawing of a library hall opening onto palms and hills."
@@ -30,43 +34,68 @@ export default function CompanyPage() {
         />
       </div>
 
-      <section className="mt-16 grid gap-12 border-t border-foreground/12 pt-12 lg:grid-cols-2">
-        <div>
+      <section className="mt-14 grid gap-4 md:grid-cols-3">
+        {company.audience.map((item) => (
+          <article
+            key={item.title}
+            className={cn("rounded-3xl p-6 shadow-sm", toneClass[item.tone])}
+          >
+            <div
+              className={cn(
+                "flex size-11 items-center justify-center rounded-2xl",
+                toneInk[item.tone]
+              )}
+            >
+              <LiIcon name={item.icon} className="size-5" />
+            </div>
+            <h2 className="mt-4 text-lg font-semibold">{item.title}</h2>
+            <p className="mt-2 text-sm text-foreground/70">{item.body}</p>
+          </article>
+        ))}
+      </section>
+
+      <section className="mt-14 grid gap-10 lg:grid-cols-2">
+        <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-foreground/8 sm:p-8">
           <SectionLabel>Mission</SectionLabel>
           <p className="mt-4 text-base leading-relaxed">{company.mission}</p>
         </div>
-        <div>
+        <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-foreground/8 sm:p-8">
           <SectionLabel>What we make</SectionLabel>
-          <p className="mt-4 text-base leading-relaxed text-muted-foreground">
+          <p className="mt-4 text-base leading-relaxed text-foreground/70">
             {company.product}
           </p>
         </div>
       </section>
 
-      <section className="mt-16 grid gap-12 border-t border-foreground/12 pt-12 lg:grid-cols-2">
-        <div>
-          <SectionLabel>Who it is for</SectionLabel>
-          <ul className="mt-4 space-y-3 text-sm leading-relaxed">
-            {company.audience.map((item) => (
-              <li key={item} className="flex gap-3">
-                <span className="mt-[0.55rem] size-1 shrink-0 rounded-full bg-foreground" />
-                {item}
-              </li>
-            ))}
-          </ul>
+      <section className="mt-10">
+        <SectionLabel>Subjects</SectionLabel>
+        <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+          {subjects.map((subject) => (
+            <div
+              key={subject.name}
+              className={cn("rounded-3xl p-4 shadow-sm", toneClass[subject.tone])}
+            >
+              <div
+                className={cn(
+                  "flex size-10 items-center justify-center rounded-2xl",
+                  toneInk[subject.tone]
+                )}
+              >
+                <LiIcon name={subject.icon} className="size-5" />
+              </div>
+              <p className="mt-3 font-semibold">{subject.name}</p>
+            </div>
+          ))}
         </div>
-        <div>
-          <SectionLabel>Subjects in view</SectionLabel>
-          <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
-            {company.subjects.join(" · ")} — mapped to CBSE chapters in Grades 6–12.
-          </p>
-          <p className="mt-6 text-sm text-muted-foreground">
-            Product:{" "}
-            <a className="text-foreground underline-offset-4 hover:underline" href={site.productUrl}>
-              {site.productUrl.replace("https://", "")}
-            </a>
-          </p>
-        </div>
+        <a
+          href={site.productUrl}
+          className={cn(
+            buttonVariants({ variant: "success", size: "lg" }),
+            "mt-8 inline-flex h-11 rounded-full px-6 text-sm font-semibold"
+          )}
+        >
+          Open learnli.in
+        </a>
       </section>
     </main>
   );

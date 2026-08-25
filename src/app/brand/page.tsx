@@ -9,11 +9,16 @@ export const metadata: Metadata = {
 };
 
 const colours = [
-  { name: "Ink", hex: "#1B3F47", note: "Lines, type, primary actions" },
-  { name: "Cream", hex: "#F6F1E8", note: "Paper, screens, quiet ground" },
-  { name: "Parchment", hex: "#FBF8F1", note: "Cards and raised sheets" },
-  { name: "Sand", hex: "#E8E0D2", note: "Secondary fills" },
-  { name: "Mist", hex: "#4F6B71", note: "Supporting copy" },
+  { name: "Cream", hex: "#F6F1E8", note: "Page ground — kept quiet" },
+  { name: "App blue", hex: "#3B82F6", note: "Buttons, active nav, numbers" },
+  { name: "App green", hex: "#22C55E", note: "Open product, start actions" },
+  { name: "Pink", hex: "#FCE4EC", note: "Learn with Li" },
+  { name: "Mint", hex: "#E7F6EE", note: "Ask Li" },
+  { name: "Lavender", hex: "#EEE8FF", note: "Visual learning" },
+  { name: "Sun", hex: "#FFF4D6", note: "Overview, levels" },
+  { name: "Sky", hex: "#E8F1FF", note: "Math, student, listen" },
+  { name: "Rose", hex: "#FFE4E8", note: "Social Studies, images" },
+  { name: "Ink", hex: "#1B3F47", note: "Headlines and body" },
 ];
 
 export default function BrandPage() {
@@ -23,14 +28,14 @@ export default function BrandPage() {
       <h1 className="font-display mt-4 max-w-3xl text-4xl tracking-tight sm:text-6xl">
         Logo, app icon, and the ink it sits in.
       </h1>
-      <p className="mt-6 max-w-2xl text-base leading-relaxed text-muted-foreground">
-        The product interface stays friendly and pastel. Marketing uses a quieter
-        language: cream paper, teal ink, and fine-line drawing — so the school
-        story feels considered, not noisy.
+      <p className="mt-6 max-w-2xl text-base leading-relaxed text-foreground/70">
+        Cream paper stays. The product’s pink, mint, lavender, sun, and blue–green
+        sit on cards, buttons, and icons — so marketing feels like the app a
+        student already opens.
       </p>
 
       <section className="mt-16 grid gap-8 lg:grid-cols-2">
-        <figure className="border border-foreground/12 bg-card p-8 sm:p-12">
+        <figure className="rounded-3xl border border-foreground/8 bg-white p-8 shadow-sm sm:p-12">
           <SectionLabel>Seal</SectionLabel>
           <div className="mt-8 flex justify-center">
             <Image
@@ -59,7 +64,7 @@ export default function BrandPage() {
           </div>
         </figure>
 
-        <figure className="border border-foreground/12 bg-card p-8 sm:p-12">
+        <figure className="rounded-3xl border border-foreground/8 bg-white p-8 shadow-sm sm:p-12">
           <SectionLabel>App icon</SectionLabel>
           <div className="mt-8 flex justify-center">
             <Image
@@ -90,15 +95,15 @@ export default function BrandPage() {
       </section>
 
       <section className="mt-16 grid gap-8 md:grid-cols-3">
-        <figure className="border border-foreground/12 p-8">
+        <figure className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-foreground/8">
           <SectionLabel>Line seal</SectionLabel>
           <SealLogo className="mx-auto mt-8 size-40" />
         </figure>
-        <figure className="border border-foreground/12 p-8">
+        <figure className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-foreground/8">
           <SectionLabel>Mark</SectionLabel>
           <GraduationMark title="LearnLi mark" className="mx-auto mt-8 size-24" />
         </figure>
-        <figure className="border border-foreground/12 p-8">
+        <figure className="rounded-3xl bg-white p-8 shadow-sm ring-1 ring-foreground/8">
           <SectionLabel>Vector icon</SectionLabel>
           <AppIconSvg className="mx-auto mt-8 size-28 overflow-visible rounded-[28%] shadow-sm" />
         </figure>
@@ -108,7 +113,7 @@ export default function BrandPage() {
         <SectionLabel>Colour</SectionLabel>
         <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {colours.map((colour) => (
-            <article key={colour.hex} className="border border-foreground/12">
+            <article key={colour.hex} className="overflow-hidden rounded-2xl ring-1 ring-foreground/8">
               <div className="h-24" style={{ background: colour.hex }} />
               <div className="p-4">
                 <p className="text-sm font-medium">{colour.name}</p>

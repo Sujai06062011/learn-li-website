@@ -13,14 +13,18 @@ export function SiteFooter() {
             <p className="mt-1 text-[11px] tracking-[0.28em] text-muted-foreground uppercase">
               {site.tagline}
             </p>
-            <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              AI-assisted learning for CBSE students in Grades 6–12, with dashboards
-              for families and teachers.
-            </p>
+            <a
+              href={site.productUrl}
+              className="mt-5 inline-flex rounded-full bg-li-green px-4 py-2 text-sm font-semibold text-white hover:opacity-90"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Open learnli.in
+            </a>
           </div>
         </div>
         <div>
-          <p className="text-[11px] tracking-[0.28em] uppercase">Visit</p>
+          <p className="text-[11px] font-semibold tracking-[0.22em] text-li-blue uppercase">Visit</p>
           <ul className="mt-4 space-y-2 text-sm">
             <li>
               <Link href="/product" className="hover:opacity-70">
@@ -45,7 +49,7 @@ export function SiteFooter() {
           </ul>
         </div>
         <div>
-          <p className="text-[11px] tracking-[0.28em] uppercase">Product</p>
+          <p className="text-[11px] font-semibold tracking-[0.22em] text-li-blue uppercase">Product</p>
           <ul className="mt-4 space-y-2 text-sm">
             <li>
               <a href={site.productUrl} className="hover:opacity-70" target="_blank" rel="noreferrer">

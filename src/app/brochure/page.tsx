@@ -4,12 +4,13 @@ import { SealLogo } from "@/components/brand/Logo";
 import { buttonVariants } from "@/components/ui/button";
 import {
   company,
-  highlights,
+  highlightTiles,
   learningModes,
   practiceFeatures,
   roles,
   site,
   smartSections,
+  toneClass,
 } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
@@ -40,7 +41,7 @@ export default function BrochurePage() {
           href={site.pdfPath}
           className={cn(
             buttonVariants({ size: "lg" }),
-            "h-11 px-5 text-[11px] tracking-[0.2em] uppercase"
+            "h-11 rounded-full px-5 text-sm font-semibold"
           )}
         >
           Download PDF
@@ -89,22 +90,22 @@ export default function BrochurePage() {
             <h2 className="font-display mt-3 max-w-md text-3xl tracking-tight">
               Everything a chapter needs, before the exam asks for it.
             </h2>
-            <ul className="mt-10 grid gap-x-10 gap-y-3 sm:grid-cols-2">
-              {highlights.map((item) => (
-                <li key={item} className="flex gap-3 text-sm leading-relaxed">
-                  <span className="mt-[0.55rem] size-1 shrink-0 rounded-full bg-foreground" />
-                  {item}
-                </li>
+            <div className="mt-8 grid grid-cols-2 gap-2 sm:grid-cols-4">
+              {highlightTiles.map((tile) => (
+                <div key={tile.title} className={cn("rounded-2xl p-3", toneClass[tile.tone])}>
+                  <p className="text-sm font-semibold">{tile.title}</p>
+                  <p className="mt-0.5 text-[11px] text-foreground/60">{tile.hint}</p>
+                </div>
               ))}
-            </ul>
-            <div className="mt-10 grid gap-6 border-t border-foreground/12 pt-8 sm:grid-cols-3">
+            </div>
+            <div className="mt-8 grid gap-3 sm:grid-cols-3">
               {learningModes.map((mode) => (
-                <div key={mode.title}>
-                  <p className="text-[10px] tracking-[0.22em] text-muted-foreground uppercase">
+                <div key={mode.title} className={cn("rounded-2xl p-4", toneClass[mode.tone])}>
+                  <p className="text-[10px] tracking-[0.18em] uppercase opacity-70">
                     {mode.kicker}
                   </p>
-                  <p className="mt-2 font-medium">{mode.title}</p>
-                  <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
+                  <p className="mt-1 font-semibold">{mode.title}</p>
+                  <p className="mt-2 text-xs leading-relaxed text-foreground/70">
                     {mode.body}
                   </p>
                 </div>
@@ -128,7 +129,7 @@ export default function BrochurePage() {
             <h2 className="font-display mt-3 text-3xl tracking-tight">Smart sections</h2>
             <div className="mt-8 grid gap-6 sm:grid-cols-2">
               {smartSections.map((section, index) => (
-                <div key={section.title} className="border-t border-foreground/12 pt-4">
+                <div key={section.title} className={cn("rounded-2xl p-4", toneClass[section.tone])}>
                   <p className="font-display text-xl text-foreground/30">
                     {String(index + 1).padStart(2, "0")}
                   </p>
@@ -169,7 +170,7 @@ export default function BrochurePage() {
             </div>
             <div className="mt-8 grid gap-6 sm:grid-cols-3">
               {roles.map((role) => (
-                <div key={role.title}>
+                <div key={role.title} className={cn("rounded-2xl p-4", toneClass[role.tone])}>
                   <p className="font-medium">{role.title}</p>
                   <p className="mt-2 text-xs leading-relaxed text-muted-foreground">
                     {role.body}

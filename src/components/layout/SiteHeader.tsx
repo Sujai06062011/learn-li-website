@@ -34,8 +34,10 @@ export function SiteHeader() {
               key={link.href}
               href={link.href}
               className={cn(
-                "text-[11px] tracking-[0.22em] uppercase transition-opacity hover:opacity-70",
-                pathname === link.href ? "opacity-100" : "opacity-55"
+                "rounded-full px-3 py-1.5 text-[11px] font-semibold tracking-[0.16em] uppercase transition-colors",
+                pathname === link.href
+                  ? "bg-li-sky text-li-blue"
+                  : "text-foreground/55 hover:text-foreground"
               )}
             >
               {link.label}
@@ -49,7 +51,7 @@ export function SiteHeader() {
           rel="noreferrer"
           className={cn(
             buttonVariants({ size: "lg" }),
-            "hidden h-9 px-4 text-[11px] tracking-[0.18em] uppercase md:inline-flex"
+            "hidden h-9 rounded-full px-4 text-sm font-semibold md:inline-flex"
           )}
         >
           Open LearnLi
