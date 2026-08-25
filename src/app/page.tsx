@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { FeatureCard } from "@/components/brand/FeatureCard";
 import { LiIcon } from "@/components/brand/LiIcon";
-import { LiveStudio } from "@/components/home/LiveStudio";
 import { buttonVariants } from "@/components/ui/button";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import {
@@ -103,26 +102,11 @@ export default function Home() {
         </div>
       </section>
 
-      <LiveStudio />
-
       <section className="mx-auto max-w-6xl px-5 py-8 sm:px-8">
         <div className="grid gap-4 md:grid-cols-3">
-          {learningModes.map((mode) => {
-            const modeId =
-              mode.title === "Learn with Li"
-                ? "li-mode-learn"
-                : mode.title === "Ask Li"
-                  ? "li-mode-ask"
-                  : null;
-            if (modeId) {
-              return (
-                <label key={mode.title} htmlFor={modeId} className="block cursor-pointer">
-                  <FeatureCard {...mode} />
-                </label>
-              );
-            }
-            return <FeatureCard key={mode.title} {...mode} />;
-          })}
+          {learningModes.map((mode) => (
+            <FeatureCard key={mode.title} {...mode} />
+          ))}
         </div>
       </section>
 
