@@ -17,8 +17,7 @@ export default function CompanyPage() {
     <main className="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
       <SectionLabel>The company</SectionLabel>
       <h1 className="font-display mt-4 max-w-3xl text-4xl tracking-tight text-balance sm:text-6xl">
-        Built for the classroom{" "}
-        <span className="text-[#c9a227]">as it actually is.</span>
+        Built for the classroom as it actually is.
       </h1>
       <p className="mt-5 max-w-2xl text-base leading-relaxed text-foreground/70">
         {company.statement} Chapters, marks, parents who want a window, teachers who
@@ -56,13 +55,11 @@ export default function CompanyPage() {
       </section>
 
       <section className="mt-14 grid gap-4 md:grid-cols-2">
-        <div className="rounded-[1.6rem] bg-[#123a4a] p-6 text-white shadow-sm sm:p-8">
-          <p className="text-[11px] font-semibold tracking-[0.22em] text-[#f5d76e] uppercase">
-            Vision
-          </p>
-          <p className="mt-4 text-base leading-relaxed text-white/90">{company.vision}</p>
+        <div className="rounded-3xl bg-[linear-gradient(135deg,#3b82f6,#6366f1)] p-6 text-white shadow-sm sm:p-8">
+          <SectionLabel className="text-white/80">Vision</SectionLabel>
+          <p className="mt-4 text-base leading-relaxed">{company.vision}</p>
         </div>
-        <div className="rounded-[1.6rem] bg-white p-6 shadow-sm ring-1 ring-foreground/8 sm:p-8">
+        <div className="rounded-3xl bg-white p-6 shadow-sm ring-1 ring-foreground/8 sm:p-8">
           <SectionLabel>Mission</SectionLabel>
           <p className="mt-4 text-base leading-relaxed">{company.mission}</p>
         </div>
@@ -98,8 +95,8 @@ export default function CompanyPage() {
         <a
           href={site.productUrl}
           className={cn(
-            buttonVariants({ variant: "gold", size: "lg" }),
-            "mt-8 inline-flex h-12 rounded-full px-7 text-sm font-semibold"
+            buttonVariants({ variant: "success", size: "lg" }),
+            "mt-8 inline-flex h-11 rounded-full px-6 text-sm font-semibold"
           )}
         >
           Open learnli.in

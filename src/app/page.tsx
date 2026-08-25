@@ -39,7 +39,7 @@ export default function Home() {
           ))}
         </div>
         <h1 className="font-display mt-6 max-w-3xl text-[2.6rem] leading-[1.05] tracking-tight text-balance sm:text-6xl lg:text-[4.2rem]">
-          Choose <span className="text-[#c9a227]">depth</span> over drill.
+          {heroCopy.headline}
         </h1>
         <p className="mt-5 max-w-xl text-base leading-relaxed text-foreground/70 sm:text-lg">
           {heroCopy.lede}
@@ -50,7 +50,7 @@ export default function Home() {
             target="_blank"
             rel="noreferrer"
             className={cn(
-              buttonVariants({ variant: "gold", size: "lg" }),
+              buttonVariants({ variant: "success", size: "lg" }),
               "h-12 rounded-full px-7 text-sm font-semibold"
             )}
           >
@@ -69,37 +69,27 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-4 sm:px-8">
-        <div className="overflow-hidden rounded-[2rem] bg-[#123a4a] p-8 text-white shadow-[0_24px_60px_-28px_rgba(18,58,74,0.7)] sm:p-12">
-          <p className="text-[11px] font-semibold tracking-[0.22em] text-[#f5d76e] uppercase">
-            About LearnLi
-          </p>
-          <p className="font-display mt-3 max-w-3xl text-3xl tracking-tight sm:text-5xl">
-            An AI companion for school —{" "}
-            <span className="text-[#f5d76e]">not a replacement for teachers</span>, and not a
+        <div className="overflow-hidden rounded-3xl bg-[linear-gradient(135deg,#3b82f6,#6366f1)] p-8 text-white shadow-[0_18px_50px_-24px_rgba(59,130,246,0.65)] sm:p-12">
+          <p className="text-[11px] tracking-[0.22em] uppercase opacity-80">The company</p>
+          <p className="font-display mt-3 max-w-3xl text-3xl tracking-tight sm:text-4xl">
+            LearnLi builds an AI companion for school —{" "}
+            <span className="text-[#fde68a]">not a replacement for teachers</span>, and not a
             feed of generic answers.
           </p>
-          <div className="mt-8 grid gap-4 sm:grid-cols-2">
-            <div className="rounded-[1.4rem] bg-white/8 p-6 ring-1 ring-white/10">
-              <p className="text-[11px] font-semibold tracking-[0.2em] text-[#f5d76e] uppercase">
-                Vision
-              </p>
-              <p className="mt-3 text-sm leading-relaxed text-white/85 sm:text-base">
-                {company.vision}
-              </p>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2">
+            <div className="rounded-2xl bg-white/12 p-5">
+              <p className="text-[11px] tracking-[0.2em] uppercase opacity-80">Vision</p>
+              <p className="mt-2 text-sm leading-relaxed sm:text-base">{company.vision}</p>
             </div>
-            <div className="rounded-[1.4rem] bg-white/8 p-6 ring-1 ring-white/10">
-              <p className="text-[11px] font-semibold tracking-[0.2em] text-[#f5d76e] uppercase">
-                Mission
-              </p>
-              <p className="mt-3 text-sm leading-relaxed text-white/85 sm:text-base">
-                {company.mission}
-              </p>
+            <div className="rounded-2xl bg-white/12 p-5">
+              <p className="text-[11px] tracking-[0.2em] uppercase opacity-80">Mission</p>
+              <p className="mt-2 text-sm leading-relaxed sm:text-base">{company.mission}</p>
             </div>
           </div>
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href="/company"
-              className="inline-flex min-h-12 items-center rounded-full bg-white px-6 text-sm font-semibold text-[#123a4a]"
+              className="rounded-full bg-white px-5 py-2.5 text-sm font-semibold text-li-blue"
             >
               About LearnLi
             </Link>
@@ -107,7 +97,7 @@ export default function Home() {
               href={site.productUrl}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex min-h-12 items-center rounded-full bg-[#f5d76e] px-6 text-sm font-semibold text-[#123a4a]"
+              className="rounded-full bg-li-green px-5 py-2.5 text-sm font-semibold text-white"
             >
               Go to learnli.in
             </a>
@@ -157,37 +147,45 @@ export default function Home() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-10 sm:px-8">
-        <p className="text-[11px] font-semibold tracking-[0.22em] text-[#123a4a]/55 uppercase">
-          Why LearnLi
-        </p>
-        <h2 className="font-display mt-3 max-w-xl text-3xl tracking-tight sm:text-5xl">
-          Why this companion{" "}
-          <span className="text-[#c9a227]">holds up in a real week of school.</span>
+        <SectionLabel>Why LearnLi</SectionLabel>
+        <h2 className="font-display mt-3 max-w-xl text-3xl tracking-tight sm:text-4xl">
+          Why this companion holds up in a real week of school.
         </h2>
         <div className="mt-8 grid gap-4 sm:grid-cols-2">
-          {promises.map((item) => (
-            <article
-              key={item.n}
-              className="rounded-[1.6rem] bg-white p-6 shadow-[0_14px_40px_-24px_rgba(18,58,74,0.35)] ring-1 ring-foreground/8 sm:p-8"
-            >
-              <p className="font-display text-4xl text-[#123a4a]/18">{item.n}</p>
-              <h3 className="mt-4 text-xl font-semibold tracking-tight">{item.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-foreground/65">{item.body}</p>
-            </article>
-          ))}
+          {promises.map((item, index) => {
+            const tones = ["pink", "mint", "lavender", "sun"] as const;
+            const tone = tones[index] ?? "sky";
+            return (
+              <article
+                key={item.n}
+                className={cn("rounded-3xl p-6 shadow-sm sm:p-7", toneClass[tone])}
+              >
+                <p className="text-sm font-semibold text-foreground/35">{item.n}</p>
+                <h3 className="mt-3 text-xl font-semibold tracking-tight">{item.title}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-foreground/65">{item.body}</p>
+              </article>
+            );
+          })}
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-5 pb-6 sm:px-8">
         <div className="grid gap-4 sm:grid-cols-3">
-          {steps.map((step) => (
+          {steps.map((step, index) => (
             <article
               key={step.n}
-              className="rounded-[1.6rem] bg-[#123a4a] p-6 text-white shadow-[0_18px_40px_-24px_rgba(18,58,74,0.55)] sm:p-7"
+              className="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-foreground/8 transition hover:-translate-y-1"
             >
-              <p className="font-display text-3xl text-[#f5d76e]">{step.n}</p>
-              <h3 className="mt-4 text-lg font-semibold">{step.title}</h3>
-              <p className="mt-2 text-sm leading-relaxed text-white/70">{step.body}</p>
+              <span
+                className={cn(
+                  "inline-flex size-9 items-center justify-center rounded-full text-sm font-bold text-white",
+                  index === 0 ? "bg-li-blue" : index === 1 ? "bg-[#8b5cf6]" : "bg-li-green"
+                )}
+              >
+                {step.n.replace(/^0/, "")}
+              </span>
+              <h3 className="mt-3 font-semibold">{step.title}</h3>
+              <p className="mt-1 text-sm text-foreground/65">{step.body}</p>
             </article>
           ))}
         </div>

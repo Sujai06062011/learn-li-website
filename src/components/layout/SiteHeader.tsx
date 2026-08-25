@@ -50,8 +50,8 @@ export function SiteHeader() {
           target="_blank"
           rel="noreferrer"
           className={cn(
-            buttonVariants({ variant: "gold", size: "lg" }),
-            "hidden h-10 rounded-full px-5 text-sm font-semibold md:inline-flex"
+            buttonVariants({ variant: "success", size: "lg" }),
+            "hidden h-9 rounded-full px-4 text-sm font-semibold md:inline-flex"
           )}
         >
           Open LearnLi
