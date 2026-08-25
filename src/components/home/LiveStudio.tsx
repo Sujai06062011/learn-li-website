@@ -35,24 +35,6 @@ const topics = [
   },
 ] as const;
 
-const parts = [
-  {
-    id: "leaf",
-    label: "Leaf",
-    copy: "The workshop. Chloroplasts sit in the mesophyll. Stomata let gases in and out.",
-  },
-  {
-    id: "sun",
-    label: "Sunlight",
-    copy: "The energy that splits water and lifts electrons in the light reaction.",
-  },
-  {
-    id: "co2",
-    label: "CO₂",
-    copy: "The carbon source. It enters through stomata and is fixed in the stroma.",
-  },
-] as const;
-
 const lessonSteps = [
   "Open the chapter outline — know the shape before the first paragraph.",
   "Walk the idea with Li, in order, the way a patient teacher would.",
@@ -107,7 +89,7 @@ export function LiveStudio() {
             <p className="text-sm font-semibold">Try it here — Grade 7 · Science</p>
           </div>
 
-          <div className="grid min-w-[18rem] flex-1 grid-cols-3 gap-1 rounded-full bg-cream p-1 sm:min-w-0 sm:flex-none">
+          <div className="grid min-w-[14rem] flex-1 grid-cols-2 gap-1 rounded-full bg-cream p-1 sm:min-w-0 sm:flex-none">
             <label
               htmlFor="li-mode-learn"
               data-tab="learn"
@@ -123,14 +105,6 @@ export function LiveStudio() {
             >
               <HitRadio id="li-mode-ask" name="li-mode" defaultChecked />
               <span className="pointer-events-none relative z-0">Ask Li</span>
-            </label>
-            <label
-              htmlFor="li-mode-visual"
-              data-tab="visual"
-              className="relative isolate flex min-h-11 cursor-pointer items-center justify-center rounded-full px-3 text-center text-xs font-semibold text-foreground/50"
-            >
-              <HitRadio id="li-mode-visual" name="li-mode" />
-              <span className="pointer-events-none relative z-0">Visual learning</span>
             </label>
           </div>
         </div>
@@ -280,87 +254,6 @@ export function LiveStudio() {
               </div>
             </aside>
           </div>
-        </div>
-
-        <div className="li-panel li-panel-visual p-5 sm:p-8">
-          <p className="text-[11px] font-semibold tracking-[0.18em] text-[#8b5cf6] uppercase">
-            Tap a part of the idea
-          </p>
-          <p className="mt-2 max-w-xl text-sm text-foreground/65">
-            Photosynthesis as a small scene — tap the leaf, the sun, or the air.
-          </p>
-
-          <div className="mt-5 overflow-hidden rounded-3xl bg-gradient-to-b from-[#dbeafe] via-li-mint to-[#fde68a] p-5 sm:p-8">
-            <div className="relative mx-auto flex min-h-[220px] max-w-lg items-end justify-center">
-              <label
-                htmlFor="li-part-sun"
-                data-part="sun"
-                className="li-scene absolute top-2 right-6 isolate flex size-16 cursor-pointer items-center justify-center rounded-full bg-[#facc15] text-2xl shadow-[0_8px_24px_-8px_rgba(250,204,21,0.9)] ring-4 ring-white/70 sm:size-20"
-              >
-                <HitRadio id="li-part-sun" name="li-part" />
-                <span className="pointer-events-none">☀</span>
-              </label>
-              <label
-                htmlFor="li-part-co2"
-                data-part="co2"
-                className="li-scene absolute top-10 left-4 isolate cursor-pointer rounded-full bg-white/80 px-3 py-2 text-xs font-semibold text-[#0ea5e9] shadow-sm sm:left-8 sm:text-sm"
-              >
-                <HitRadio id="li-part-co2" name="li-part" />
-                <span className="pointer-events-none">CO₂ in the air</span>
-              </label>
-              <label
-                htmlFor="li-part-leaf"
-                data-part="leaf"
-                className="li-scene relative isolate z-[1] mb-2 cursor-pointer"
-              >
-                <HitRadio id="li-part-leaf" name="li-part" defaultChecked />
-                <svg
-                  viewBox="0 0 180 140"
-                  className="pointer-events-none h-36 w-44 sm:h-44 sm:w-56"
-                  aria-hidden
-                >
-                  <path
-                    d="M20 110 C40 40 90 10 160 30 C120 70 90 110 70 128 C48 122 30 120 20 110Z"
-                    fill="#22c55e"
-                  />
-                  <path
-                    d="M70 128 C90 80 120 50 160 30"
-                    fill="none"
-                    stroke="#166534"
-                    strokeWidth="3"
-                  />
-                  <path d="M78 70 Q100 78 118 62" fill="none" stroke="#166534" strokeWidth="2" />
-                  <path d="M72 92 Q92 98 108 84" fill="none" stroke="#166534" strokeWidth="2" />
-                </svg>
-              </label>
-            </div>
-          </div>
-
-          <div className="mt-5 flex flex-wrap gap-3">
-            {parts.map((part) => (
-              <label
-                key={part.id}
-                htmlFor={`li-part-${part.id}`}
-                data-part={part.id}
-                className="li-chip inline-flex min-h-11 cursor-pointer items-center rounded-full bg-li-lavender px-4 text-sm font-semibold"
-              >
-                {part.label}
-              </label>
-            ))}
-          </div>
-
-          {parts.map((part) => (
-            <p
-              key={part.id}
-              className={cn(
-                "li-part-copy mt-6 rounded-3xl bg-li-lavender px-5 py-4 text-sm leading-relaxed",
-                `li-part-${part.id}`
-              )}
-            >
-              <span className="font-semibold">{part.label}. </span>
-              {part.copy}
-            </p>
-          ))}
         </div>
       </div>
     </section>

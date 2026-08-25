@@ -111,14 +111,17 @@ export default function Home() {
             const modeId =
               mode.title === "Learn with Li"
                 ? "li-mode-learn"
-                : mode.title === "Visual learning"
-                  ? "li-mode-visual"
-                  : "li-mode-ask";
-            return (
-              <label key={mode.title} htmlFor={modeId} className="block cursor-pointer">
-                <FeatureCard {...mode} />
-              </label>
-            );
+                : mode.title === "Ask Li"
+                  ? "li-mode-ask"
+                  : null;
+            if (modeId) {
+              return (
+                <label key={mode.title} htmlFor={modeId} className="block cursor-pointer">
+                  <FeatureCard {...mode} />
+                </label>
+              );
+            }
+            return <FeatureCard key={mode.title} {...mode} />;
           })}
         </div>
       </section>
