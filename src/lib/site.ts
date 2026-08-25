@@ -76,9 +76,32 @@ export const highlightTiles = [
 ];
 
 export const steps = [
-  { n: "1", title: "Pick the chapter", body: "Grade, subject, chapter — the same shape as school." },
-  { n: "2", title: "Learn your way", body: "Guided lesson, Ask Li, or visuals. Listen or speak." },
-  { n: "3", title: "Prove it", body: "Quiz, custom test, or a plan. Li scores the gaps." },
+  { n: "01", title: "Pick the chapter", body: "Grade, subject, chapter — the same shape as school." },
+  { n: "02", title: "Learn your way", body: "Guided lesson, Ask Li, or visuals. Listen or speak." },
+  { n: "03", title: "Prove it", body: "Quiz, custom test, or a plan. Li scores the gaps." },
+];
+
+export const promises = [
+  {
+    n: "01",
+    title: "Chapter-bound answers",
+    body: "Li stays inside the open chapter — not a feed of generic internet replies.",
+  },
+  {
+    n: "02",
+    title: "Three ways to learn",
+    body: "A guided lesson, a doubt in Ask Li, or a diagram you can tap.",
+  },
+  {
+    n: "03",
+    title: "Practice that fits",
+    body: "Quiz, a test you shape, or a photo of the page in your hand.",
+  },
+  {
+    n: "04",
+    title: "A window for home",
+    body: "Student, parent, and teacher dashboards tell the same honest story.",
+  },
 ];
 
 export const learningModes = [

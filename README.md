@@ -8,8 +8,9 @@ The product itself lives at [learnli.in](https://learnli.in). This repository is
 
 The product UI is friendly, pastel, and card-based. Marketing uses a quieter register:
 
-- Cream paper (`#F6F1E8`) and teal ink (`#1B3F47`)
-- Fine-line illustration in the spirit of an editorial brochure
+- Cream paper (`#F6F1E8`) and teal ink (`#1B3F47` / `#123A4A`)
+- Yellow tap targets (`#F5D76E`) on dark teal
+- Fine-line illustration plus the product’s pastel cards
 - The existing mortarboard, rewritten as a seal and a home-screen icon, with an AI spark as the tassel
 
 ## What is in this repo

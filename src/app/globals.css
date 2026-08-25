@@ -114,6 +114,71 @@
   margin: 0;
 }
 
+/* Live demo: native radios + :has(), so tabs and topics work even before JS hydrates. */
+.li-hit {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  opacity: 0.001;
+  appearance: none;
+  -webkit-appearance: none;
+  pointer-events: auto;
+  touch-action: manipulation;
+}
+
+.li-studio .li-panel,
+.li-studio .li-reply,
+.li-studio .li-part-copy {
+  display: none;
+}
+
+.li-studio:has(#li-mode-learn:checked) .li-panel-learn,
+.li-studio:has(#li-mode-ask:checked) .li-panel-ask,
+.li-studio:has(#li-mode-visual:checked) .li-panel-visual {
+  display: block;
+}
+
+.li-studio:has(#li-mode-learn:checked) [data-tab="learn"],
+.li-studio:has(#li-mode-ask:checked) [data-tab="ask"],
+.li-studio:has(#li-mode-visual:checked) [data-tab="visual"] {
+  background: #f5d76e;
+  color: #123a4a;
+}
+
+.li-studio:has(#li-topic-autotrophs:checked) .li-reply-autotrophs,
+.li-studio:has(#li-topic-photosynthesis:checked) .li-reply-photosynthesis,
+.li-studio:has(#li-topic-heat:checked) .li-reply-heat,
+.li-studio:has(#li-topic-integers:checked) .li-reply-integers {
+  display: block;
+}
+
+.li-studio:has(#li-topic-autotrophs:checked) [data-topic="autotrophs"],
+.li-studio:has(#li-topic-photosynthesis:checked) [data-topic="photosynthesis"],
+.li-studio:has(#li-topic-heat:checked) [data-topic="heat"],
+.li-studio:has(#li-topic-integers:checked) [data-topic="integers"] {
+  background: #3b82f6;
+  color: #fff;
+  box-shadow: 0 12px 24px -14px rgba(59, 130, 246, 0.85);
+}
+
+.li-studio:has(#li-part-leaf:checked) .li-part-leaf,
+.li-studio:has(#li-part-sun:checked) .li-part-sun,
+.li-studio:has(#li-part-co2:checked) .li-part-co2 {
+  display: block;
+}
+
+.li-studio:has(#li-part-leaf:checked) [data-part="leaf"],
+.li-studio:has(#li-part-sun:checked) [data-part="sun"],
+.li-studio:has(#li-part-co2:checked) [data-part="co2"] {
+  background: #8b5cf6;
+  color: #fff;
+  box-shadow: 0 16px 32px -18px rgba(139, 92, 246, 0.7);
+}
+
 @media print {
   header,
   footer {

@@ -5,6 +5,26 @@ import { site } from "@/lib/site";
 export function SiteFooter() {
   return (
     <footer className="border-t border-foreground/10 print:hidden">
+      <div className="bg-[#123a4a] text-white">
+        <div className="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-5 py-10 sm:flex-row sm:items-center sm:px-8">
+          <div>
+            <p className="text-[11px] font-semibold tracking-[0.22em] text-[#f5d76e] uppercase">
+              Open the product
+            </p>
+            <p className="font-display mt-2 text-3xl tracking-tight sm:text-4xl">
+              One chapter away from the next clear hour.
+            </p>
+          </div>
+          <a
+            href={site.productUrl}
+            className="inline-flex min-h-12 items-center rounded-full bg-[#f5d76e] px-6 text-sm font-semibold text-[#123a4a] hover:bg-[#f0cc55]"
+            target="_blank"
+            rel="noreferrer"
+          >
+            Go to learnli.in
+          </a>
+        </div>
+      </div>
       <div className="mx-auto grid max-w-6xl gap-10 px-5 py-14 sm:px-8 md:grid-cols-[1.2fr_1fr_1fr]">
         <div className="flex gap-5">
           <SealLogo className="size-20 shrink-0" />
@@ -15,7 +35,7 @@ export function SiteFooter() {
             </p>
             <a
               href={site.productUrl}
-              className="mt-5 inline-flex rounded-full bg-li-green px-4 py-2 text-sm font-semibold text-white hover:opacity-90"
+              className="mt-5 inline-flex rounded-full bg-[#f5d76e] px-4 py-2 text-sm font-semibold text-[#123a4a] hover:bg-[#f0cc55]"
               target="_blank"
               rel="noreferrer"
             >
