@@ -8,7 +8,6 @@ import { SectionLabel } from "@/components/ui/SectionLabel";
 import {
   careerNote,
   company,
-  extras,
   heroCopy,
   highlightTiles,
   learningModes,
@@ -18,7 +17,6 @@ import {
   site,
   smartSections,
   snapshot,
-  steps,
   toneClass,
   toneInk,
 } from "@/lib/site";
@@ -169,53 +167,40 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-6xl px-5 pb-6 sm:px-8">
-        <div className="grid gap-4 sm:grid-cols-3">
-          {steps.map((step, index) => (
-            <article
-              key={step.n}
-              className="rounded-3xl bg-white p-5 shadow-sm ring-1 ring-foreground/8 transition hover:-translate-y-1"
-            >
-              <span
-                className={cn(
-                  "inline-flex size-9 items-center justify-center rounded-full text-sm font-bold text-white",
-                  index === 0 ? "bg-li-blue" : index === 1 ? "bg-[#8b5cf6]" : "bg-li-green"
-                )}
-              >
-                {step.n.replace(/^0/, "")}
-              </span>
-              <h3 className="mt-3 font-semibold">{step.title}</h3>
-              <p className="mt-1 text-sm text-foreground/65">{step.body}</p>
-            </article>
-          ))}
-        </div>
-      </section>
-
       <section className="mx-auto max-w-6xl px-5 py-14 sm:px-8">
         <SectionLabel>What students actually open</SectionLabel>
         <h2 className="font-display mt-3 max-w-xl text-3xl tracking-tight sm:text-4xl">
           Not a lecture. A set of tools.
         </h2>
-        <div className="mt-8 grid grid-cols-2 gap-3 lg:grid-cols-4">
-          {highlightTiles.map((tile) => (
-            <div
-              key={tile.title}
-              className={cn(
-                "rounded-3xl p-4 shadow-sm transition hover:-translate-y-1",
-                toneClass[tile.tone]
-              )}
-            >
-              <div
-                className={cn(
-                  "flex size-10 items-center justify-center rounded-2xl",
-                  toneInk[tile.tone]
-                )}
-              >
-                <LiIcon name={tile.icon} className="size-5" />
-              </div>
-              <p className="mt-3 font-semibold">{tile.title}</p>
-              <p className="mt-1 text-xs text-foreground/60">{tile.hint}</p>
-            </div>
+        <div className="mt-10 grid gap-x-16 sm:grid-cols-2">
+          {[highlightTiles.slice(0, 4), highlightTiles.slice(4)].map((column, columnIndex) => (
+            <ul key={columnIndex} className="border-b border-foreground/10">
+              {column.map((tile, index) => {
+                const n = columnIndex * 4 + index + 1;
+                return (
+                  <li
+                    key={tile.title}
+                    className="flex items-start gap-4 border-t border-foreground/10 py-5"
+                  >
+                    <span className="font-display w-8 shrink-0 pt-0.5 text-xl text-foreground/25">
+                      {String(n).padStart(2, "0")}
+                    </span>
+                    <span
+                      className={cn(
+                        "flex size-10 shrink-0 items-center justify-center rounded-full",
+                        toneInk[tile.tone]
+                      )}
+                    >
+                      <LiIcon name={tile.icon} className="size-5" />
+                    </span>
+                    <div className="min-w-0">
+                      <p className="font-semibold">{tile.title}</p>
+                      <p className="mt-0.5 text-sm text-foreground/60">{tile.hint}</p>
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
           ))}
         </div>
       </section>
@@ -256,11 +241,6 @@ export default function Home() {
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           {practiceFeatures.map((feature) => (
             <FeatureCard key={feature.title} {...feature} />
-          ))}
-        </div>
-        <div className="mt-4 grid gap-4 md:grid-cols-3">
-          {extras.map((item) => (
-            <FeatureCard key={item.title} {...item} />
           ))}
         </div>
       </section>
