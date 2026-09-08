@@ -8,9 +8,291 @@ export const site = {
 };
 
 export const heroCopy = {
-  kicker: "CBSE  ·  Grades 6–12  ·  AI companion",
-  headline: "Choose depth over drill.",
-  lede: "Pick a chapter. Learn with Li, ask a doubt, take a quiz, or talk it through. Parents and teachers see the same progress.",
+  kicker: "AI-powered CBSE learning support for Grades 6–12",
+  headline: "Extend great teaching beyond the classroom.",
+  lede: "LearnLi helps schools make classroom teaching more visual and interactive — and gives every student AI-powered learning, practice and answer evaluation at home.",
+};
+
+export const heroProof = [
+  "Visual + interactive classroom learning",
+  "Chapter-aligned AI support",
+  "White-labelled for your school",
+];
+
+export const ecosystemStrip = {
+  title: "One connected learning ecosystem",
+  body: "What the teacher presents in school continues with the student at home.",
+  metrics: [
+    { label: "Classroom", hint: "Visual + Interactive" },
+    { label: "Home", hint: "AI + Practice" },
+    { label: "School", hint: "White-labelled Platform" },
+  ],
+};
+
+export const whySchools = {
+  kicker: "Why schools choose LearnLi",
+  title: "Four reasons that matter to a school.",
+  body: "LearnLi is not positioned as “another AI app.” It gives schools better classroom tools, stronger at-home learning support, measurable improvement and a modern digital identity.",
+  pillars: [
+    {
+      n: "01",
+      title: "Teach Better",
+      body: "Use visual and interactive learning on smart boards, TVs and projectors to explain complex concepts step by step.",
+      mini: "Visual + interactive classroom learning",
+      tone: "sun" as Tone,
+    },
+    {
+      n: "02",
+      title: "Learn Better",
+      body: "Students continue with the same chapter content at home, supported by prerequisites, Ask Li, visuals and guided exercises.",
+      mini: "AI-powered personal learning",
+      tone: "mint" as Tone,
+    },
+    {
+      n: "03",
+      title: "Improve Better",
+      body: "The Scoring Partner shows exactly what was missed, incomplete or incorrect — including step-by-step errors in Mathematics.",
+      mini: "Precise learning-gap identification",
+      tone: "rose" as Tone,
+    },
+    {
+      n: "04",
+      title: "Position Better",
+      body: "Give students and parents a school-branded digital learning experience that strengthens the school's technology leadership.",
+      mini: "Your school's own learning platform",
+      tone: "lavender" as Tone,
+    },
+  ],
+};
+
+export const classroomVisual = {
+  kicker: "For the classroom",
+  title: "Don't only tell students what happens. Let them see how it happens.",
+  body: "Many concepts become easier when students can watch a process develop, compare alternatives or interact with a model instead of relying only on text and static diagrams.",
+  demoKicker: "Interactive visual demo",
+  demoTitle: "Chemical reaction — stage by stage",
+  demoBody:
+    "A teacher can present the visual on a classroom screen, pause at each stage, discuss what changed and replay the sequence when needed.",
+  whyKicker: "Why this matters",
+  whyTitle: "From abstract to understandable",
+  whyBody: "Click each stage to see the classroom-to-home learning progression.",
+  steps: [
+    {
+      id: "hook",
+      label: "1 · Hook",
+      copy: "Start with a real-world question: Why do some reactions happen faster than others?",
+    },
+    {
+      id: "before",
+      label: "2 · Before",
+      copy: "Show the reactants and explain what students should observe before the reaction starts.",
+    },
+    {
+      id: "during",
+      label: "3 · During",
+      copy: "Play the reaction sequence so students can observe the visible changes stage by stage.",
+    },
+    {
+      id: "explain",
+      label: "4 · Explain",
+      copy: "Pause and discuss the evidence of the reaction, then connect it to the underlying concept.",
+    },
+    {
+      id: "practise",
+      label: "5 · Practise",
+      copy: "Let students revisit the same visual at home and test their understanding with guided questions.",
+    },
+  ],
+  devices: ["Smart Board", "Television", "Projector", "Student Device"],
+};
+
+export const scoringPartner = {
+  kicker: "Key differentiator",
+  title: "Your personal Scoring Partner — whenever you study.",
+  body: "Students may study early in the morning or late at night when a teacher or parent is not available. LearnLi evaluates their work and tells them exactly where improvement is needed.",
+  note: "Students can track recurring gaps over time — helping an average performer strengthen foundations and a high performer identify the small gaps between 90 and 100.",
+  science: {
+    answer:
+      "GM crops can be designed to resist pests and improve yield. They may also reduce crop damage. They are created by changing genetic material to introduce a useful trait.",
+    answerNote:
+      "LearnLi evaluates not only the final answer, but the quality and completeness of the explanation.",
+    items: [
+      {
+        kind: "miss" as const,
+        text: "Missed point — Explain that pest-resistant GM crops may reduce dependence on some chemical pesticides.",
+      },
+      {
+        kind: "wrong" as const,
+        text: "Incorrect point — No major factual error detected in the submitted answer.",
+      },
+      {
+        kind: "inc" as const,
+        text: "Incomplete point — “Changing genetic material” is correct but should explain that a selected gene or trait is introduced.",
+      },
+      {
+        kind: "good" as const,
+        text: "Strong point — Correctly connected pest resistance with reduced crop damage and improved yield.",
+      },
+    ],
+  },
+  math: {
+    answerLines: [
+      "Solve: 3x + 12 = 36",
+      "Student working:",
+      "3x = 36 − 12",
+      "3x = 24",
+      "x = 24 ÷ 3",
+      "x = 8",
+    ],
+    answerNote:
+      "Example below demonstrates how a future scoring view can identify the type and origin of a mathematical error.",
+    items: [
+      { label: "Step 1 · Correct", text: "Formula selected correctly." },
+      {
+        label: "Step 2 · Arithmetic Error",
+        text: "12 × 4 was calculated as 42 instead of 48.",
+      },
+      {
+        label: "Step 3 · Cascading Error",
+        text: "The next value is incorrect because it uses the wrong result from Step 2.",
+      },
+      { label: "Focus Area", text: "Recheck multiplication before moving to the next step." },
+    ],
+  },
+};
+
+export const learningJourney = {
+  kicker: "A complete learning journey",
+  title: "Prepare. Engage. Understand. Practise. Improve.",
+  body: "The strongest story is not a list of features. It is a structured learning journey that helps students become ready to learn, understand difficult ideas and know exactly what to improve.",
+  steps: [
+    {
+      icon: "🧱",
+      title: "Prerequisites",
+      body: "Check whether the student has the foundation needed before starting a new chapter.",
+    },
+    {
+      icon: "✨",
+      title: "Hook",
+      body: "Show why the topic matters and create curiosity before detailed learning begins.",
+    },
+    {
+      icon: "📘",
+      title: "Learn with Li",
+      body: "Present the subject with visuals, examples, explanations and concept checks.",
+    },
+    {
+      icon: "💬",
+      title: "Ask Li",
+      body: "Select any concept and ask for simpler, step-by-step, comparative or tabular explanations.",
+    },
+    {
+      icon: "🎯",
+      title: "Scoring Partner",
+      body: "Evaluate answers, identify gaps and guide the student toward the next improvement.",
+    },
+  ],
+  features: [
+    {
+      tag: "AI-Powered",
+      title: "Prerequisite Readiness",
+      body: "If a foundation concept is weak, the student can understand it first instead of struggling through the new chapter.",
+      tone: "mint" as Tone,
+    },
+    {
+      tag: "Visual Engagement",
+      title: "Hook Before the Chapter",
+      body: "Real-life context, visuals and key questions answer “Why am I learning this?” before the lesson begins.",
+      tone: "sun" as Tone,
+    },
+    {
+      tag: "Chapter Experience",
+      title: "Learn with Li",
+      body: "Combine text, images, examples and exercises to make learning active rather than just digital reading.",
+      tone: "lavender" as Tone,
+    },
+    {
+      tag: "Contextual AI",
+      title: "Ask Li",
+      body: "Students can request a simpler explanation, a table, an example, comparison or a step-by-step breakdown without leaving the chapter.",
+      tone: "cyan" as Tone,
+    },
+    {
+      tag: "Guided Practice",
+      title: "Exercises That Teach",
+      body: "Help students understand what the question asks, which concept applies and how a strong answer should be approached.",
+      tone: "rose" as Tone,
+    },
+    {
+      tag: "Improvement",
+      title: "Track the Gaps",
+      body: "Keep a history of repeated mistakes and incomplete concepts so improvement can become focused instead of guesswork.",
+      tone: "sky" as Tone,
+    },
+  ],
+};
+
+export const schoolPlatform = {
+  kicker: "White-label",
+  title: "Your school. Your learning platform.",
+  body: "Deliver LearnLi as a white-labelled learning environment with your school's identity. Students and parents experience the technology as part of the school's own learning ecosystem — not just another external app.",
+  emphasis:
+    "Position your institution as a technology-forward school that provides modern learning infrastructure both inside and outside the classroom.",
+  schoolName: "Greenfield International School",
+  welcome: "Welcome back, Aarav",
+  continue: "Continue your learning journey",
+  grade: "Grade 10 · CBSE",
+};
+
+export const trustMatters = {
+  kicker: "Trust matters in school AI",
+  title: "Designed for learning — with visibility and safeguards.",
+  body: "A school evaluating AI needs more than feature claims. The website should clearly explain how learning content, student data, AI behaviour and teacher visibility are handled.",
+  note: "Sample copy only — publish only safeguards and data practices that LearnLi actually implements.",
+  cards: [
+    {
+      title: "Chapter-Bound AI",
+      body: "Keep AI assistance anchored to the curriculum and current learning context rather than becoming an unrestricted answer feed.",
+    },
+    {
+      title: "Teacher Visibility",
+      body: "Give teachers appropriate visibility into learning activity, progress and recurring gaps.",
+    },
+    {
+      title: "Student Data Protection",
+      body: "Publish clear privacy, data-use and retention practices for schools, parents and students.",
+    },
+    {
+      title: "Validated Learning Content",
+      body: "Explain how curriculum content is reviewed, maintained and kept aligned with the intended syllabus.",
+    },
+  ],
+};
+
+export const evidence = {
+  kicker: "Build trust with evidence",
+  title: "Show schools what changes after LearnLi.",
+  body: "Replace these sample cards with verified pilot metrics, school testimonials and measurable student outcomes as soon as you have them.",
+  quotes: [
+    {
+      text: "Students were able to revisit difficult visual concepts at home after seeing them in class.",
+      by: "Sample Teacher Testimonial",
+    },
+    {
+      text: "The Scoring Partner helped students identify exactly why marks were being lost in written answers.",
+      by: "Sample Academic Head Testimonial",
+    },
+    {
+      text: "Parents appreciated having school-supported learning help available beyond classroom hours.",
+      by: "Sample Parent Feedback",
+    },
+  ],
+};
+
+export const schoolCta = {
+  kicker: "Bring LearnLi to your school",
+  title: "Make teaching more visual. Learning more personal. Improvement more measurable.",
+  body: "See how LearnLi can support your teachers in the classroom and continue helping every student after school — through your school's own digital learning platform.",
 };
 
 export type Tone = "pink" | "mint" | "lavender" | "sun" | "sky" | "rose" | "cyan";

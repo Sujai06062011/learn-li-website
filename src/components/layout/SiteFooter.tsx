@@ -27,6 +27,11 @@ export function SiteFooter() {
           <p className="text-[11px] font-semibold tracking-[0.22em] text-li-blue uppercase">Visit</p>
           <ul className="mt-4 space-y-2 text-sm">
             <li>
+              <Link href="/#why" className="hover:opacity-70">
+                Why LearnLi
+              </Link>
+            </li>
+            <li>
               <Link href="/product" className="hover:opacity-70">
                 Product
               </Link>
