@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { FeatureCard } from "@/components/brand/FeatureCard";
 import { LiIcon } from "@/components/brand/LiIcon";
+import { ProductStory } from "@/components/home/ProductStory";
 import { buttonVariants } from "@/components/ui/button";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import {
@@ -26,7 +27,7 @@ export default function Home() {
     <main>
       <section className="mx-auto max-w-6xl px-5 pt-10 pb-6 sm:px-8 sm:pt-14">
         <div className="flex flex-wrap gap-2">
-          {["CBSE", "Grades 6–12", "Ask Li", "Voice & listen"].map((tag) => (
+          {["CBSE", "Grades 6–12", "White-label for schools", "Ask Li"].map((tag) => (
             <span
               key={tag}
               className="rounded-full bg-white px-3 py-1 text-[11px] font-medium tracking-[0.14em] text-li-blue uppercase shadow-sm ring-1 ring-li-blue/15"
@@ -39,7 +40,8 @@ export default function Home() {
           {heroCopy.headline}
         </h1>
         <p className="mt-5 max-w-xl text-base leading-relaxed text-foreground/70 sm:text-lg">
-          {heroCopy.lede}
+          White-label digital support for schools. Li complements the teacher with visuals,
+          interactive labs, and a scoring partner — from the average week through to 90–100.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
           <a
@@ -101,6 +103,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <ProductStory />
 
       <section className="mx-auto max-w-6xl px-5 py-8 sm:px-8">
         <div className="grid gap-4 md:grid-cols-3">

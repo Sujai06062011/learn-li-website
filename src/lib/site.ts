@@ -242,6 +242,147 @@ export const roles = [
 export const careerNote =
   "Career paths sit beside the syllabus: engineering, medicine, civil services, research, law, and more.";
 
+export const schoolPartner = {
+  kicker: "For schools",
+  title: "A white-label tech partner — not another app to sell to children.",
+  body: "LearnLi sits with the school. Campus name on the door, chapter-bound digital support for students between and after class. Teachers keep the session. Li carries the doubt, the diagram, and the practice.",
+  points: [
+    { title: "School-first", body: "White-label learning support that follows the CBSE timetable, not a consumer feed." },
+    { title: "Student-facing", body: "Grade, subject, chapter — the same shape as the classroom, available after the bell." },
+    { title: "Teacher-visible", body: "Who opened the chapter, who is stuck, which test they built for themselves." },
+  ],
+};
+
+export const teacherSupport = {
+  kicker: "Beside the teacher",
+  title: "Visual and interactive work that complements the session — it does not replace it.",
+  body: "A teacher still introduces the idea. LearnLi supplies the layer that is hard to draw on a board in forty minutes: a DNA helix a student can inspect, an explanation scored in their own words, a diagram they photographed from the textbook.",
+  points: [
+    { title: "See the idea", body: "Interactive labs — base pairs, inspectors, 3D structure — for the chapters that need to be handled, not only heard." },
+    { title: "Hear the doubt", body: "Ask Li stays inside the open chapter, so the answer after school matches what was taught in it." },
+    { title: "Name the gap", body: "The scoring partner reads a written explanation and sends the student back to the missed point." },
+  ],
+};
+
+export const lifecycle = [
+  {
+    n: "01",
+    feature: "Dashboard",
+    moment: "Arrive",
+    body: "Grade, subjects, streaks, last opened chapter. The student sees the week; the teacher sees the class.",
+  },
+  {
+    n: "02",
+    feature: "Ask Li",
+    moment: "Doubt",
+    body: "A question in the chapter — typed or spoken. Li answers as a companion, not as a search engine.",
+  },
+  {
+    n: "03",
+    feature: "Interactive learning",
+    moment: "See",
+    body: "Tap a base pair, inspect thymine, mutate a codon. The diagram from class becomes a sandbox.",
+  },
+  {
+    n: "04",
+    feature: "Scoring partner",
+    moment: "Explain",
+    body: "Write it in their own words. Li returns a master level, points missed, and the next action.",
+  },
+  {
+    n: "05",
+    feature: "Create your own test",
+    moment: "Prove",
+    body: "Subject, chapters, timer, difficulty. Practice that fits average work and 90–100 stretch alike.",
+  },
+];
+
+export const scoreBands = {
+  kicker: "Every student",
+  title: "Built for the average week, and for the 90–100 stretch.",
+  body: "The same companion. Different depth. Li does not sort children into tracks — it lets the chapter go as far as the student will take it.",
+  bands: [
+    {
+      label: "Average → secure",
+      range: "The working majority",
+      body: "Ask Li for the definition, scoring partner for the missed point, a custom test on the weak chapter. Mastery named in gaps, not in rank.",
+    },
+    {
+      label: "High scores",
+      range: "90–100",
+      body: "Interactive labs, industry insights, harder custom tests, career paths beside the syllabus. Depth after the mark is already high.",
+    },
+  ],
+};
+
+export const productShots = {
+  dashboard: {
+    kicker: "Dashboard",
+    title: "The week at a glance — subjects, streaks, and the next honest chapter.",
+    body: "Teacher or student, the landing is the same shape: active grade, subjects with chapters and mastery, recent activity. Li suggests the next dive without burying the timetable.",
+    src: "/product/dashboard.png",
+    alt: "LearnLi dashboard with subject cards for Mathematics, Biology, English, Science and Social Studies, plus a teacher-mode welcome banner.",
+    width: 1920,
+    height: 1080,
+  },
+  askLi: {
+    kicker: "Ask Li",
+    title: "Ask anything in the chapter. Li answers like a tutor, not a search box.",
+    body: "A teal companion window: type a doubt, get a definition, an equation, and the school example. The live demo on the right plays the same motion as a real Ask Li chat.",
+    src: "/product/ask-li.png",
+    alt: "Ask Li chat window. A student asks what photosynthesis is; Li replies with a definition and the chemical equation.",
+    width: 410,
+    height: 573,
+  },
+  interactive: {
+    kicker: "Interactive learning",
+    title: "When the idea has to be seen — a helix you can inspect, not a static figure.",
+    body: "Gene sequencer on the left, 3D DNA in the centre, molecular inspector on the right. Select a base pair, read thymine, mutate the codon. This is how LearnLi complements a board-and-chalk session.",
+    shots: [
+      {
+        src: "/product/interactive-helix.png",
+        alt: "DNA Double Helix 3D Explorer with a gene sequencer list and a colour-coded helix.",
+        width: 1353,
+        height: 851,
+      },
+      {
+        src: "/product/interactive-inspector.png",
+        alt: "DNA explorer with a selected thymine base, molecular inspector, and mutate-codon controls.",
+        width: 1764,
+        height: 831,
+      },
+    ],
+  },
+  scoring: {
+    kicker: "Li scoring partner",
+    title: "Explain it in your own words. Li names the master level and the missed points.",
+    body: "Type, speak, or upload. Learning Intelligence reads the explanation against the chapter — what went well, what was missed, what to do next. Average work gets a path back in. High scores get the incomplete point tightened.",
+    shots: [
+      {
+        src: "/product/scoring-write.png",
+        alt: "LI Scoring Partner write-up screen for Grade 12 Biology, with type, voice and upload options.",
+        width: 1917,
+        height: 904,
+      },
+      {
+        src: "/product/scoring-feedback.png",
+        alt: "LI Scoring Partner feedback: 6/10, points missed, points incorrect, points incomplete.",
+        width: 1913,
+        height: 922,
+      },
+    ],
+  },
+  createTest: {
+    kicker: "Create your own test",
+    title: "Subject, chapters, timer, difficulty — a test the student actually owns.",
+    body: "Step 1 of 3: pick the subject. Then chapters and settings. Average students drill the weak unit. Students at 90–100 raise the difficulty and mix chapters. Li stays the scoring partner on the other side.",
+    src: "/product/create-test.png",
+    alt: "Create Your Own Test: Grade 12 subject cards for Mathematics, Physics, Chemistry and Biology.",
+    width: 1914,
+    height: 915,
+  },
+};
+
 export const company = {
   name: "LearnLi",
   statement:

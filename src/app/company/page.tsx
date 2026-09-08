@@ -3,7 +3,7 @@ import Image from "next/image";
 import { LiIcon } from "@/components/brand/LiIcon";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { buttonVariants } from "@/components/ui/button";
-import { company, site, subjects, toneClass, toneInk } from "@/lib/site";
+import { company, schoolPartner, site, subjects, toneClass, toneInk } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
@@ -70,6 +70,16 @@ export default function CompanyPage() {
         <p className="mt-4 text-base leading-relaxed text-foreground/70">
           {company.product}
         </p>
+      </section>
+
+      <section className="mt-6 rounded-3xl bg-[#123a4a] p-6 text-white sm:p-8">
+        <p className="text-[11px] font-semibold tracking-[0.22em] text-[#f5d76e] uppercase">
+          {schoolPartner.kicker}
+        </p>
+        <h2 className="font-display mt-3 text-2xl tracking-tight sm:text-3xl">
+          {schoolPartner.title}
+        </h2>
+        <p className="mt-4 text-base leading-relaxed text-white/85">{schoolPartner.body}</p>
       </section>
 
       <section className="mt-10">

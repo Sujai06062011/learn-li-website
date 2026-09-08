@@ -39,8 +39,8 @@ npm start
 
 | Path | Contents |
 | --- | --- |
-| `/` | Story, features, dashboards, company note |
-| `/product` | Learning modes, smart sections, tests, voice, image upload |
+| `/` | Story, product screenshots, Ask Li live demo, dashboards |
+| `/product` | Same product story plus modes, tests, voice, image upload |
 | `/company` | Mission and who the product is for |
 | `/brand` | Logo, app icon, colour, type |
 | `/brochure` | Printable four-page brochure and PDF download |
