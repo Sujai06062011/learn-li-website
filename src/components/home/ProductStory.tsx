@@ -158,16 +158,8 @@ export function ProductStory() {
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground/70">
           {productShots.askLi.body}
         </p>
-        <div className="mt-8 flex flex-col items-center justify-center gap-8 lg:flex-row lg:items-start">
+        <div className="mt-8 flex justify-center">
           <AskLiDemo />
-          <div className="w-full max-w-sm">
-            <Shot
-              src={productShots.askLi.src}
-              alt={productShots.askLi.alt}
-              width={productShots.askLi.width}
-              height={productShots.askLi.height}
-            />
-          </div>
         </div>
         <p className="mt-4 text-center text-xs text-foreground/50">
           Tap Photosynthesis, Heat, or Integers — the chat plays the reply the way a real Ask Li
