@@ -40,38 +40,23 @@ const topics = [
   },
 ] as const;
 
-type Phase = "welcome" | "user" | "typing" | "reply";
-
-function wait(ms: number) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
+type TopicId = (typeof topics)[number]["id"];
 
 export function AskLiDemo() {
-  const [topicId, setTopicId] = useState<(typeof topics)[number]["id"]>("photo");
-  const [phase, setPhase] = useState<Phase>("welcome");
+  const [topicId, setTopicId] = useState<TopicId>("photo");
+  const [showReply, setShowReply] = useState(true);
   const topic = topics.find((item) => item.id === topicId) ?? topics[0];
 
   useEffect(() => {
-    let cancelled = false;
-
-    async function play() {
-      setPhase("welcome");
-      await wait(700);
-      if (cancelled) return;
-      setPhase("user");
-      await wait(900);
-      if (cancelled) return;
-      setPhase("typing");
-      await wait(1100);
-      if (cancelled) return;
-      setPhase("reply");
-    }
-
-    void play();
-    return () => {
-      cancelled = true;
-    };
+    setShowReply(false);
+    const timer = window.setTimeout(() => setShowReply(true), 450);
+    return () => window.clearTimeout(timer);
   }, [topicId]);
+
+  function pick(id: TopicId) {
+    setTopicId(id);
+    setShowReply(false);
+  }
 
   return (
     <div className="li-phone mx-auto flex w-full max-w-[22rem] flex-col overflow-hidden rounded-[1.8rem] bg-white shadow-[0_28px_60px_-28px_rgba(13,148,136,0.55)] ring-1 ring-foreground/10">
@@ -92,7 +77,7 @@ export function AskLiDemo() {
       </div>
 
       <div className="flex min-h-[22rem] flex-1 flex-col gap-3 bg-[#f8fafc] p-4">
-        <div className="li-chat-enter flex items-end gap-2">
+        <div className="flex items-end gap-2">
           <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-[#0d9488] text-white">
             <Sparkles className="size-3.5" />
           </span>
@@ -101,28 +86,13 @@ export function AskLiDemo() {
           </p>
         </div>
 
-        {phase !== "welcome" ? (
-          <div key={`${topic.id}-user`} className="li-chat-enter ml-auto flex max-w-[85%] items-end gap-2">
-            <p className="rounded-2xl rounded-br-md bg-[#0d9488] px-3 py-2 text-sm font-medium text-white">
-              {topic.prompt}
-            </p>
-          </div>
-        ) : null}
+        <div key={`${topic.id}-user`} className="li-chat-enter ml-auto flex max-w-[85%] items-end gap-2">
+          <p className="rounded-2xl rounded-br-md bg-[#0d9488] px-3 py-2 text-sm font-medium text-white">
+            {topic.prompt}
+          </p>
+        </div>
 
-        {phase === "typing" ? (
-          <div className="li-chat-enter flex items-end gap-2">
-            <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-[#0d9488] text-white">
-              <Sparkles className="size-3.5" />
-            </span>
-            <div className="flex gap-1 rounded-2xl rounded-bl-md bg-white px-3 py-3 shadow-sm">
-              <span className="li-dot size-1.5 rounded-full bg-[#0d9488]" />
-              <span className="li-dot li-dot-2 size-1.5 rounded-full bg-[#0d9488]" />
-              <span className="li-dot li-dot-3 size-1.5 rounded-full bg-[#0d9488]" />
-            </div>
-          </div>
-        ) : null}
-
-        {phase === "reply" ? (
+        {showReply ? (
           <div key={`${topic.id}-reply`} className="li-chat-enter flex items-end gap-2">
             <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-[#0d9488] text-white">
               <Sparkles className="size-3.5" />
@@ -136,7 +106,18 @@ export function AskLiDemo() {
               ))}
             </div>
           </div>
-        ) : null}
+        ) : (
+          <div className="flex items-end gap-2">
+            <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-[#0d9488] text-white">
+              <Sparkles className="size-3.5" />
+            </span>
+            <div className="flex gap-1 rounded-2xl rounded-bl-md bg-white px-3 py-3 shadow-sm">
+              <span className="li-dot size-1.5 rounded-full bg-[#0d9488]" />
+              <span className="li-dot li-dot-2 size-1.5 rounded-full bg-[#0d9488]" />
+              <span className="li-dot li-dot-3 size-1.5 rounded-full bg-[#0d9488]" />
+            </div>
+          </div>
+        )}
       </div>
 
       <div className="border-t border-foreground/8 bg-white p-3">
@@ -148,7 +129,7 @@ export function AskLiDemo() {
             <button
               key={item.id}
               type="button"
-              onClick={() => setTopicId(item.id)}
+              onClick={() => pick(item.id)}
               className={cn(
                 "cursor-pointer rounded-full px-3 py-1.5 text-xs font-semibold transition",
                 topicId === item.id
