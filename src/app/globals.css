@@ -149,6 +149,31 @@
   animation-delay: 0.3s;
 }
 
+.li-ask .li-ask-thread {
+  display: none;
+}
+
+.li-ask:has(#li-ask-photo:checked) .li-ask-thread-photo,
+.li-ask:has(#li-ask-heat:checked) .li-ask-thread-heat,
+.li-ask:has(#li-ask-integers:checked) .li-ask-thread-integers {
+  display: block;
+}
+
+.li-ask:has(#li-ask-photo:checked) label[for="li-ask-photo"],
+.li-ask:has(#li-ask-heat:checked) label[for="li-ask-heat"],
+.li-ask:has(#li-ask-integers:checked) label[for="li-ask-integers"] {
+  background: #0d9488;
+  color: #fff;
+}
+
+.li-ask-user {
+  animation: li-rise 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.li-ask-reply {
+  animation: li-rise 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.28s both;
+}
+
 @page {
   size: A4;
   margin: 0;

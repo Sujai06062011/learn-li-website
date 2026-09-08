@@ -1,8 +1,4 @@
-"use client";
-
-import { useEffect, useState } from "react";
 import { Send, Sparkles } from "lucide-react";
-import { cn } from "@/lib/utils";
 
 const topics = [
   {
@@ -40,26 +36,19 @@ const topics = [
   },
 ] as const;
 
-type TopicId = (typeof topics)[number]["id"];
-
 export function AskLiDemo() {
-  const [topicId, setTopicId] = useState<TopicId>("photo");
-  const [showReply, setShowReply] = useState(true);
-  const topic = topics.find((item) => item.id === topicId) ?? topics[0];
-
-  useEffect(() => {
-    setShowReply(false);
-    const timer = window.setTimeout(() => setShowReply(true), 450);
-    return () => window.clearTimeout(timer);
-  }, [topicId]);
-
-  function pick(id: TopicId) {
-    setTopicId(id);
-    setShowReply(false);
-  }
-
   return (
-    <div className="li-phone mx-auto flex w-full max-w-[22rem] flex-col overflow-hidden rounded-[1.8rem] bg-white shadow-[0_28px_60px_-28px_rgba(13,148,136,0.55)] ring-1 ring-foreground/10">
+    <div className="li-ask li-phone mx-auto flex w-full max-w-[22rem] flex-col overflow-hidden rounded-[1.8rem] bg-white shadow-[0_28px_60px_-28px_rgba(13,148,136,0.55)] ring-1 ring-foreground/10">
+      <input
+        id="li-ask-photo"
+        type="radio"
+        name="li-ask-demo"
+        className="sr-only"
+        defaultChecked
+      />
+      <input id="li-ask-heat" type="radio" name="li-ask-demo" className="sr-only" />
+      <input id="li-ask-integers" type="radio" name="li-ask-demo" className="sr-only" />
+
       <div className="flex items-center justify-between bg-[#0d9488] px-4 py-3 text-white">
         <div className="flex items-center gap-2">
           <span className="flex size-9 items-center justify-center rounded-full bg-white/15">
@@ -86,38 +75,28 @@ export function AskLiDemo() {
           </p>
         </div>
 
-        <div key={`${topic.id}-user`} className="li-chat-enter ml-auto flex max-w-[85%] items-end gap-2">
-          <p className="rounded-2xl rounded-br-md bg-[#0d9488] px-3 py-2 text-sm font-medium text-white">
-            {topic.prompt}
-          </p>
-        </div>
-
-        {showReply ? (
-          <div key={`${topic.id}-reply`} className="li-chat-enter flex items-end gap-2">
-            <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-[#0d9488] text-white">
-              <Sparkles className="size-3.5" />
-            </span>
-            <div className="max-w-[85%] rounded-2xl rounded-bl-md bg-white px-3 py-2 text-sm leading-relaxed shadow-sm">
-              {topic.reply.map((block) => (
-                <p key={block.heading} className="mt-2 first:mt-0">
-                  <span className="font-semibold text-[#0f766e]">{block.heading}. </span>
-                  {block.text}
-                </p>
-              ))}
+        {topics.map((topic) => (
+          <div key={topic.id} className={`li-ask-thread li-ask-thread-${topic.id} space-y-3`}>
+            <div className="li-ask-user ml-auto flex max-w-[85%] items-end justify-end">
+              <p className="rounded-2xl rounded-br-md bg-[#0d9488] px-3 py-2 text-sm font-medium text-white">
+                {topic.prompt}
+              </p>
+            </div>
+            <div className="li-ask-reply flex items-end gap-2">
+              <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-[#0d9488] text-white">
+                <Sparkles className="size-3.5" />
+              </span>
+              <div className="max-w-[85%] rounded-2xl rounded-bl-md bg-white px-3 py-2 text-sm leading-relaxed shadow-sm">
+                {topic.reply.map((block) => (
+                  <p key={block.heading} className="mt-2 first:mt-0">
+                    <span className="font-semibold text-[#0f766e]">{block.heading}. </span>
+                    {block.text}
+                  </p>
+                ))}
+              </div>
             </div>
           </div>
-        ) : (
-          <div className="flex items-end gap-2">
-            <span className="flex size-7 shrink-0 items-center justify-center rounded-full bg-[#0d9488] text-white">
-              <Sparkles className="size-3.5" />
-            </span>
-            <div className="flex gap-1 rounded-2xl rounded-bl-md bg-white px-3 py-3 shadow-sm">
-              <span className="li-dot size-1.5 rounded-full bg-[#0d9488]" />
-              <span className="li-dot li-dot-2 size-1.5 rounded-full bg-[#0d9488]" />
-              <span className="li-dot li-dot-3 size-1.5 rounded-full bg-[#0d9488]" />
-            </div>
-          </div>
-        )}
+        ))}
       </div>
 
       <div className="border-t border-foreground/8 bg-white p-3">
@@ -125,20 +104,14 @@ export function AskLiDemo() {
           Try asking
         </p>
         <div className="mb-3 flex flex-wrap gap-1.5">
-          {topics.map((item) => (
-            <button
-              key={item.id}
-              type="button"
-              onClick={() => pick(item.id)}
-              className={cn(
-                "cursor-pointer rounded-full px-3 py-1.5 text-xs font-semibold transition",
-                topicId === item.id
-                  ? "bg-[#0d9488] text-white"
-                  : "bg-[#f0fdfa] text-[#0f766e] hover:bg-[#ccfbf1]"
-              )}
+          {topics.map((topic) => (
+            <label
+              key={topic.id}
+              htmlFor={`li-ask-${topic.id}`}
+              className="relative isolate inline-flex min-h-8 cursor-pointer items-center rounded-full bg-[#f0fdfa] px-3 text-xs font-semibold text-[#0f766e]"
             >
-              {item.chip}
-            </button>
+              {topic.chip}
+            </label>
           ))}
         </div>
         <div className="flex items-center gap-2">
