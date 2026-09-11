@@ -1,5 +1,6 @@
+import { FeatureCard } from "@/components/brand/FeatureCard";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { learningJourney, toneClass } from "@/lib/site";
+import { learningJourney, smartSections, toneClass } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export function LearningJourney() {
@@ -41,6 +42,22 @@ export function LearningJourney() {
             <p className="mt-3 text-sm leading-relaxed text-foreground/65">{feature.body}</p>
           </article>
         ))}
+      </div>
+
+      <div className="mt-12">
+        <SectionLabel>Inside every chapter</SectionLabel>
+        <h2 className="font-display mt-3 max-w-xl text-3xl tracking-tight sm:text-4xl">
+          Smart sections
+        </h2>
+        <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+          {smartSections.map((section, index) => (
+            <FeatureCard
+              key={section.title}
+              {...section}
+              index={String(index + 1).padStart(2, "0")}
+            />
+          ))}
+        </div>
       </div>
     </section>
   );

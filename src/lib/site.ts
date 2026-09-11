@@ -450,6 +450,12 @@ export const smartSections = [
     tone: "rose" as Tone,
     body: "Li names the gaps and sends the student back to the exact idea.",
   },
+  {
+    title: "Create your own test",
+    icon: "file-plus",
+    tone: "cyan" as Tone,
+    body: "Subject, chapters, duration, MCQ / blanks / one-word — then schedule it.",
+  },
 ];
 
 export const practiceFeatures = [
