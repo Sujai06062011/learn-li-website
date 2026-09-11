@@ -230,6 +230,38 @@ export const learningJourney = {
       tone: "sky" as Tone,
     },
   ],
+  chapterCards: [
+    {
+      tag: "Overview",
+      title: "Simple overview",
+      body: "A short outline so the student knows the shape of the work first.",
+      tone: "pink" as Tone,
+    },
+    {
+      tag: "Context",
+      title: "Industry insights",
+      body: "Where this chapter lives outside the exam: labs, clinics, workshops, careers.",
+      tone: "sun" as Tone,
+    },
+    {
+      tag: "Speak",
+      title: "Pronunciation lab",
+      body: "Hear and practise the keywords, with IPA, until they are speakable.",
+      tone: "lavender" as Tone,
+    },
+    {
+      tag: "Check",
+      title: "Take a quiz",
+      body: "A conceptual mock of the chapter — before the school test, not after.",
+      tone: "mint" as Tone,
+    },
+    {
+      tag: "Practice",
+      title: "Create your own test",
+      body: "Subject, chapters, duration, MCQ / blanks / one-word — then schedule it.",
+      tone: "rose" as Tone,
+    },
+  ],
 };
 
 export const schoolPlatform = {
