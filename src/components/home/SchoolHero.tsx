@@ -9,7 +9,7 @@ export function SchoolHero() {
     <>
       <section className="relative mx-auto max-w-6xl overflow-hidden px-5 pt-10 pb-8 sm:px-8 sm:pt-14">
         <div className="pointer-events-none absolute -top-40 -right-20 size-[28rem] rounded-full bg-[radial-gradient(circle,rgba(59,130,246,0.18),transparent_70%)]" />
-        <div className="grid items-center gap-10 lg:grid-cols-[1.08fr_0.92fr] lg:gap-14">
+        <div className="flex flex-col gap-10">
           <div>
             <p className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-white/70 px-3 py-1.5 text-[12px] font-semibold">
               <span className="size-2 rounded-full bg-li-green" />
@@ -57,9 +57,9 @@ export function SchoolHero() {
           <div className="overflow-hidden rounded-[2rem] bg-white shadow-[0_22px_50px_-28px_rgba(27,63,71,0.45)] ring-1 ring-foreground/8">
             <Image
               src="/product/science-come-to-life.png"
-              alt="Interactive science learning: flower anatomy, pollination, cell voltage, and a DNA helix explorer."
-              width={1672}
-              height={941}
+              alt="Interactive maths and science learning: flower anatomy, cell voltage, linear programming, and a DNA helix explorer."
+              width={1374}
+              height={1145}
               priority
               className="h-auto w-full"
             />
