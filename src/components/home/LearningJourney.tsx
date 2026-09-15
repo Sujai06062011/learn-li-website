@@ -16,7 +16,7 @@ function JourneyCard({
       <h3 className="font-display text-[1.35rem] leading-snug tracking-tight sm:text-[1.45rem]">
         {title}
       </h3>
-      <p className="mt-2 text-[15px] leading-relaxed text-foreground/65">{body}</p>
+      <p className="mt-2 text-base leading-relaxed text-foreground/65 sm:text-[17px]">{body}</p>
     </article>
   );
 }
