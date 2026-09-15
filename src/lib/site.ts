@@ -114,7 +114,7 @@ export const scoringPartner = {
   science: {
     label: "Science",
     caption: "Tamil scoring partner — Mendel’s laws, Grade 12 Biology.",
-    src: "/product/scoring-science-ta.png",
+    src: "/product/scoring-science-ta.png?v=20260915",
     alt: "LI Scoring Partner in Tamil for Grade 12 Biology, showing missed, incorrect, incomplete and strong points for Mendel’s laws.",
     width: 1500,
     height: 1049,
@@ -122,7 +122,7 @@ export const scoringPartner = {
   maths: {
     label: "Mathematics",
     caption: "Tamil step-by-step evaluation — Integrals, with formula, arithmetic and follow-on errors named.",
-    src: "/product/scoring-maths.png",
+    src: "/product/scoring-maths.png?v=20260915",
     alt: "LI Scoring Partner in Tamil for Grade 12 Integrals, with an 8/10 score and step-by-step evaluation of substitution and differentiation errors.",
     width: 1616,
     height: 973,

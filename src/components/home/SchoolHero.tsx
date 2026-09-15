@@ -56,11 +56,12 @@ export function SchoolHero() {
 
           <div className="overflow-hidden rounded-[2rem] bg-white shadow-[0_22px_50px_-28px_rgba(27,63,71,0.45)] ring-1 ring-foreground/8">
             <Image
-              src="/product/science-come-to-life.png"
+              src="/product/science-come-to-life.png?v=20260915"
               alt="Interactive maths and science learning: flower anatomy, cell voltage, linear programming, and a DNA helix explorer."
               width={1374}
               height={1145}
               priority
+              unoptimized
               className="h-auto w-full"
             />
           </div>

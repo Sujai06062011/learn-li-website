@@ -24,7 +24,14 @@ function ScoringShot({
         <p className="max-w-xl text-sm text-cream/70">{caption}</p>
       </div>
       <div className="mt-4 overflow-hidden rounded-3xl bg-white shadow-[0_18px_40px_-28px_rgba(0,0,0,0.45)]">
-        <Image src={src} alt={alt} width={width} height={height} className="h-auto w-full" />
+        <Image
+          src={src}
+          alt={alt}
+          width={width}
+          height={height}
+          unoptimized
+          className="h-auto w-full"
+        />
       </div>
     </article>
   );
