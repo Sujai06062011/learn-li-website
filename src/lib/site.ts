@@ -217,26 +217,6 @@ export const trustMatters = {
   ],
 };
 
-export const evidence = {
-  kicker: "Build trust with evidence",
-  title: "Show schools what changes after LearnLi.",
-  body: "Replace these sample cards with verified pilot metrics, school testimonials and measurable student outcomes as soon as you have them.",
-  quotes: [
-    {
-      text: "Students were able to revisit difficult visual concepts at home after seeing them in class.",
-      by: "Sample Teacher Testimonial",
-    },
-    {
-      text: "The Scoring Partner helped students identify exactly why marks were being lost in written answers.",
-      by: "Sample Academic Head Testimonial",
-    },
-    {
-      text: "Parents appreciated having school-supported learning help available beyond classroom hours.",
-      by: "Sample Parent Feedback",
-    },
-  ],
-};
-
 export const schoolCta = {
   kicker: "Bring LearnLi to your school",
   title: "Make teaching more visual. Learning more personal. Improvement more measurable.",

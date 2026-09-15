@@ -1,6 +1,6 @@
 import { buttonVariants } from "@/components/ui/button";
 import { SectionLabel } from "@/components/ui/SectionLabel";
-import { evidence, schoolCta, site, trustMatters } from "@/lib/site";
+import { schoolCta, site, trustMatters } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 export function TrustAndCta() {
@@ -28,28 +28,6 @@ export function TrustAndCta() {
           ))}
         </div>
         <p className="mt-4 text-xs text-foreground/45">{trustMatters.note}</p>
-      </section>
-
-      <section className="mx-auto max-w-6xl px-5 pb-6 sm:px-8">
-        <div className="rounded-[2rem] bg-white p-6 shadow-sm ring-1 ring-foreground/8 sm:p-8">
-          <div className="grid gap-6 lg:grid-cols-[1fr_0.85fr] lg:items-end">
-            <div>
-              <SectionLabel>{evidence.kicker}</SectionLabel>
-              <h2 className="font-display mt-3 text-3xl tracking-tight sm:text-4xl">
-                {evidence.title}
-              </h2>
-            </div>
-            <p className="text-sm leading-relaxed text-foreground/65">{evidence.body}</p>
-          </div>
-          <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {evidence.quotes.map((quote) => (
-              <blockquote key={quote.by} className="rounded-[1.3rem] bg-cream p-5">
-                <p className="text-sm leading-relaxed text-foreground/70 italic">“{quote.text}”</p>
-                <p className="mt-4 text-xs font-semibold text-foreground/50">{quote.by}</p>
-              </blockquote>
-            ))}
-          </div>
-        </div>
       </section>
 
       <section id="demo" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-8 sm:px-8 sm:pb-16">
