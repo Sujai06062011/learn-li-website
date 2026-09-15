@@ -92,101 +92,86 @@ export const learningJourney = {
   kicker: "A complete learning journey",
   title: "Prepare. Engage. Understand. Practise. Improve.",
   body: "The strongest story is not a list of features. It is a structured learning journey that helps students become ready to learn, understand difficult ideas and know exactly what to improve.",
-  steps: [
+  groups: [
     {
-      icon: "🧱",
-      title: "Prerequisites",
-      body: "Check whether the student has the foundation needed before starting a new chapter.",
+      title: "Get Ready to Learn",
+      cards: [
+        {
+          title: "Prerequisite Readiness",
+          body: "If a foundation concept is weak, the student can understand it first instead of struggling through the new chapter.",
+          tone: "mint" as Tone,
+        },
+        {
+          title: "Hook",
+          body: "Real-life context, visuals and key questions answer “Why am I learning this?” before the lesson begins.",
+          tone: "sun" as Tone,
+        },
+      ],
     },
     {
-      icon: "✨",
-      title: "Hook",
-      body: "Show why the topic matters and create curiosity before detailed learning begins.",
+      title: "Learn Smarter",
+      cards: [
+        {
+          title: "Learn with Li",
+          body: "Combine text, images, examples and exercises to make learning active rather than just digital reading.",
+          tone: "lavender" as Tone,
+        },
+        {
+          title: "Ask Li",
+          body: "Students can request a simpler explanation, a table, an example, comparison or a step-by-step breakdown without leaving the chapter.",
+          tone: "cyan" as Tone,
+        },
+        {
+          title: "Real-World Knowledge Application",
+          body: "Where this chapter lives outside the exam: labs, clinics, workshops and the work that uses these ideas.",
+          tone: "pink" as Tone,
+        },
+        {
+          title: "Pronunciation Lab",
+          body: "Hear and practise the keywords, with IPA, until they are speakable.",
+          tone: "sky" as Tone,
+        },
+      ],
     },
     {
-      icon: "📘",
-      title: "Learn with Li",
-      body: "Present the subject with visuals, examples, explanations and concept checks.",
+      title: "Practise, Test & Improve",
+      cards: [
+        {
+          title: "Exercises That Teach",
+          body: "Help students understand what the question asks, which concept applies and how a strong answer should be approached.",
+          tone: "rose" as Tone,
+        },
+        {
+          title: "Quick Look",
+          body: "A short outline so the student knows the shape of the work first.",
+          tone: "sun" as Tone,
+        },
+        {
+          title: "Take a Quiz",
+          body: "A conceptual mock of the chapter — before the school test, not after.",
+          tone: "mint" as Tone,
+        },
+        {
+          title: "Create Your Own Test",
+          body: "Subject, chapters, duration, MCQ / blanks / one-word — then schedule it.",
+          tone: "cyan" as Tone,
+        },
+        {
+          title: "Track the Gaps",
+          body: "Keep a history of repeated mistakes and incomplete concepts so improvement can become focused instead of guesswork.",
+          tone: "lavender" as Tone,
+        },
+      ],
     },
     {
-      icon: "💬",
-      title: "Ask Li",
-      body: "Select any concept and ask for simpler, step-by-step, comparative or tabular explanations.",
-    },
-    {
-      icon: "🎯",
-      title: "Scoring Partner",
-      body: "Evaluate answers, identify gaps and guide the student toward the next improvement.",
-    },
-  ],
-  features: [
-    {
-      tag: "AI-Powered",
-      title: "Prerequisite Readiness",
-      body: "If a foundation concept is weak, the student can understand it first instead of struggling through the new chapter.",
-      tone: "mint" as Tone,
-    },
-    {
-      tag: "Visual Engagement",
-      title: "Hook Before the Chapter",
-      body: "Real-life context, visuals and key questions answer “Why am I learning this?” before the lesson begins.",
-      tone: "sun" as Tone,
-    },
-    {
-      tag: "Chapter Experience",
-      title: "Learn with Li",
-      body: "Combine text, images, examples and exercises to make learning active rather than just digital reading.",
-      tone: "lavender" as Tone,
-    },
-    {
-      tag: "Contextual AI",
-      title: "Ask Li",
-      body: "Students can request a simpler explanation, a table, an example, comparison or a step-by-step breakdown without leaving the chapter.",
-      tone: "cyan" as Tone,
-    },
-    {
-      tag: "Guided Practice",
-      title: "Exercises That Teach",
-      body: "Help students understand what the question asks, which concept applies and how a strong answer should be approached.",
-      tone: "rose" as Tone,
-    },
-    {
-      tag: "Improvement",
-      title: "Track the Gaps",
-      body: "Keep a history of repeated mistakes and incomplete concepts so improvement can become focused instead of guesswork.",
-      tone: "sky" as Tone,
-    },
-  ],
-  chapterCards: [
-    {
-      tag: "Overview",
-      title: "Simple overview",
-      body: "A short outline so the student knows the shape of the work first.",
-      tone: "pink" as Tone,
-    },
-    {
-      tag: "Context",
-      title: "Industry insights",
-      body: "Where this chapter lives outside the exam: labs, clinics, workshops, careers.",
-      tone: "sun" as Tone,
-    },
-    {
-      tag: "Speak",
-      title: "Pronunciation lab",
-      body: "Hear and practise the keywords, with IPA, until they are speakable.",
-      tone: "lavender" as Tone,
-    },
-    {
-      tag: "Check",
-      title: "Take a quiz",
-      body: "A conceptual mock of the chapter — before the school test, not after.",
-      tone: "mint" as Tone,
-    },
-    {
-      tag: "Practice",
-      title: "Create your own test",
-      body: "Subject, chapters, duration, MCQ / blanks / one-word — then schedule it.",
-      tone: "rose" as Tone,
+      title: "Discover Your Future",
+      cards: [
+        {
+          title: "Career Explorer",
+          body: "See the roles, pathways and next steps this chapter opens — so students connect today’s lesson to a future they can aim for.",
+          tone: "sky" as Tone,
+        },
+      ],
     },
   ],
 };
