@@ -18,12 +18,10 @@ function ScoringShot({
   height: number;
 }) {
   return (
-    <article className="mt-8">
-      <div className="flex flex-wrap items-end justify-between gap-3">
-        <h3 className="font-display text-2xl tracking-tight sm:text-3xl">{label}</h3>
-        <p className="max-w-xl text-sm text-cream/70">{caption}</p>
-      </div>
-      <div className="mt-4 overflow-hidden rounded-3xl bg-white shadow-[0_18px_40px_-28px_rgba(0,0,0,0.45)]">
+    <article>
+      <h3 className="font-display text-2xl tracking-tight sm:text-3xl">{label}</h3>
+      <p className="mt-1 text-sm leading-relaxed text-cream/70">{caption}</p>
+      <div className="mt-4 overflow-hidden rounded-2xl bg-white shadow-[0_18px_40px_-28px_rgba(0,0,0,0.45)]">
         <Image
           src={src}
           alt={alt}
@@ -51,8 +49,10 @@ export function ScoringPartner() {
           </p>
         </div>
 
-        <ScoringShot {...scoringPartner.science} />
-        <ScoringShot {...scoringPartner.maths} />
+        <div className="mt-8 grid gap-6 lg:grid-cols-2 lg:items-start">
+          <ScoringShot {...scoringPartner.science} />
+          <ScoringShot {...scoringPartner.maths} />
+        </div>
 
         <p className="mt-6 text-sm text-cream/75">
           <span className="mr-1.5 text-li-green">✓</span>
