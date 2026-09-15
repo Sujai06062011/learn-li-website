@@ -80,7 +80,7 @@ export function SchoolHero() {
               className="border-t border-white/15 pt-3 sm:border-t-0 sm:border-l sm:pt-0 sm:pl-5"
             >
               <p className="font-display text-2xl">{metric.label}</p>
-              <p className="text-xs text-cream/70">{metric.hint}</p>
+              <p className="text-xs leading-snug text-cream/70">{metric.hint}</p>
             </div>
           ))}
         </div>

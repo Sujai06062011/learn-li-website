@@ -24,7 +24,7 @@ export const ecosystemStrip = {
   body: "What the teacher presents in school continues with the student at home.",
   metrics: [
     { label: "Classroom", hint: "Visual + Interactive" },
-    { label: "Home", hint: "AI + Practice" },
+    { label: "Home", hint: "Visual + Interactive + AI-powered Practice" },
     { label: "School", hint: "White-labelled Platform" },
   ],
 };
@@ -574,7 +574,7 @@ export const productShots = {
   },
   askLi: {
     kicker: "Ask Li",
-    title: "Ask anything in the chapter. Li answers like a tutor, not a search box.",
+    title: "Ask anything in the chapter. LI - Learning Intelligence answers like a tutor, not a search box.",
     body: "A teal companion window: type a doubt, get a definition, an equation, and the school example. Tap a topic — the chat plays the reply the way a real Ask Li window does.",
   },
   interactive: {

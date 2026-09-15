@@ -14,6 +14,7 @@ export default function Home() {
     <main>
       <SchoolHero />
       <WhySchools />
+      <ProductStory />
       <ScoringPartner />
 
       <section id="ask-li" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-12 sm:px-8">
@@ -33,7 +34,6 @@ export default function Home() {
         </p>
       </section>
 
-      <ProductStory />
       <LearningJourney />
       <SchoolPlatform />
       <TrustAndCta />
