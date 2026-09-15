@@ -1,4 +1,4 @@
-import { AskLiDemo } from "@/components/home/AskLiDemo";
+import { AskLiPair } from "@/components/home/AskLiDemo";
 import { LearningJourney } from "@/components/home/LearningJourney";
 import { SchoolHero } from "@/components/home/SchoolHero";
 import { SchoolPlatform } from "@/components/home/SchoolPlatform";
@@ -25,12 +25,12 @@ export default function Home() {
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground/70">
           {productShots.askLi.body}
         </p>
-        <div className="mt-8 flex justify-center">
-          <AskLiDemo />
+        <div className="mt-8">
+          <AskLiPair />
         </div>
         <p className="mt-4 text-center text-xs text-foreground/50">
-          Tap Photosynthesis, Heat, or Integers — the chat plays the reply the way a real Ask Li
-          window does.
+          English is live — tap Photosynthesis, Heat, or Integers. Tamil shows the same photosynthesis
+          thread.
         </p>
       </section>
 

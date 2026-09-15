@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { FeatureCard, WhiteFeatureCard } from "@/components/brand/FeatureCard";
-import { AskLiDemo } from "@/components/home/AskLiDemo";
+import { AskLiPair } from "@/components/home/AskLiDemo";
 import { ProductStory } from "@/components/home/ProductStory";
 import { ScoringPartner } from "@/components/home/ScoringPartner";
 import { SectionLabel } from "@/components/ui/SectionLabel";
@@ -53,8 +53,8 @@ export default function ProductPage() {
         <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground/70">
           {productShots.askLi.body}
         </p>
-        <div className="mt-8 flex justify-center">
-          <AskLiDemo />
+        <div className="mt-8">
+          <AskLiPair />
         </div>
       </section>
 

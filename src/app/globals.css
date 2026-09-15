@@ -188,6 +188,19 @@
   }
 }
 
+.li-ask-pair {
+  display: grid;
+  gap: 2rem;
+  justify-items: center;
+  align-items: start;
+}
+
+@media (min-width: 640px) {
+  .li-ask-pair {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
 @page {
   size: A4;
   margin: 0;

@@ -1,4 +1,6 @@
+import Image from "next/image";
 import { Send, Sparkles } from "lucide-react";
+import { productShots } from "@/lib/site";
 
 const topics = [
   {
@@ -123,6 +125,34 @@ export function AskLiDemo() {
           </span>
         </div>
       </div>
+    </div>
+  );
+}
+
+export function AskLiPair() {
+  const tamil = productShots.askLi.tamil;
+
+  return (
+    <div className="li-ask-pair">
+      <figure className="w-full max-w-[22rem]">
+        <figcaption className="mb-3 text-center text-[11px] font-semibold tracking-[0.16em] text-[#0f766e] uppercase">
+          English
+        </figcaption>
+        <AskLiDemo />
+      </figure>
+      <figure className="w-full max-w-[22rem]">
+        <figcaption className="mb-3 text-center text-[11px] font-semibold tracking-[0.16em] text-[#0f766e] uppercase">
+          தமிழ்
+        </figcaption>
+        <Image
+          src={tamil.src}
+          alt={tamil.alt}
+          width={tamil.width}
+          height={tamil.height}
+          unoptimized
+          className="h-auto w-full"
+        />
+      </figure>
     </div>
   );
 }

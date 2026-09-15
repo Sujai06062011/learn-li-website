@@ -544,7 +544,13 @@ export const productShots = {
   askLi: {
     kicker: "Ask Li",
     title: "Ask anything in the chapter. LI - Learning Intelligence answers like a tutor, not a search box.",
-    body: "A teal companion window: type a doubt, get a definition, an equation, and the school example. Tap a topic — the chat plays the reply the way a real Ask Li window does.",
+    body: "A teal companion window: type a doubt, get a definition, an equation, and the school example. The same Ask Li thread in English and Tamil.",
+    tamil: {
+      src: "/product/ask-li-ta.png?v=20260915",
+      alt: "Ask Li in Tamil answering what photosynthesis is, with a definition and the chemical equation.",
+      width: 1022,
+      height: 1539,
+    },
   },
   interactive: {
     kicker: "Interactive learning",
