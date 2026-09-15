@@ -12,9 +12,11 @@ function JourneyCard({
   tone: Tone;
 }) {
   return (
-    <article className={cn("rounded-[1.5rem] p-6 shadow-sm", toneClass[tone])}>
-      <h3 className="font-display text-2xl tracking-tight">{title}</h3>
-      <p className="mt-3 text-sm leading-relaxed text-foreground/65">{body}</p>
+    <article className={cn("rounded-[1.35rem] px-5 py-4 shadow-sm", toneClass[tone])}>
+      <h3 className="font-display text-[1.35rem] leading-snug tracking-tight sm:text-[1.45rem]">
+        {title}
+      </h3>
+      <p className="mt-2 text-[15px] leading-relaxed text-foreground/65">{body}</p>
     </article>
   );
 }
@@ -32,25 +34,14 @@ export function LearningJourney() {
         <p className="text-base leading-relaxed text-foreground/65">{learningJourney.body}</p>
       </div>
 
-      <div className="mt-10 space-y-12">
+      <div className="mt-10 space-y-10">
         {learningJourney.groups.map((group, index) => (
           <div key={group.title}>
-            <h3 className="font-display text-2xl tracking-tight sm:text-3xl">
+            <h3 className="font-display text-xl tracking-tight sm:text-2xl">
               <span className="mr-2 text-[#2c7e69]">{index + 1}.</span>
               {group.title}
             </h3>
-            <div
-              className={cn(
-                "mt-5 grid gap-4",
-                group.cards.length === 1
-                  ? "max-w-xl"
-                  : group.cards.length === 2
-                    ? "sm:grid-cols-2"
-                    : group.cards.length === 4
-                      ? "sm:grid-cols-2"
-                      : "sm:grid-cols-2 lg:grid-cols-3"
-              )}
-            >
+            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {group.cards.map((card) => (
                 <JourneyCard key={card.title} {...card} />
               ))}
