@@ -112,52 +112,20 @@ export const scoringPartner = {
   body: "Students may study early in the morning or late at night when a teacher or parent is not available. LearnLi evaluates their work and tells them exactly where improvement is needed.",
   note: "Students can track recurring gaps over time — helping an average performer strengthen foundations and a high performer identify the small gaps between 90 and 100.",
   science: {
-    answer:
-      "GM crops can be designed to resist pests and improve yield. They may also reduce crop damage. They are created by changing genetic material to introduce a useful trait.",
-    answerNote:
-      "LearnLi evaluates not only the final answer, but the quality and completeness of the explanation.",
-    items: [
-      {
-        kind: "miss" as const,
-        text: "Missed point — Explain that pest-resistant GM crops may reduce dependence on some chemical pesticides.",
-      },
-      {
-        kind: "wrong" as const,
-        text: "Incorrect point — No major factual error detected in the submitted answer.",
-      },
-      {
-        kind: "inc" as const,
-        text: "Incomplete point — “Changing genetic material” is correct but should explain that a selected gene or trait is introduced.",
-      },
-      {
-        kind: "good" as const,
-        text: "Strong point — Correctly connected pest resistance with reduced crop damage and improved yield.",
-      },
-    ],
+    label: "Science",
+    caption: "Tamil scoring partner — Mendel’s laws, Grade 12 Biology.",
+    src: "/product/scoring-science-ta.png",
+    alt: "LI Scoring Partner in Tamil for Grade 12 Biology, showing missed, incorrect, incomplete and strong points for Mendel’s laws.",
+    width: 1499,
+    height: 1049,
   },
-  math: {
-    answerLines: [
-      "Solve: 3x + 12 = 36",
-      "Student working:",
-      "3x = 36 − 12",
-      "3x = 24",
-      "x = 24 ÷ 3",
-      "x = 8",
-    ],
-    answerNote:
-      "Example below demonstrates how a future scoring view can identify the type and origin of a mathematical error.",
-    items: [
-      { label: "Step 1 · Correct", text: "Formula selected correctly." },
-      {
-        label: "Step 2 · Arithmetic Error",
-        text: "12 × 4 was calculated as 42 instead of 48.",
-      },
-      {
-        label: "Step 3 · Cascading Error",
-        text: "The next value is incorrect because it uses the wrong result from Step 2.",
-      },
-      { label: "Focus Area", text: "Recheck multiplication before moving to the next step." },
-    ],
+  maths: {
+    label: "Mathematics",
+    caption: "Step-by-step evaluation — Integrals, with formula, arithmetic and follow-on errors named.",
+    src: "/product/scoring-maths.png",
+    alt: "LI Scoring Partner for Grade 12 Integrals, with an 8/10 score and step-by-step evaluation of substitution and differentiation errors.",
+    width: 1600,
+    height: 964,
   },
 };
 
