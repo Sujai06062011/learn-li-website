@@ -174,20 +174,18 @@
   animation: li-rise 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.28s both;
 }
 
-.li-score .li-score-science,
-.li-score .li-score-math {
-  display: none;
+.li-score-pair {
+  display: grid;
+  gap: 1.5rem;
+  margin-top: 2rem;
+  grid-template-columns: 1fr;
 }
 
-.li-score:has(#li-score-science:checked) .li-score-science,
-.li-score:has(#li-score-math:checked) .li-score-math {
-  display: block;
-}
-
-.li-score:has(#li-score-science:checked) label[for="li-score-science"],
-.li-score:has(#li-score-math:checked) label[for="li-score-math"] {
-  background: #fff;
-  color: var(--foreground);
+@media (min-width: 640px) {
+  .li-score-pair {
+    grid-template-columns: 1fr 1fr;
+    align-items: start;
+  }
 }
 
 @page {
