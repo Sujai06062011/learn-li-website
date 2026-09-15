@@ -30,6 +30,8 @@ npm run pdf      # writes public/learnli-company-product.pdf
 npm run dev      # http://127.0.0.1:4317
 ```
 
+`next.config.ts` sets `allowedDevOrigins: ['127.0.0.1']` so Cursor Preview and browsers that open the app as `127.0.0.1` (not `localhost`) can load `/_next` assets. Without that, Next.js 16 closes those requests and the preview shows `ERR_EMPTY_RESPONSE`.
+
 ```bash
 npm run build
 npm start
