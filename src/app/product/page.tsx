@@ -43,6 +43,8 @@ export default function ProductPage() {
         </section>
       </div>
 
+      <ScoringPartner />
+
       <section id="ask-li" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-8 sm:px-8">
         <SectionLabel>{productShots.askLi.kicker}</SectionLabel>
         <h2 className="font-display mt-3 max-w-3xl text-3xl tracking-tight sm:text-4xl">
@@ -57,7 +59,6 @@ export default function ProductPage() {
       </section>
 
       <ProductStory />
-      <ScoringPartner />
 
       <div className="mx-auto max-w-6xl px-5 pb-16 sm:px-8">
         <section>

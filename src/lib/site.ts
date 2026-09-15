@@ -65,47 +65,6 @@ export const whySchools = {
   ],
 };
 
-export const classroomVisual = {
-  kicker: "For the classroom",
-  title: "Don't only tell students what happens. Let them see how it happens.",
-  body: "Many concepts become easier when students can watch a process develop, compare alternatives or interact with a model instead of relying only on text and static diagrams.",
-  demoKicker: "Interactive visual demo",
-  demoTitle: "Chemical reaction — stage by stage",
-  demoBody:
-    "A teacher can present the visual on a classroom screen, pause at each stage, discuss what changed and replay the sequence when needed.",
-  whyKicker: "Why this matters",
-  whyTitle: "From abstract to understandable",
-  whyBody: "Click each stage to see the classroom-to-home learning progression.",
-  steps: [
-    {
-      id: "hook",
-      label: "1 · Hook",
-      copy: "Start with a real-world question: Why do some reactions happen faster than others?",
-    },
-    {
-      id: "before",
-      label: "2 · Before",
-      copy: "Show the reactants and explain what students should observe before the reaction starts.",
-    },
-    {
-      id: "during",
-      label: "3 · During",
-      copy: "Play the reaction sequence so students can observe the visible changes stage by stage.",
-    },
-    {
-      id: "explain",
-      label: "4 · Explain",
-      copy: "Pause and discuss the evidence of the reaction, then connect it to the underlying concept.",
-    },
-    {
-      id: "practise",
-      label: "5 · Practise",
-      copy: "Let students revisit the same visual at home and test their understanding with guided questions.",
-    },
-  ],
-  devices: ["Smart Board", "Television", "Projector", "Student Device"],
-};
-
 export const scoringPartner = {
   kicker: "Key differentiator",
   title: "Your personal Scoring Partner — whenever you study.",

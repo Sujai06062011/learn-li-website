@@ -1,5 +1,4 @@
 import { AskLiDemo } from "@/components/home/AskLiDemo";
-import { ClassroomVisual } from "@/components/home/ClassroomVisual";
 import { LearningJourney } from "@/components/home/LearningJourney";
 import { SchoolHero } from "@/components/home/SchoolHero";
 import { SchoolPlatform } from "@/components/home/SchoolPlatform";
@@ -15,7 +14,7 @@ export default function Home() {
     <main>
       <SchoolHero />
       <WhySchools />
-      <ClassroomVisual />
+      <ScoringPartner />
 
       <section id="ask-li" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-12 sm:px-8">
         <SectionLabel>{productShots.askLi.kicker}</SectionLabel>
@@ -35,7 +34,6 @@ export default function Home() {
       </section>
 
       <ProductStory />
-      <ScoringPartner />
       <LearningJourney />
       <SchoolPlatform />
       <TrustAndCta />

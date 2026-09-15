@@ -174,60 +174,9 @@
   animation: li-rise 0.45s cubic-bezier(0.22, 1, 0.36, 1) 0.28s both;
 }
 
-@keyframes li-pollen {
-  50% {
-    transform: translate(-18px, 10px);
-    opacity: 0.4;
-  }
-}
-
-@keyframes li-flask-pulse {
-  50% {
-    height: 6.6rem;
-  }
-}
-
-@keyframes li-bubble {
-  to {
-    transform: translateY(-6.5rem) scale(0.6);
-    opacity: 0;
-  }
-}
-
-.li-pollen {
-  animation: li-pollen 2.4s infinite ease-in-out;
-}
-
-.li-flask-liquid {
-  animation: li-flask-pulse 3s infinite;
-}
-
-.li-bubble {
-  animation: li-bubble 2.3s infinite ease-in;
-}
-
-.li-class .li-class-copy,
 .li-score .li-score-science,
 .li-score .li-score-math {
   display: none;
-}
-
-.li-class:has(#li-class-hook:checked) .li-class-copy-hook,
-.li-class:has(#li-class-before:checked) .li-class-copy-before,
-.li-class:has(#li-class-during:checked) .li-class-copy-during,
-.li-class:has(#li-class-explain:checked) .li-class-copy-explain,
-.li-class:has(#li-class-practise:checked) .li-class-copy-practise {
-  display: block;
-}
-
-.li-class:has(#li-class-hook:checked) label[for="li-class-hook"],
-.li-class:has(#li-class-before:checked) label[for="li-class-before"],
-.li-class:has(#li-class-during:checked) label[for="li-class-during"],
-.li-class:has(#li-class-explain:checked) label[for="li-class-explain"],
-.li-class:has(#li-class-practise:checked) label[for="li-class-practise"] {
-  background: var(--foreground);
-  color: var(--background);
-  border-color: transparent;
 }
 
 .li-score:has(#li-score-science:checked) .li-score-science,
