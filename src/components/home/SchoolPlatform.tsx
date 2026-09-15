@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { buttonVariants } from "@/components/ui/button";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { schoolPlatform, site } from "@/lib/site";
@@ -44,7 +45,7 @@ export function SchoolPlatform() {
         </div>
 
         <div className="rounded-[1.7rem] bg-white p-4 shadow-sm ring-1 ring-foreground/8 sm:p-5">
-          <div className="mb-4 flex items-center justify-between gap-3">
+          <div className="mb-3 flex items-center justify-between gap-3">
             <div className="flex items-center gap-2.5 font-semibold">
               <span className="size-9 rounded-full bg-[linear-gradient(135deg,#513d8e,#2f8f79)]" />
               {schoolPlatform.schoolName}
@@ -53,19 +54,18 @@ export function SchoolPlatform() {
               Powered by LearnLi
             </span>
           </div>
-          <div className="rounded-3xl bg-[linear-gradient(135deg,#ece9f6,#e3f1ec)] p-6">
-            <p className="text-[11px] font-semibold tracking-[0.16em] text-foreground/50 uppercase">
-              {schoolPlatform.welcome}
-            </p>
-            <h3 className="font-display mt-2 text-2xl tracking-tight sm:text-3xl">
-              {schoolPlatform.continue}
-            </h3>
-            <p className="mt-2 text-sm text-foreground/55">{schoolPlatform.grade}</p>
-            <div className="mt-5 grid grid-cols-3 gap-2">
-              <div className="h-16 rounded-2xl bg-white" />
-              <div className="h-16 rounded-2xl bg-white" />
-              <div className="h-16 rounded-2xl bg-white" />
-            </div>
+          <p className="mb-3 text-[11px] font-semibold tracking-[0.16em] text-foreground/50 uppercase">
+            {schoolPlatform.welcome}
+          </p>
+          <div className="overflow-hidden rounded-2xl ring-1 ring-foreground/8">
+            <Image
+              src={schoolPlatform.shot.src}
+              alt={schoolPlatform.shot.alt}
+              width={schoolPlatform.shot.width}
+              height={schoolPlatform.shot.height}
+              unoptimized
+              className="h-auto w-full"
+            />
           </div>
         </div>
       </div>

@@ -182,10 +182,14 @@ export const schoolPlatform = {
   body: "Deliver LearnLi as a white-labelled learning environment with your school's identity. Students and parents experience the technology as part of the school's own learning ecosystem — not just another external app.",
   emphasis:
     "Position your institution as a technology-forward school that provides modern learning infrastructure both inside and outside the classroom.",
-  schoolName: "Greenfield International School",
-  welcome: "Welcome back, Aarav",
-  continue: "Continue your learning journey",
-  grade: "Grade 10 · CBSE",
+  schoolName: "Malar International School",
+  welcome: "Welcome back, Dhanvanth",
+  shot: {
+    src: "/product/school-dashboard.png?v=20260915",
+    alt: "Malar International School student dashboard for Dhanvanth, Grade 12 CBSE, with Maths, Physics, Chemistry and Biology.",
+    width: 1690,
+    height: 931,
+  },
 };
 
 export const trustMatters = {
