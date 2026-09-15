@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start --hostname 0.0.0.0 --port 4317",
     "lint": "eslint",
-    "pdf": "node scripts/generate-pdf.mjs"
+    "pdf": "node scripts/generate-pdf.mjs",
+    "pdf:home": "node scripts/generate-homepage-pdf.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.7.0",

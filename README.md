@@ -27,6 +27,7 @@ The product UI is friendly, pastel, and card-based. Marketing uses a quieter reg
 ```bash
 npm install
 npm run pdf      # writes public/learnli-company-product.pdf
+npm run pdf:home # writes public/learnli-homepage.pdf (full homepage, screen colors)
 npm run dev      # http://127.0.0.1:4317
 ```
 
