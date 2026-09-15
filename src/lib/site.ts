@@ -579,22 +579,14 @@ export const productShots = {
   },
   interactive: {
     kicker: "Interactive learning",
-    title: "When the idea has to be seen — a helix you can inspect, not a static figure.",
-    body: "Gene sequencer on the left, 3D DNA in the centre, molecular inspector on the right. Select a base pair, read thymine, mutate the codon. This is how LearnLi complements a board-and-chalk session.",
-    shots: [
-      {
-        src: "/product/interactive-helix.png",
-        alt: "DNA Double Helix 3D Explorer with a gene sequencer list and a colour-coded helix.",
-        width: 1353,
-        height: 851,
-      },
-      {
-        src: "/product/interactive-inspector.png",
-        alt: "DNA explorer with a selected thymine base, molecular inspector, and mutate-codon controls.",
-        width: 1764,
-        height: 831,
-      },
-    ],
+    title: "When the idea has to be seen — a model you can inspect, not a static figure.",
+    body: "Students select a part, turn the model, and read what it does — on a classroom screen or at home. This is how LearnLi complements a board-and-chalk session.",
+    shot: {
+      src: "/product/interactive-lab.png?v=20260915",
+      alt: "Interactive 3D lab with a parts list, a rotatable model, and an inspector panel for the selected part.",
+      width: 1710,
+      height: 920,
+    },
   },
   scoring: {
     kicker: "Li scoring partner",
