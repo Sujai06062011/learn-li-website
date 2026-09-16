@@ -67,8 +67,13 @@ export function SiteFooter() {
               </a>
             </li>
             <li>
-              <a href={site.pdfPath} className="hover:opacity-70">
-                Download PDF
+              <a
+                href="https://profluentlabs.com/"
+                className="hover:opacity-70"
+                target="_blank"
+                rel="noreferrer"
+              >
+                profluentlabs.com
               </a>
             </li>
           </ul>
