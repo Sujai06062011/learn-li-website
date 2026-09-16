@@ -23,26 +23,26 @@ function JourneyCard({
 
 export function LearningJourney() {
   return (
-    <section id="ecosystem" className="pdf-flow mx-auto max-w-6xl scroll-mt-24 px-5 py-14 sm:px-8">
-      <div className="grid gap-6 lg:grid-cols-[1fr_0.85fr] lg:items-end">
+    <section id="ecosystem" data-pdf-chunk className="pdf-flow mx-auto max-w-6xl scroll-mt-24 px-5 py-14 sm:px-8">
+      <div>
         <div>
           <SectionLabel>{learningJourney.kicker}</SectionLabel>
-          <h2 className="font-display mt-3 max-w-2xl text-3xl tracking-tight sm:text-5xl">
+          <h2 className="font-display mt-3 max-w-4xl text-3xl tracking-tight sm:text-5xl">
             {learningJourney.title}
           </h2>
+          <p className="mt-4 max-w-3xl text-base leading-relaxed text-foreground/65">
+            {learningJourney.body}
+          </p>
         </div>
-        <p className="text-base leading-relaxed text-foreground/65">{learningJourney.body}</p>
-      </div>
 
-      <div className="mt-10 space-y-8">
-        <div className="pdf-keep space-y-7">
+        <div className="mt-10 space-y-8">
           {learningJourney.groups.slice(0, 2).map((group, index) => (
             <div key={group.title}>
               <h3 className="font-display text-xl tracking-tight sm:text-2xl">
                 <span className="mr-2 text-[#2c7e69]">{index + 1}.</span>
                 {group.title}
               </h3>
-              <div className="li-journey-cards mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+              <div className="li-journey-cards mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
                 {group.cards.map((card) => (
                   <JourneyCard key={card.title} {...card} />
                 ))}
@@ -50,21 +50,21 @@ export function LearningJourney() {
             </div>
           ))}
         </div>
-        <div className="pdf-keep space-y-7">
-          {learningJourney.groups.slice(2).map((group, index) => (
-            <div key={group.title}>
-              <h3 className="font-display text-xl tracking-tight sm:text-2xl">
-                <span className="mr-2 text-[#2c7e69]">{index + 3}.</span>
-                {group.title}
-              </h3>
-              <div className="li-journey-cards mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-                {group.cards.map((card) => (
-                  <JourneyCard key={card.title} {...card} />
-                ))}
-              </div>
+      </div>
+      <div className="mt-10 space-y-8">
+        {learningJourney.groups.slice(2).map((group, index) => (
+          <div key={group.title}>
+            <h3 className="font-display text-xl tracking-tight sm:text-2xl">
+              <span className="mr-2 text-[#2c7e69]">{index + 3}.</span>
+              {group.title}
+            </h3>
+            <div className="li-journey-cards mt-4 grid gap-3 sm:grid-cols-2 xl:grid-cols-3">
+              {group.cards.map((card) => (
+                <JourneyCard key={card.title} {...card} />
+              ))}
             </div>
-          ))}
-        </div>
+          </div>
+        ))}
       </div>
     </section>
   );

@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 export function TrustAndCta() {
   return (
-    <section id="trust" className="pdf-block mx-auto max-w-6xl scroll-mt-24 px-5 py-14 sm:px-8">
+    <section id="trust" data-pdf-chunk className="pdf-block mx-auto max-w-6xl scroll-mt-24 px-5 py-14 sm:px-8">
       <div className="grid gap-6 lg:grid-cols-[1fr_0.85fr] lg:items-end">
         <div>
           <SectionLabel>{trustMatters.kicker}</SectionLabel>
@@ -33,7 +33,7 @@ export function TrustAndCta() {
 
 export function SchoolCta() {
   return (
-    <section id="demo" className="pdf-center mx-auto max-w-6xl scroll-mt-24 px-5 py-8 sm:px-8 sm:pb-16">
+    <section id="demo" data-pdf-chunk data-pdf-align="center" className="pdf-center mx-auto max-w-6xl scroll-mt-24 px-5 py-8 sm:px-8 sm:pb-16">
       <div className="rounded-[2.2rem] bg-foreground px-6 py-12 text-center text-cream sm:px-12 sm:py-16">
         <SectionLabel className="text-[#a9ddcf]">{schoolCta.kicker}</SectionLabel>
         <h2 className="font-display mx-auto mt-4 max-w-3xl text-3xl tracking-tight sm:text-5xl">

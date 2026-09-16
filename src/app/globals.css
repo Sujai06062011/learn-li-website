@@ -195,6 +195,10 @@
   align-items: start;
 }
 
+.li-journey-cards > article:last-child:nth-child(odd) {
+  grid-column: 1 / -1;
+}
+
 @media (min-width: 640px) {
   .li-ask-pair {
     grid-template-columns: 1fr 1fr;

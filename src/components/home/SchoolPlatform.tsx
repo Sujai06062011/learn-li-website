@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils";
 
 export function SchoolPlatform() {
   return (
-    <section id="schools" className="pdf-block mx-auto max-w-6xl scroll-mt-24 px-5 py-10 sm:px-8">
+    <section id="schools" data-pdf-chunk className="pdf-block mx-auto max-w-6xl scroll-mt-24 px-5 py-10 sm:px-8">
       <div className="li-platform-grid grid items-start gap-8 rounded-[2rem] bg-[#efe8dc] p-6 sm:p-10 lg:grid-cols-2">
         <div>
           <SectionLabel>{schoolPlatform.kicker}</SectionLabel>

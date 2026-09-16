@@ -6,7 +6,7 @@ export function ProductStory() {
   const { kicker, title, body, shot } = productShots.interactive;
 
   return (
-    <section id="interactive" className="pdf-block mx-auto max-w-6xl scroll-mt-24 px-5 py-12 sm:px-8">
+    <section id="interactive" data-pdf-chunk className="pdf-block mx-auto max-w-6xl scroll-mt-24 px-5 py-12 sm:px-8">
       <SectionLabel>{kicker}</SectionLabel>
       <h2 className="font-display mt-3 max-w-3xl text-3xl tracking-tight sm:text-4xl">{title}</h2>
       <p className="mt-4 max-w-2xl text-base leading-relaxed text-foreground/70">{body}</p>

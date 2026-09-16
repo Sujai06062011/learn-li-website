@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 export function WhySchools() {
   return (
-    <section id="why" className="pdf-block mx-auto max-w-6xl scroll-mt-24 px-5 py-14 sm:px-8">
+    <section id="why" data-pdf-chunk className="pdf-block mx-auto max-w-6xl scroll-mt-24 px-5 py-14 sm:px-8">
       <div className="grid gap-6 lg:grid-cols-[1fr_0.85fr] lg:items-end">
         <div>
           <SectionLabel>{whySchools.kicker}</SectionLabel>
