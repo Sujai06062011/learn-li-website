@@ -227,8 +227,18 @@ export const profluentLabs = {
   kicker: "The company behind LearnLi",
   legalName: "Profluent Labs Pvt. Ltd.",
   title: "Effective & innovative learning tools, built with purpose.",
+  aboutTitle: "About Us",
   about:
     "Profluent Labs is a technology-driven company with over eight years of proven expertise in IT services — a trusted technology partner to global clients including American Eagle Outfitters (USA) and Freudenberg (Germany). We are now entering eLearning SaaS with tailor-made digital learning tools for specific niche segments. LearnLi is that product.",
+  reach: {
+    title: "Reach Us",
+    name: "Profluent Labs Pvt. Ltd.",
+    address: "Dr. Kannan Towers, Arcot Rd, Sai Nagar, Porur, Chennai, Tamil Nadu 600116",
+    phone: "099402 04680",
+    phoneHref: "tel:+919940204680",
+    website: "https://profluentlabs.com/",
+    websiteLabel: "profluentlabs.com",
+  },
   purpose: {
     title: "Our purpose",
     body: "To make learning easy, effective, and enjoyable with technology that’s accessible and affordable for every educator and learner.",

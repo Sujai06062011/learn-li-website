@@ -44,9 +44,14 @@ export function ProfluentLabs() {
           />
         </div>
 
-        <p className="mt-8 max-w-4xl text-base leading-relaxed text-foreground/70">
-          {profluentLabs.about}
-        </p>
+        <div className="mt-8">
+          <p className="text-[11px] font-semibold tracking-[0.22em] text-li-blue uppercase">
+            {profluentLabs.aboutTitle}
+          </p>
+          <p className="mt-3 max-w-4xl text-base leading-relaxed text-foreground/70">
+            {profluentLabs.about}
+          </p>
+        </div>
 
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           <BeliefCard {...profluentLabs.purpose} />
@@ -84,6 +89,47 @@ export function ProfluentLabs() {
                 </li>
               ))}
             </ul>
+          </div>
+        </div>
+
+        <div className="mt-6 rounded-[1.6rem] bg-[#e7f6ee] p-6 sm:p-8">
+          <p className="text-[11px] font-semibold tracking-[0.22em] text-li-blue uppercase">
+            {profluentLabs.reach.title}
+          </p>
+          <p className="font-display mt-3 text-2xl tracking-tight">{profluentLabs.reach.name}</p>
+          <div className="mt-5 grid gap-5 sm:grid-cols-3">
+            <div>
+              <p className="text-[11px] font-semibold tracking-[0.16em] text-[#2c7e69] uppercase">
+                Address
+              </p>
+              <p className="mt-2 text-sm leading-relaxed text-foreground/70">
+                {profluentLabs.reach.address}
+              </p>
+            </div>
+            <div>
+              <p className="text-[11px] font-semibold tracking-[0.16em] text-[#2c7e69] uppercase">
+                Phone
+              </p>
+              <a
+                href={profluentLabs.reach.phoneHref}
+                className="mt-2 inline-block text-sm font-semibold text-foreground hover:opacity-70"
+              >
+                {profluentLabs.reach.phone}
+              </a>
+            </div>
+            <div>
+              <p className="text-[11px] font-semibold tracking-[0.16em] text-[#2c7e69] uppercase">
+                Website
+              </p>
+              <a
+                href={profluentLabs.reach.website}
+                target="_blank"
+                rel="noreferrer"
+                className="mt-2 inline-block text-sm font-semibold text-li-blue hover:opacity-70"
+              >
+                {profluentLabs.reach.websiteLabel}
+              </a>
+            </div>
           </div>
         </div>
       </div>
