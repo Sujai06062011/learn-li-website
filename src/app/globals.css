@@ -253,13 +253,25 @@
       page-break-after: avoid;
     }
 
+    > section,
+    > .pdf-block,
+    > .pdf-flow,
+    > .pdf-center {
+      max-width: none !important;
+      width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+    }
+
     .pdf-block {
       break-inside: avoid;
       page-break-inside: avoid;
       break-before: page;
       page-break-before: always;
-      padding-top: 6mm !important;
-      padding-bottom: 6mm !important;
+      padding-top: 3mm !important;
+      padding-bottom: 3mm !important;
     }
 
     .pdf-block:first-child,
@@ -276,8 +288,8 @@
     .pdf-flow {
       break-before: page;
       page-break-before: always;
-      padding-top: 6mm !important;
-      padding-bottom: 6mm !important;
+      padding-top: 3mm !important;
+      padding-bottom: 3mm !important;
     }
 
     .pdf-keep {
@@ -285,11 +297,23 @@
       page-break-inside: avoid;
     }
 
+    .pdf-center {
+      break-before: page;
+      page-break-before: always;
+      break-inside: avoid;
+      min-height: 255mm;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      padding-top: 0 !important;
+      padding-bottom: 0 !important;
+    }
+
     .li-hero-grid {
       display: grid !important;
       grid-template-columns: 1.05fr 0.95fr !important;
-      align-items: center;
-      gap: 8mm !important;
+      align-items: start !important;
+      gap: 7mm !important;
     }
 
     .li-hero-grid h1 {
@@ -308,15 +332,15 @@
       display: block;
       width: 100% !important;
       height: auto !important;
-      max-height: none !important;
-      object-fit: cover !important;
-      object-position: center;
+      max-height: 105mm !important;
+      object-fit: contain !important;
+      object-position: top center;
     }
 
     .li-eco-strip {
       display: grid !important;
       grid-template-columns: 1.4fr repeat(3, 0.8fr) !important;
-      align-items: center;
+      align-items: center !important;
     }
 
     .li-eco-strip > div {
@@ -331,36 +355,50 @@
       padding-left: 0;
     }
 
-    .li-why-pillars {
+    .li-why-pillars,
+    .li-trust-cards {
       grid-template-columns: 1fr 1fr !important;
-      align-items: start !important;
+      align-items: stretch !important;
+      gap: 4mm !important;
     }
 
-    .li-why-pillars article {
+    .li-why-pillars article,
+    .li-trust-cards article {
       min-height: 0 !important;
       height: auto !important;
-      align-self: start !important;
+      display: flex !important;
+      flex-direction: column !important;
     }
 
     .li-score-pair {
       display: grid !important;
       grid-template-columns: 1fr 1fr !important;
-      align-items: start !important;
+      align-items: stretch !important;
       gap: 5mm !important;
     }
 
+    .li-score-pair article {
+      display: flex !important;
+      flex-direction: column !important;
+    }
+
+    .li-score-caption {
+      min-height: 3.4em;
+    }
+
     .li-score-frame {
+      margin-top: auto;
       background: #ffffff !important;
       -webkit-print-color-adjust: exact !important;
       print-color-adjust: exact !important;
       isolation: isolate;
+      height: 72mm;
     }
 
     .pdf-score-shot {
       display: block;
       width: 100% !important;
-      height: auto !important;
-      max-height: 90mm !important;
+      height: 72mm !important;
       object-fit: contain !important;
       object-position: top center;
       background: #ffffff !important;
@@ -379,10 +417,13 @@
     .li-ask-pair figure {
       max-width: none !important;
       width: 100% !important;
+      display: flex !important;
+      flex-direction: column !important;
     }
 
     .li-ask-frame {
-      height: 150mm;
+      flex: 1;
+      height: 142mm;
       overflow: hidden;
       border-radius: 1.5rem;
       background: #ffffff !important;
@@ -392,52 +433,58 @@
 
     .li-ask-frame .li-ask {
       max-width: none !important;
-      height: 150mm;
+      height: 142mm;
       box-shadow: none !important;
     }
 
     .pdf-ask-shot {
       display: block;
       width: 100% !important;
-      height: 150mm !important;
-      object-fit: contain !important;
+      height: 142mm !important;
+      object-fit: cover !important;
       object-position: top center;
       background: #ffffff !important;
     }
 
     .li-journey-cards {
-      grid-template-columns: 1fr 1fr 1fr !important;
-      align-items: start !important;
+      grid-template-columns: 1fr 1fr !important;
+      align-items: stretch !important;
+      gap: 3.5mm !important;
     }
 
     .li-journey-cards article {
       height: auto !important;
       min-height: 0 !important;
-      padding: 10px 12px !important;
-      align-self: start !important;
+      padding: 9px 12px !important;
+      display: flex !important;
+      flex-direction: column !important;
+    }
+
+    .li-journey-cards article:last-child:nth-child(odd) {
+      grid-column: 1 / -1;
     }
 
     .li-platform-grid {
       display: grid !important;
       grid-template-columns: 1fr 1fr !important;
-      align-items: center;
+      align-items: start !important;
     }
 
     .li-profluent-head {
       display: flex !important;
       flex-direction: row !important;
-      align-items: flex-end !important;
+      align-items: flex-start !important;
       justify-content: space-between !important;
       gap: 8mm !important;
     }
 
     .pdf-logo {
-      height: 42px !important;
+      height: 40px !important;
       width: auto !important;
-      max-width: 210px !important;
+      max-width: 200px !important;
       object-fit: contain !important;
       flex: none !important;
-      align-self: flex-end !important;
+      align-self: flex-start !important;
     }
 
     .li-beliefs {
@@ -448,6 +495,8 @@
     .li-beliefs article {
       height: auto !important;
       min-height: 0 !important;
+      display: flex !important;
+      flex-direction: column !important;
     }
 
     .pdf-profluent-top {
@@ -470,13 +519,14 @@
     .li-profluent-split {
       display: grid !important;
       grid-template-columns: 1.4fr 1fr !important;
-      align-items: start !important;
+      align-items: stretch !important;
     }
 
     .pdf-shot {
-      max-height: 92mm;
+      display: block;
       width: 100%;
       height: auto;
+      max-height: 118mm;
       object-fit: contain;
       object-position: top;
     }

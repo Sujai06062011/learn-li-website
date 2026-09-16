@@ -24,7 +24,7 @@ export function ProfluentLabs() {
   return (
     <section id="profluent" className="pdf-flow mx-auto max-w-6xl scroll-mt-24 px-5 py-14 sm:px-8">
       <div className="pdf-profluent-top overflow-hidden rounded-[2rem] bg-white p-6 shadow-[0_22px_50px_-28px_rgba(27,63,71,0.45)] ring-1 ring-foreground/8 sm:p-8 lg:p-10">
-        <div className="li-profluent-head flex flex-col items-start gap-6 lg:flex-row lg:items-end lg:justify-between">
+        <div className="li-profluent-head flex flex-col items-start gap-6 lg:flex-row lg:items-start lg:justify-between">
           <div className="max-w-2xl">
             <SectionLabel>{profluentLabs.kicker}</SectionLabel>
             <h2 className="font-display mt-3 text-3xl tracking-tight sm:text-5xl">

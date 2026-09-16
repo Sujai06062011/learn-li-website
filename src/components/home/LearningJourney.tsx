@@ -34,21 +34,23 @@ export function LearningJourney() {
         <p className="text-base leading-relaxed text-foreground/65">{learningJourney.body}</p>
       </div>
 
-      <div className="mt-10 space-y-10">
-        {learningJourney.groups.slice(0, 2).map((group, index) => (
-          <div key={group.title} className="pdf-keep">
-            <h3 className="font-display text-xl tracking-tight sm:text-2xl">
-              <span className="mr-2 text-[#2c7e69]">{index + 1}.</span>
-              {group.title}
-            </h3>
-            <div className="li-journey-cards mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
-              {group.cards.map((card) => (
-                <JourneyCard key={card.title} {...card} />
-              ))}
+      <div className="mt-10 space-y-8">
+        <div className="pdf-keep space-y-7">
+          {learningJourney.groups.slice(0, 2).map((group, index) => (
+            <div key={group.title}>
+              <h3 className="font-display text-xl tracking-tight sm:text-2xl">
+                <span className="mr-2 text-[#2c7e69]">{index + 1}.</span>
+                {group.title}
+              </h3>
+              <div className="li-journey-cards mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {group.cards.map((card) => (
+                  <JourneyCard key={card.title} {...card} />
+                ))}
+              </div>
             </div>
-          </div>
-        ))}
-        <div className="pdf-keep space-y-10">
+          ))}
+        </div>
+        <div className="pdf-keep space-y-7">
           {learningJourney.groups.slice(2).map((group, index) => (
             <div key={group.title}>
               <h3 className="font-display text-xl tracking-tight sm:text-2xl">

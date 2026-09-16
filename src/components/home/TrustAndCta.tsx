@@ -15,7 +15,7 @@ export function TrustAndCta() {
         </div>
         <p className="text-base leading-relaxed text-foreground/65">{trustMatters.body}</p>
       </div>
-      <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      <div className="li-trust-cards mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {trustMatters.cards.map((card) => (
           <article
             key={card.title}
@@ -33,7 +33,7 @@ export function TrustAndCta() {
 
 export function SchoolCta() {
   return (
-    <section id="demo" className="pdf-block pdf-continue mx-auto max-w-6xl scroll-mt-24 px-5 py-8 sm:px-8 sm:pb-16">
+    <section id="demo" className="pdf-center mx-auto max-w-6xl scroll-mt-24 px-5 py-8 sm:px-8 sm:pb-16">
       <div className="rounded-[2.2rem] bg-foreground px-6 py-12 text-center text-cream sm:px-12 sm:py-16">
         <SectionLabel className="text-[#a9ddcf]">{schoolCta.kicker}</SectionLabel>
         <h2 className="font-display mx-auto mt-4 max-w-3xl text-3xl tracking-tight sm:text-5xl">
