@@ -38,7 +38,7 @@ export default function BrochurePage() {
           <h1 className="font-display mt-2 text-3xl tracking-tight">LearnLi brochure</h1>
         </div>
         <a
-          href={site.pdfPath}
+          href={site.brochurePdfPath}
           className={cn(
             buttonVariants({ size: "lg" }),
             "h-11 rounded-full px-5 text-sm font-semibold"

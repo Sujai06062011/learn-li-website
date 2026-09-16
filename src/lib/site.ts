@@ -2,7 +2,8 @@ export const site = {
   name: "LearnLi",
   tagline: "Learn Smart",
   productUrl: "https://learnli.in",
-  pdfPath: "/learnli-company-product.pdf",
+  pdfPath: "/learnli-homepage.pdf",
+  brochurePdfPath: "/learnli-company-product.pdf",
   description:
     "LearnLi is an AI-assisted learning platform for CBSE students in Grades 6–12. Li is the companion that teaches, listens, quizzes, and helps families and teachers see progress clearly.",
 };

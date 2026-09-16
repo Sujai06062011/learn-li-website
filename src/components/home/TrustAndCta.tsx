@@ -65,6 +65,16 @@ export function SchoolCta() {
           >
             Request a Pilot
           </a>
+          <a
+            href={site.pdfPath}
+            download="LearnLi-website.pdf"
+            className={cn(
+              buttonVariants({ variant: "outline", size: "lg" }),
+              "h-12 rounded-full border-white/35 bg-transparent px-7 text-sm font-semibold text-cream hover:bg-white/10"
+            )}
+          >
+            Download PDF
+          </a>
         </div>
       </div>
     </section>

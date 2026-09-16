@@ -6,6 +6,7 @@ import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button, buttonVariants } from "@/components/ui/button";
 import { LogoLockup } from "@/components/brand/Logo";
+import { site } from "@/lib/site";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -44,15 +45,27 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <a
-          href="/#demo"
-          className={cn(
-            buttonVariants({ variant: "ink", size: "lg" }),
-            "hidden h-9 rounded-full px-4 text-sm font-semibold md:inline-flex"
-          )}
-        >
-          Book a School Demo
-        </a>
+        <div className="hidden items-center gap-2 md:flex">
+          <a
+            href={site.pdfPath}
+            download="LearnLi-website.pdf"
+            className={cn(
+              buttonVariants({ variant: "outline", size: "lg" }),
+              "h-9 rounded-full bg-white px-4 text-sm font-semibold"
+            )}
+          >
+            Download PDF
+          </a>
+          <a
+            href="/#demo"
+            className={cn(
+              buttonVariants({ variant: "ink", size: "lg" }),
+              "h-9 rounded-full px-4 text-sm font-semibold"
+            )}
+          >
+            Book a School Demo
+          </a>
+        </div>
 
         <Button
           variant="ghost"
@@ -81,6 +94,14 @@ export function SiteHeader() {
                 {link.label}
               </Link>
             ))}
+            <a
+              href={site.pdfPath}
+              download="LearnLi-website.pdf"
+              onClick={() => setOpen(false)}
+              className="pt-2 text-sm tracking-[0.16em] uppercase"
+            >
+              Download PDF
+            </a>
             <a href="/#demo" className="pt-2 text-sm tracking-[0.16em] uppercase">
               Book a School Demo
             </a>

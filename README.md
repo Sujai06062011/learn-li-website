@@ -51,7 +51,8 @@ npm start
 ## Regenerating the PDF
 
 ```bash
-npm run pdf
+npm run pdf       # printable brochure → public/learnli-company-product.pdf
+npm run pdf:home  # full homepage snapshot → public/learnli-homepage.pdf
 ```
 
-The generator prints `/brochure` through Chrome (`puppeteer-core`). If a dev server is already running on port 4317 it will reuse it; otherwise it starts a temporary one on 4318.
+The header **Download PDF** button serves the homepage snapshot. The Brochure page still downloads the A4 company/product PDF. Generators use Chrome (`puppeteer-core`). If a dev server is already running on port 4317 they reuse it.
