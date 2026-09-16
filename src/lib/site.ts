@@ -229,7 +229,7 @@ export const profluentLabs = {
   title: "Effective & innovative learning tools, built with purpose.",
   aboutTitle: "About Us",
   about:
-    "Profluent Labs is a technology-driven company with over eight years of proven expertise in IT services — a trusted technology partner to global clients including American Eagle Outfitters (USA) and Freudenberg (Germany). We are now entering eLearning SaaS with tailor-made digital learning tools for specific niche segments. LearnLi is that product.",
+    "Profluent Labs is a technology-driven company with over eight years of proven expertise in IT services, proudly serving as a trusted technology partner to global clients, including American Eagle Outfitters (USA), and Freudenberg (Germany). Evolving with purpose, we are now entering the eLearning SaaS space with innovative, tailor-made digital learning tools built for specific niche segments.",
   reach: {
     title: "Reach Us",
     name: "Profluent Labs Pvt. Ltd.",
