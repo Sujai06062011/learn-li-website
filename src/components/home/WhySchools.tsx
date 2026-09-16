@@ -4,7 +4,7 @@ import { cn } from "@/lib/utils";
 
 export function WhySchools() {
   return (
-    <section id="why" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-14 sm:px-8">
+    <section id="why" className="pdf-block mx-auto max-w-6xl scroll-mt-24 px-5 py-14 sm:px-8">
       <div className="grid gap-6 lg:grid-cols-[1fr_0.85fr] lg:items-end">
         <div>
           <SectionLabel>{whySchools.kicker}</SectionLabel>
@@ -14,7 +14,7 @@ export function WhySchools() {
         </div>
         <p className="text-base leading-relaxed text-foreground/65">{whySchools.body}</p>
       </div>
-      <div className="mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      <div className="li-why-pillars mt-10 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
         {whySchools.pillars.map((pillar) => (
           <article
             key={pillar.n}

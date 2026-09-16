@@ -18,7 +18,7 @@ export default function Home() {
       <ProductStory />
       <ScoringPartner />
 
-      <section id="ask-li" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-12 sm:px-8">
+      <section id="ask-li" className="pdf-block mx-auto max-w-6xl scroll-mt-24 px-5 py-12 sm:px-8">
         <SectionLabel>{productShots.askLi.kicker}</SectionLabel>
         <h2 className="font-display mt-3 max-w-3xl text-3xl tracking-tight sm:text-4xl">
           {productShots.askLi.title}

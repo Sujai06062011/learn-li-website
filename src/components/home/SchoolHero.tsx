@@ -6,10 +6,9 @@ import { cn } from "@/lib/utils";
 
 export function SchoolHero() {
   return (
-    <>
-      <section className="relative mx-auto max-w-7xl overflow-hidden px-5 pt-10 pb-8 sm:px-8 sm:pt-14">
+    <section className="pdf-block relative mx-auto max-w-7xl overflow-hidden px-5 pt-10 pb-8 sm:px-8 sm:pt-14">
         <div className="pointer-events-none absolute -top-40 -right-20 size-[28rem] rounded-full bg-[radial-gradient(circle,rgba(59,130,246,0.18),transparent_70%)]" />
-        <div className="grid items-center gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-12">
+        <div className="li-hero-grid grid items-center gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(0,0.95fr)] lg:gap-12">
           <div>
             <p className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-white/70 px-3 py-1.5 text-[12px] font-semibold">
               <span className="size-2 rounded-full bg-li-green" />
@@ -62,14 +61,13 @@ export function SchoolHero() {
               height={1145}
               priority
               unoptimized
-              className="h-auto w-full"
+              className="pdf-shot h-auto w-full"
             />
           </div>
         </div>
-      </section>
 
-      <div className="mx-auto max-w-7xl px-5 pb-4 sm:px-8">
-        <div className="grid gap-4 rounded-[1.6rem] bg-foreground px-5 py-5 text-cream sm:grid-cols-[1.4fr_repeat(3,0.8fr)] sm:items-center sm:px-7">
+      <div className="mt-6">
+        <div className="li-eco-strip grid gap-4 rounded-[1.6rem] bg-foreground px-5 py-5 text-cream sm:grid-cols-[1.4fr_repeat(3,0.8fr)] sm:items-center sm:px-7">
           <div>
             <p className="font-display text-xl">{ecosystemStrip.title}</p>
             <p className="mt-1 text-sm text-cream/75">{ecosystemStrip.body}</p>
@@ -85,6 +83,6 @@ export function SchoolHero() {
           ))}
         </div>
       </div>
-    </>
+    </section>
   );
 }

@@ -5,7 +5,7 @@ import { cn } from "@/lib/utils";
 
 export function TrustAndCta() {
   return (
-    <section id="trust" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-14 sm:px-8">
+    <section id="trust" className="pdf-block mx-auto max-w-6xl scroll-mt-24 px-5 py-14 sm:px-8">
       <div className="grid gap-6 lg:grid-cols-[1fr_0.85fr] lg:items-end">
         <div>
           <SectionLabel>{trustMatters.kicker}</SectionLabel>
@@ -33,7 +33,7 @@ export function TrustAndCta() {
 
 export function SchoolCta() {
   return (
-    <section id="demo" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-8 sm:px-8 sm:pb-16">
+    <section id="demo" className="pdf-block pdf-continue mx-auto max-w-6xl scroll-mt-24 px-5 py-8 sm:px-8 sm:pb-16">
       <div className="rounded-[2.2rem] bg-foreground px-6 py-12 text-center text-cream sm:px-12 sm:py-16">
         <SectionLabel className="text-[#a9ddcf]">{schoolCta.kicker}</SectionLabel>
         <h2 className="font-display mx-auto mt-4 max-w-3xl text-3xl tracking-tight sm:text-5xl">
@@ -70,7 +70,7 @@ export function SchoolCta() {
             download="LearnLi-website.pdf"
             className={cn(
               buttonVariants({ variant: "outline", size: "lg" }),
-              "h-12 rounded-full border-white/35 bg-transparent px-7 text-sm font-semibold text-cream hover:bg-white/10"
+              "h-12 rounded-full border-white/35 bg-transparent px-7 text-sm font-semibold text-cream hover:bg-white/10 print:hidden"
             )}
           >
             Download PDF

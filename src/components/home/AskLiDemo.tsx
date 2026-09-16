@@ -150,7 +150,7 @@ export function AskLiPair() {
           width={tamil.width}
           height={tamil.height}
           unoptimized
-          className="h-auto w-full"
+          className="pdf-shot-tall h-auto w-full"
         />
       </figure>
     </div>

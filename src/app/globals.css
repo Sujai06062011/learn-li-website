@@ -203,17 +203,33 @@
 
 @page {
   size: A4;
-  margin: 0;
+  margin: 10mm;
 }
 
 @media print {
+  html,
+  body {
+    background: #f6f1e8 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    overflow: visible !important;
+  }
+
+  * {
+    scrollbar-width: none !important;
+    animation: none !important;
+    transition: none !important;
+  }
+
+  *::-webkit-scrollbar {
+    display: none !important;
+    width: 0 !important;
+    height: 0 !important;
+  }
+
   header,
   footer {
     display: none !important;
-  }
-
-  body {
-    background: #f6f1e8 !important;
   }
 
   .sheet {
@@ -222,10 +238,139 @@
     box-shadow: none !important;
     max-width: none;
     border: none !important;
-    min-height: 297mm;
+    min-height: 277mm;
   }
 
   .sheet:last-child {
     break-after: auto;
+  }
+
+  main:not(:has(.sheet)) {
+    h1,
+    h2,
+    h3 {
+      break-after: avoid;
+      page-break-after: avoid;
+    }
+
+    .pdf-block {
+      break-inside: avoid;
+      page-break-inside: avoid;
+      break-before: page;
+      page-break-before: always;
+      padding-top: 6mm !important;
+      padding-bottom: 6mm !important;
+    }
+
+    .pdf-block:first-child,
+    .pdf-continue {
+      break-before: auto;
+      page-break-before: auto;
+    }
+
+    .pdf-flow article {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .pdf-flow {
+      break-before: page;
+      page-break-before: always;
+      padding-top: 6mm !important;
+      padding-bottom: 6mm !important;
+    }
+
+    .pdf-keep {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .li-hero-grid {
+      display: grid !important;
+      grid-template-columns: 1.05fr 0.95fr !important;
+      align-items: center;
+      gap: 8mm !important;
+    }
+
+    .li-hero-grid h1 {
+      font-size: 28px !important;
+      line-height: 1.12 !important;
+    }
+
+    .li-eco-strip {
+      display: grid !important;
+      grid-template-columns: 1.4fr repeat(3, 0.8fr) !important;
+      align-items: center;
+    }
+
+    .li-eco-strip > div {
+      border-top: 0 !important;
+      padding-top: 0 !important;
+      border-left: 1px solid rgb(255 255 255 / 0.15);
+      padding-left: 1.25rem;
+    }
+
+    .li-eco-strip > div:first-child {
+      border-left: 0;
+      padding-left: 0;
+    }
+
+    .li-why-pillars {
+      grid-template-columns: 1fr 1fr !important;
+    }
+
+    .li-why-pillars article {
+      min-height: 0 !important;
+    }
+
+    .li-score-pair,
+    .li-ask-pair {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      align-items: start;
+    }
+
+    .li-journey-cards {
+      grid-template-columns: 1fr 1fr 1fr !important;
+    }
+
+    .li-platform-grid {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      align-items: center;
+    }
+
+    .li-beliefs {
+      grid-template-columns: 1fr 1fr 1fr !important;
+    }
+
+    .li-profluent-split {
+      display: grid !important;
+      grid-template-columns: 1.4fr 1fr !important;
+    }
+
+    .pdf-shot {
+      max-height: 92mm;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      object-position: top;
+    }
+
+    .pdf-shot-tall {
+      max-height: 148mm;
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      object-position: top;
+    }
+
+    .li-ask {
+      max-width: 100%;
+    }
+
+    .li-ask [class*="min-h-"] {
+      min-height: 0 !important;
+    }
   }
 }

@@ -28,7 +28,7 @@ function ScoringShot({
           width={width}
           height={height}
           unoptimized
-          className="h-auto w-full"
+          className="pdf-shot h-auto w-full"
         />
       </div>
     </article>
@@ -37,7 +37,7 @@ function ScoringShot({
 
 export function ScoringPartner() {
   return (
-    <section id="scoring" className="mx-auto max-w-7xl scroll-mt-24 px-5 py-12 sm:px-8">
+    <section id="scoring" className="pdf-block mx-auto max-w-7xl scroll-mt-24 px-5 py-12 sm:px-8">
       <div className="overflow-hidden rounded-[2rem] bg-foreground p-6 text-cream shadow-[0_22px_50px_-28px_rgba(27,63,71,0.55)] sm:p-8 lg:p-10">
         <div className="max-w-3xl">
           <SectionLabel className="text-[#9fd4c6]">{scoringPartner.kicker}</SectionLabel>

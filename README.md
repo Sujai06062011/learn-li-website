@@ -55,4 +55,4 @@ npm run pdf       # printable brochure → public/learnli-company-product.pdf
 npm run pdf:home  # full homepage as A4 pages → public/learnli-homepage.pdf
 ```
 
-The header **Download PDF** button serves a multi-page A4 export of the homepage (screen colours and backgrounds). The Brochure page still downloads the A4 company/product PDF. Generators use Chrome (`puppeteer-core`). If a dev server is already running on port 4317 they reuse it.
+The header **Download PDF** button serves a multi-page A4 export of the homepage (colours kept, one section per page, site header/footer omitted). The Brochure page still downloads the A4 company/product PDF. Generators use Chrome (`puppeteer-core`). If a dev server is already running on port 4317 they reuse it.

@@ -40,10 +40,10 @@ async function main() {
     const limit = document.documentElement.scrollHeight;
     for (let y = 0; y < limit; y += 700) {
       window.scrollTo(0, y);
-      await pause(200);
+      await pause(180);
     }
     window.scrollTo(0, 0);
-    await pause(400);
+    await pause(300);
   });
 
   await page.evaluate(async () => {
@@ -58,33 +58,26 @@ async function main() {
     );
   });
 
-  // Keep on-screen colours (cream, pastels, shadows). Paginate onto A4 — never a
-  // single giant “screenshot” page, which Preview shrinks to a postage stamp.
-  await page.emulateMediaType("screen");
-  await page.addStyleTag({
-    content: `
-      html, body {
-        background: #F6F1E8 !important;
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
-      }
-      header {
-        position: static !important;
-      }
-      img, article, .rounded-\\[1\\.4rem\\], .rounded-\\[2\\.2rem\\] {
-        break-inside: avoid;
-        page-break-inside: avoid;
-      }
-    `,
+  await page.evaluate(() => {
+    document.documentElement.classList.add("pdf-export");
+    document.querySelectorAll("header, footer").forEach((node) => node.remove());
+    document.documentElement.style.overflow = "hidden";
+    document.body.style.overflow = "hidden";
   });
+
+  // Print media applies A4 page-breaks and hides site chrome. Backgrounds stay on.
+  await page.emulateMediaType("print");
 
   await page.pdf({
     path: OUT,
     format: "A4",
     printBackground: true,
     preferCSSPageSize: false,
-    margin: { top: "8mm", right: "8mm", bottom: "8mm", left: "8mm" },
-    displayHeaderFooter: false,
+    margin: { top: "10mm", right: "10mm", bottom: "12mm", left: "10mm" },
+    displayHeaderFooter: true,
+    headerTemplate: "<div></div>",
+    footerTemplate:
+      '<div style="font-size:8px;width:100%;text-align:center;color:#5b7177;font-family:Outfit,sans-serif;padding-top:4px;">LearnLi · <span class="pageNumber"></span> / <span class="totalPages"></span></div>',
     omitBackground: false,
   });
 

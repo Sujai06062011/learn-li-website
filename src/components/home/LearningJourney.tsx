@@ -23,7 +23,7 @@ function JourneyCard({
 
 export function LearningJourney() {
   return (
-    <section id="ecosystem" className="mx-auto max-w-6xl scroll-mt-24 px-5 py-14 sm:px-8">
+    <section id="ecosystem" className="pdf-flow mx-auto max-w-6xl scroll-mt-24 px-5 py-14 sm:px-8">
       <div className="grid gap-6 lg:grid-cols-[1fr_0.85fr] lg:items-end">
         <div>
           <SectionLabel>{learningJourney.kicker}</SectionLabel>
@@ -41,7 +41,7 @@ export function LearningJourney() {
               <span className="mr-2 text-[#2c7e69]">{index + 1}.</span>
               {group.title}
             </h3>
-            <div className="mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+            <div className="li-journey-cards mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
               {group.cards.map((card) => (
                 <JourneyCard key={card.title} {...card} />
               ))}
