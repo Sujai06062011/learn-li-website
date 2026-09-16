@@ -3,9 +3,10 @@ import { LearningJourney } from "@/components/home/LearningJourney";
 import { SchoolHero } from "@/components/home/SchoolHero";
 import { SchoolPlatform } from "@/components/home/SchoolPlatform";
 import { ScoringPartner } from "@/components/home/ScoringPartner";
-import { TrustAndCta } from "@/components/home/TrustAndCta";
+import { TrustAndCta, SchoolCta } from "@/components/home/TrustAndCta";
 import { WhySchools } from "@/components/home/WhySchools";
 import { ProductStory } from "@/components/home/ProductStory";
+import { ProfluentLabs } from "@/components/home/ProfluentLabs";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { productShots } from "@/lib/site";
 
@@ -37,6 +38,8 @@ export default function Home() {
       <LearningJourney />
       <SchoolPlatform />
       <TrustAndCta />
+      <ProfluentLabs />
+      <SchoolCta />
     </main>
   );
 }

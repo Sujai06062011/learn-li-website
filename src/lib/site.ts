@@ -223,6 +223,44 @@ export const schoolCta = {
   body: "See how LearnLi can support your teachers in the classroom and continue helping every student after school — through your school's own digital learning platform.",
 };
 
+export const profluentLabs = {
+  kicker: "The company behind LearnLi",
+  legalName: "Profluent Labs Pvt. Ltd.",
+  title: "Effective & innovative learning tools, built with purpose.",
+  about:
+    "Profluent Labs is a technology-driven company with over eight years of proven expertise in IT services — a trusted technology partner to global clients including American Eagle Outfitters (USA) and Freudenberg (Germany). We are now entering eLearning SaaS with tailor-made digital learning tools for specific niche segments. LearnLi is that product.",
+  purpose: {
+    title: "Our purpose",
+    body: "To make learning easy, effective, and enjoyable with technology that’s accessible and affordable for every educator and learner.",
+    tone: "mint" as Tone,
+  },
+  promise: {
+    title: "Brand promise",
+    body: "Smart digital tools that empower every educator and learner.",
+    tone: "sun" as Tone,
+  },
+  believe: {
+    title: "What we believe",
+    body: "Appropriate application of technology can revolutionize the learning experience and deliver excellent results.",
+    tone: "lavender" as Tone,
+  },
+  storyTitle: "Our story",
+  story:
+    "With over two decades of experience designing smart learning solutions for Fortune 100 companies — and international awards along the way — our founder started this eLearning SaaS journey with a simple idea: leveraging technology to empower learning should not require technical expertise, a large budget, or extra infrastructure.",
+  award:
+    "Most Promising EdTech Startup of the Year — 5th GCC Leadership Conclave, Leadership Federation, Pune (21–22 January 2026).",
+  clients: [
+    { name: "American Eagle Outfitters", hint: "USA" },
+    { name: "Freudenberg", hint: "Germany" },
+  ],
+  logo: {
+    src: "/brand/profluent-labs-logo.png",
+    alt: "Profluent Labs — Effective & Innovative",
+    width: 4405,
+    height: 1142,
+  },
+};
+
 export type Tone = "pink" | "mint" | "lavender" | "sun" | "sky" | "rose" | "cyan";
 
 export const toneClass: Record<Tone, string> = {

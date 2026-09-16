@@ -37,6 +37,11 @@ export function SiteFooter() {
               </Link>
             </li>
             <li>
+              <Link href="/#profluent" className="hover:opacity-70">
+                Profluent Labs
+              </Link>
+            </li>
+            <li>
               <Link href="/company" className="hover:opacity-70">
                 Company
               </Link>
@@ -71,7 +76,7 @@ export function SiteFooter() {
       </div>
       <div className="border-t border-foreground/10">
         <div className="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-5 text-xs text-muted-foreground sm:flex-row sm:items-center sm:justify-between sm:px-8">
-          <p>© {new Date().getFullYear()} LearnLi. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Profluent Labs Pvt. Ltd. LearnLi is a Profluent Labs product.</p>
           <p className="tracking-[0.18em] uppercase">CBSE · Grades 6–12</p>
         </div>
       </div>

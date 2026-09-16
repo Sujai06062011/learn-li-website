@@ -4,17 +4,19 @@ import { LiIcon } from "@/components/brand/LiIcon";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { buttonVariants } from "@/components/ui/button";
 import { company, schoolPartner, site, subjects, toneClass, toneInk } from "@/lib/site";
+import { ProfluentLabs } from "@/components/home/ProfluentLabs";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Company",
   description:
-    "LearnLi is the company behind the AI-assisted CBSE learning platform for Grades 6–12.",
+    "LearnLi is built by Profluent Labs Pvt. Ltd. — an EdTech SaaS company and trusted technology partner to global clients.",
 };
 
 export default function CompanyPage() {
   return (
-    <main className="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
+    <main>
+      <div className="mx-auto max-w-6xl px-5 py-12 sm:px-8 sm:py-16">
       <SectionLabel>The company</SectionLabel>
       <h1 className="font-display mt-4 max-w-3xl text-4xl tracking-tight text-balance sm:text-6xl">
         Built for the classroom as it actually is.
@@ -112,6 +114,8 @@ export default function CompanyPage() {
           Open learnli.in
         </a>
       </section>
+      </div>
+      <ProfluentLabs />
     </main>
   );
 }
