@@ -31,7 +31,7 @@ async function main() {
     headless: true,
   });
   const page = await browser.newPage();
-  await page.setViewport({ width: 1440, height: 1200, deviceScaleFactor: 2 });
+  await page.setViewport({ width: 1200, height: 1600, deviceScaleFactor: 2 });
   await page.goto(`${ORIGIN}/`, { waitUntil: "networkidle0", timeout: 180000 });
   await page.evaluate(() => document.fonts.ready);
 
@@ -58,23 +58,38 @@ async function main() {
     );
   });
 
-  // Keep on-screen CSS (cream background, header, shadows) instead of @media print.
+  // Keep on-screen colours (cream, pastels, shadows). Paginate onto A4 — never a
+  // single giant “screenshot” page, which Preview shrinks to a postage stamp.
   await page.emulateMediaType("screen");
-
-  const height = await page.evaluate(() => Math.ceil(document.documentElement.scrollHeight));
+  await page.addStyleTag({
+    content: `
+      html, body {
+        background: #F6F1E8 !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+      }
+      header {
+        position: static !important;
+      }
+      img, article, .rounded-\\[1\\.4rem\\], .rounded-\\[2\\.2rem\\] {
+        break-inside: avoid;
+        page-break-inside: avoid;
+      }
+    `,
+  });
 
   await page.pdf({
     path: OUT,
-    width: "1440px",
-    height: `${Math.max(height, 1200)}px`,
+    format: "A4",
     printBackground: true,
-    margin: { top: 0, right: 0, bottom: 0, left: 0 },
+    preferCSSPageSize: false,
+    margin: { top: "8mm", right: "8mm", bottom: "8mm", left: "8mm" },
     displayHeaderFooter: false,
     omitBackground: false,
   });
 
   await browser.close();
-  console.log(`Wrote ${OUT} (${height}px tall)`);
+  console.log(`Wrote A4 paginated PDF to ${OUT}`);
 }
 
 main().catch((error) => {

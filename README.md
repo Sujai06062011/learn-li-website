@@ -27,7 +27,7 @@ The product UI is friendly, pastel, and card-based. Marketing uses a quieter reg
 ```bash
 npm install
 npm run pdf      # writes public/learnli-company-product.pdf
-npm run pdf:home # writes public/learnli-homepage.pdf (full homepage, screen colors)
+npm run pdf:home # writes public/learnli-homepage.pdf (A4 pages, screen colors)
 npm run dev      # http://127.0.0.1:4317
 ```
 
@@ -52,7 +52,7 @@ npm start
 
 ```bash
 npm run pdf       # printable brochure → public/learnli-company-product.pdf
-npm run pdf:home  # full homepage snapshot → public/learnli-homepage.pdf
+npm run pdf:home  # full homepage as A4 pages → public/learnli-homepage.pdf
 ```
 
-The header **Download PDF** button serves the homepage snapshot. The Brochure page still downloads the A4 company/product PDF. Generators use Chrome (`puppeteer-core`). If a dev server is already running on port 4317 they reuse it.
+The header **Download PDF** button serves a multi-page A4 export of the homepage (screen colours and backgrounds). The Brochure page still downloads the A4 company/product PDF. Generators use Chrome (`puppeteer-core`). If a dev server is already running on port 4317 they reuse it.
