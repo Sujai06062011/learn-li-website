@@ -297,6 +297,22 @@
       line-height: 1.12 !important;
     }
 
+    .li-hero-shot-wrap {
+      background: #d7eef6 !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      overflow: hidden;
+    }
+
+    .pdf-hero-shot {
+      display: block;
+      width: 100% !important;
+      height: auto !important;
+      max-height: none !important;
+      object-fit: cover !important;
+      object-position: center;
+    }
+
     .li-eco-strip {
       display: grid !important;
       grid-template-columns: 1.4fr repeat(3, 0.8fr) !important;
@@ -317,21 +333,88 @@
 
     .li-why-pillars {
       grid-template-columns: 1fr 1fr !important;
+      align-items: start !important;
     }
 
     .li-why-pillars article {
       min-height: 0 !important;
+      height: auto !important;
+      align-self: start !important;
     }
 
-    .li-score-pair,
+    .li-score-pair {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      align-items: start !important;
+      gap: 5mm !important;
+    }
+
+    .li-score-frame {
+      background: #ffffff !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+      isolation: isolate;
+    }
+
+    .pdf-score-shot {
+      display: block;
+      width: 100% !important;
+      height: auto !important;
+      max-height: 90mm !important;
+      object-fit: contain !important;
+      object-position: top center;
+      background: #ffffff !important;
+      mix-blend-mode: normal !important;
+    }
+
     .li-ask-pair {
       display: grid !important;
       grid-template-columns: 1fr 1fr !important;
-      align-items: start;
+      align-items: stretch !important;
+      justify-items: stretch !important;
+      gap: 6mm !important;
+      background: transparent !important;
+    }
+
+    .li-ask-pair figure {
+      max-width: none !important;
+      width: 100% !important;
+    }
+
+    .li-ask-frame {
+      height: 150mm;
+      overflow: hidden;
+      border-radius: 1.5rem;
+      background: #ffffff !important;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    .li-ask-frame .li-ask {
+      max-width: none !important;
+      height: 150mm;
+      box-shadow: none !important;
+    }
+
+    .pdf-ask-shot {
+      display: block;
+      width: 100% !important;
+      height: 150mm !important;
+      object-fit: contain !important;
+      object-position: top center;
+      background: #ffffff !important;
     }
 
     .li-journey-cards {
       grid-template-columns: 1fr 1fr 1fr !important;
+      align-items: start !important;
+    }
+
+    .li-journey-cards article {
+      height: auto !important;
+      min-height: 0 !important;
+      padding: 10px 12px !important;
+      align-self: start !important;
     }
 
     .li-platform-grid {
@@ -340,13 +423,54 @@
       align-items: center;
     }
 
+    .li-profluent-head {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: flex-end !important;
+      justify-content: space-between !important;
+      gap: 8mm !important;
+    }
+
+    .pdf-logo {
+      height: 42px !important;
+      width: auto !important;
+      max-width: 210px !important;
+      object-fit: contain !important;
+      flex: none !important;
+      align-self: flex-end !important;
+    }
+
     .li-beliefs {
       grid-template-columns: 1fr 1fr 1fr !important;
+      align-items: stretch !important;
+    }
+
+    .li-beliefs article {
+      height: auto !important;
+      min-height: 0 !important;
+    }
+
+    .pdf-profluent-top {
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .pdf-profluent-bottom {
+      break-before: page;
+      page-break-before: always;
+      break-inside: avoid;
+      page-break-inside: avoid;
+      min-height: 255mm;
+      display: flex !important;
+      flex-direction: column !important;
+      justify-content: center !important;
+      gap: 6mm !important;
     }
 
     .li-profluent-split {
       display: grid !important;
       grid-template-columns: 1.4fr 1fr !important;
+      align-items: start !important;
     }
 
     .pdf-shot {
@@ -355,18 +479,6 @@
       height: auto;
       object-fit: contain;
       object-position: top;
-    }
-
-    .pdf-shot-tall {
-      max-height: 148mm;
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-      object-position: top;
-    }
-
-    .li-ask {
-      max-width: 100%;
     }
 
     .li-ask [class*="min-h-"] {

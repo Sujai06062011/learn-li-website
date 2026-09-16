@@ -21,14 +21,14 @@ function ScoringShot({
     <article>
       <h3 className="font-display text-2xl tracking-tight sm:text-3xl">{label}</h3>
       <p className="mt-1 text-sm leading-relaxed text-cream/70">{caption}</p>
-      <div className="mt-4 overflow-hidden rounded-2xl bg-white shadow-[0_18px_40px_-28px_rgba(0,0,0,0.45)]">
+      <div className="li-score-frame mt-4 overflow-hidden rounded-2xl bg-white shadow-[0_18px_40px_-28px_rgba(0,0,0,0.45)]">
         <Image
           src={src}
           alt={alt}
           width={width}
           height={height}
           unoptimized
-          className="pdf-shot h-auto w-full"
+          className="pdf-score-shot block h-auto w-full"
         />
       </div>
     </article>

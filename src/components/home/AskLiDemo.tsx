@@ -138,20 +138,24 @@ export function AskLiPair() {
         <figcaption className="mb-3 text-center text-[11px] font-semibold tracking-[0.16em] text-[#0f766e] uppercase">
           English
         </figcaption>
-        <AskLiDemo />
+        <div className="li-ask-frame">
+          <AskLiDemo />
+        </div>
       </figure>
       <figure className="w-full max-w-[22rem]">
         <figcaption className="mb-3 text-center text-[11px] font-semibold tracking-[0.16em] text-[#0f766e] uppercase">
           தமிழ்
         </figcaption>
-        <Image
-          src={tamil.src}
-          alt={tamil.alt}
-          width={tamil.width}
-          height={tamil.height}
-          unoptimized
-          className="pdf-shot-tall h-auto w-full"
-        />
+        <div className="li-ask-frame overflow-hidden rounded-[1.8rem] bg-white ring-1 ring-foreground/10">
+          <Image
+            src={tamil.src}
+            alt={tamil.alt}
+            width={tamil.width}
+            height={tamil.height}
+            unoptimized
+            className="pdf-ask-shot h-auto w-full"
+          />
+        </div>
       </figure>
     </div>
   );

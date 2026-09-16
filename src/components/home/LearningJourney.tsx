@@ -35,8 +35,8 @@ export function LearningJourney() {
       </div>
 
       <div className="mt-10 space-y-10">
-        {learningJourney.groups.map((group, index) => (
-          <div key={group.title}>
+        {learningJourney.groups.slice(0, 2).map((group, index) => (
+          <div key={group.title} className="pdf-keep">
             <h3 className="font-display text-xl tracking-tight sm:text-2xl">
               <span className="mr-2 text-[#2c7e69]">{index + 1}.</span>
               {group.title}
@@ -48,6 +48,21 @@ export function LearningJourney() {
             </div>
           </div>
         ))}
+        <div className="pdf-keep space-y-10">
+          {learningJourney.groups.slice(2).map((group, index) => (
+            <div key={group.title}>
+              <h3 className="font-display text-xl tracking-tight sm:text-2xl">
+                <span className="mr-2 text-[#2c7e69]">{index + 3}.</span>
+                {group.title}
+              </h3>
+              <div className="li-journey-cards mt-4 grid gap-3 sm:grid-cols-2 lg:grid-cols-3">
+                {group.cards.map((card) => (
+                  <JourneyCard key={card.title} {...card} />
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );

@@ -23,8 +23,8 @@ function BeliefCard({
 export function ProfluentLabs() {
   return (
     <section id="profluent" className="pdf-flow mx-auto max-w-6xl scroll-mt-24 px-5 py-14 sm:px-8">
-      <div className="overflow-hidden rounded-[2rem] bg-white p-6 shadow-[0_22px_50px_-28px_rgba(27,63,71,0.45)] ring-1 ring-foreground/8 sm:p-8 lg:p-10">
-        <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
+      <div className="pdf-profluent-top overflow-hidden rounded-[2rem] bg-white p-6 shadow-[0_22px_50px_-28px_rgba(27,63,71,0.45)] ring-1 ring-foreground/8 sm:p-8 lg:p-10">
+        <div className="li-profluent-head flex flex-col items-start gap-6 lg:flex-row lg:items-end lg:justify-between">
           <div className="max-w-2xl">
             <SectionLabel>{profluentLabs.kicker}</SectionLabel>
             <h2 className="font-display mt-3 text-3xl tracking-tight sm:text-5xl">
@@ -40,7 +40,7 @@ export function ProfluentLabs() {
             width={profluentLabs.logo.width}
             height={profluentLabs.logo.height}
             unoptimized
-            className="h-12 w-auto sm:h-14"
+            className="pdf-logo h-12 w-auto max-w-[240px] object-contain sm:h-14"
           />
         </div>
 
@@ -53,13 +53,15 @@ export function ProfluentLabs() {
           </p>
         </div>
 
-        <div className="li-beliefs mt-8 grid gap-4 md:grid-cols-3">
+        <div className="li-beliefs mt-8 grid items-start gap-4 md:grid-cols-3">
           <BeliefCard {...profluentLabs.purpose} />
           <BeliefCard {...profluentLabs.promise} />
           <BeliefCard {...profluentLabs.believe} />
         </div>
+      </div>
 
-        <div className="pdf-keep mt-8 rounded-[1.6rem] bg-foreground p-6 text-cream sm:p-8">
+      <div className="pdf-profluent-bottom mt-6 space-y-6">
+        <div className="rounded-[1.6rem] bg-foreground p-6 text-cream sm:p-8">
           <p className="text-[11px] font-semibold tracking-[0.22em] text-[#9fd4c6] uppercase">
             {profluentLabs.storyTitle}
           </p>
@@ -68,7 +70,7 @@ export function ProfluentLabs() {
           </p>
         </div>
 
-        <div className="li-profluent-split pdf-keep mt-6 grid gap-4 lg:grid-cols-[1.4fr_1fr]">
+        <div className="li-profluent-split grid gap-4 lg:grid-cols-[1.4fr_1fr]">
           <div className="rounded-[1.5rem] bg-[#fff4d6] p-6">
             <p className="text-[11px] font-semibold tracking-[0.18em] text-[#2c7e69] uppercase">
               Recognition
@@ -92,7 +94,7 @@ export function ProfluentLabs() {
           </div>
         </div>
 
-        <div className="pdf-keep mt-6 rounded-[1.6rem] bg-[#e7f6ee] p-6 sm:p-8">
+        <div className="rounded-[1.6rem] bg-[#e7f6ee] p-6 sm:p-8">
           <p className="text-[11px] font-semibold tracking-[0.22em] text-li-blue uppercase">
             {profluentLabs.reach.title}
           </p>

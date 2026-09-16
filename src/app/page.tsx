@@ -29,7 +29,7 @@ export default function Home() {
         <div className="mt-8">
           <AskLiPair />
         </div>
-        <p className="mt-4 text-center text-xs text-foreground/50">
+        <p className="mt-4 w-full text-center text-xs text-foreground/50">
           English is live — tap Photosynthesis, Heat, or Integers. Tamil shows the same photosynthesis
           thread.
         </p>
