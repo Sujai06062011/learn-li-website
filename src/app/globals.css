@@ -199,6 +199,56 @@
   grid-column: 1 / -1;
 }
 
+.li-journey-puzzle {
+  display: grid;
+  gap: 1.75rem 0.75rem;
+  justify-items: center;
+  grid-template-areas:
+    "bulb"
+    "s1"
+    "s2"
+    "s3"
+    "s4";
+}
+
+.li-journey-puzzle [data-area="bulb"] {
+  grid-area: bulb;
+}
+
+.li-journey-puzzle [data-area="s1"] {
+  grid-area: s1;
+}
+
+.li-journey-puzzle [data-area="s2"] {
+  grid-area: s2;
+}
+
+.li-journey-puzzle [data-area="s3"] {
+  grid-area: s3;
+}
+
+.li-journey-puzzle [data-area="s4"] {
+  grid-area: s4;
+}
+
+@media (min-width: 1024px) {
+  .li-journey-puzzle {
+    grid-template-columns: minmax(0, 1fr) 250px minmax(0, 1fr);
+    grid-template-areas:
+      "s1 bulb s3"
+      "s2 bulb s4";
+    align-items: start;
+    justify-items: stretch;
+    column-gap: 0.25rem;
+    row-gap: 2.25rem;
+  }
+
+  .li-journey-puzzle [data-area="bulb"] {
+    justify-self: center;
+    align-self: center;
+  }
+}
+
 @media (min-width: 640px) {
   .li-ask-pair {
     grid-template-columns: 1fr 1fr;
